@@ -1,6 +1,7 @@
 // components
 import App from './components/App';
 import Landing from './components/Landing';
+import Login from './components/Login';
 
 // dependencies
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -17,9 +18,12 @@ injectTapEventPlugin();
 const muiTheme = getMuiTheme({
 
   palette: {
-    primary1Color: '#F9FDFE',
+
+    primary1Color: '#405D63',
     primaryTextColor: '#F9FDFE',
-    alternateTextColor: '#174859'
+    alternateTextColor: '#F9FDFE',
+    disabledColor: '#405D63',
+    accent1Color: '#B85948'
   }
 });
 
@@ -28,6 +32,7 @@ const router = <MuiThemeProvider muiTheme={muiTheme}>
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={Landing}/>
+        <Route path="login" component={Login} />
 
       </Route>
     </Router>

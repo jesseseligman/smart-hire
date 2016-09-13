@@ -38,17 +38,17 @@ const App = React.createClass({
           <FlatButton
           label="Sign Up"
           labelStyle={styleButton}
-          primary={true}
+          style={{color: '#F9FDFE'}}
           />
           <FlatButton
           label="Login"
           labelStyle={styleButton}
-          primary={true}
+          style={{color: '#F9FDFE'}}
           />
           <FlatButton
           label="Find a job"
           labelStyle={styleButton}
-          primary={true}
+          style={{color: '#F9FDFE'}}
           />
         </div>
       </nav>
