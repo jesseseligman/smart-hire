@@ -17,14 +17,13 @@ injectTapEventPlugin();
 const muiTheme = getMuiTheme({
 
   palette: {
-    primary1Color: '#788ca9',
-    primary2Color: '#fff',
-    textColor: '#000',
+    primary1Color: '#b5c2cc',
+    primaryTextColor: '#F9FDFE',
     alternateTextColor: '#174859'
   }
 });
 
-const router = <MuiThemeProvider>
+const router = <MuiThemeProvider muiTheme={muiTheme}>
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={App}>

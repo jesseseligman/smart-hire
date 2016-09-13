@@ -1,28 +1,3 @@
-#nav-container {
-  display:flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: flex-start;
-  align-items: center;
-}
-
-#nav-bar {
-  display: flex;
-  align-items: center;
-  height: 6em;
-  width: 100%;
-  background-color: #174859;
-}
-
-#logo {
-  color: #F9FDFE;
-  font-size: 4em;
-  font-family: Roboto;
-  margin-left: 15px;
-  font-weight: lighter;
-}
-
 #image-container {
   display: flex;
   align-items: center;

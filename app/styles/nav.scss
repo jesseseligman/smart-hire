@@ -1,0 +1,24 @@
+#nav-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 6em;
+  width: 100%;
+  background-color: #174859;
+}
+
+#logo {
+  color: #F9FDFE;
+  font-size: 4em;
+  font-family: Roboto;
+  margin-left: 15px;
+  font-weight: lighter;
+}
+
+#nav-button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
