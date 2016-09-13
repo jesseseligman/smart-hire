@@ -5,11 +5,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 const Landing = React.createClass({
   render() {
 
-    const styleColumnContainer = {
-      display: 'flex',
-      flexDirection: 'row',
-      margin: '0 40px'
-    };
+
 
     const styleButtonContainer = {
       display: 'flex',
@@ -29,7 +25,7 @@ const Landing = React.createClass({
         </div>
       </div>
 
-      <section style={styleColumnContainer}>
+      <section id="column-container">
         <div className="info-column">
           <h4 className="column-title">What is implicit bias?</h4>
           <div>_____________________</div>

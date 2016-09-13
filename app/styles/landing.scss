@@ -25,10 +25,14 @@ a {
   }
 }
 
-
-
-.column-icon {
-  width: 90px;
+#column-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0 35px;
+  @media (max-width: 1000px) {
+    flex-wrap: wrap;
+    margin: 0 20px;
+  }
 }
 
 .info-column {

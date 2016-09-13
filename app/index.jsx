@@ -17,7 +17,7 @@ injectTapEventPlugin();
 const muiTheme = getMuiTheme({
 
   palette: {
-    primary1Color: '#b5c2cc',
+    primary1Color: '#F9FDFE',
     primaryTextColor: '#F9FDFE',
     alternateTextColor: '#174859'
   }
