@@ -4,7 +4,7 @@ import FlatButton from 'material-ui/FlatButton';
 
 const EmployerListing = React.createClass({
   render() {
-    return <div id="employer-listing">
+    return <div className="card">
       <Card>
         <CardHeader
           title={this.props.jobTitle}

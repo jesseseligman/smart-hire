@@ -2,18 +2,7 @@ import React from 'react';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import ButtonForm from 'components/ButtonForm';
 
-const Response = React.createClass({
-  getInitialState() {
-    return {
-      selected: null
-    }
-  },
-
-  handleButtonClick(event) {
-    this.setState({
-      selected: event.target.value
-    })
-  },
+const QuestionResponse = React.createClass({
 
   render() {
     return <div className="card">
@@ -24,7 +13,7 @@ const Response = React.createClass({
         <CardText>
           {this.props.response}
         </CardText>
-        
+
         <ButtonForm/>
       </Card>
 
@@ -33,4 +22,4 @@ const Response = React.createClass({
   }
 })
 
-export default Response;
+export default QuestionResponse;

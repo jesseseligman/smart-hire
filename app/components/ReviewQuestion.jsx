@@ -1,8 +1,8 @@
 import React from 'react';
-import Response from 'components/Response';
+import QuestionResponse from 'components/QuestionResponse';
 import weakKey from 'weak-key';
 
-const Review = React.createClass({
+const ReviewQuestion = React.createClass({
 
   render() {
     const data = {
@@ -34,7 +34,7 @@ const Review = React.createClass({
     return <div className="dashboard-container">
       <h3>{data.question}</h3>
       {data.responses.map((response, index) => {
-        return <Response
+        return <QuestionResponse
           key={weakKey(response)}
           alias={index + 1}
           response={response.response}
@@ -44,4 +44,4 @@ const Review = React.createClass({
   }
 })
 
-export default Review;
+export default ReviewQuestion;

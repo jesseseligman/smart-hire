@@ -4,7 +4,7 @@ import Landing from './components/Landing';
 import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/Dashboard';
-import Review from './components/Review'
+import ReviewQuestion from './components/ReviewQuestion'
 
 // dependencies
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -38,9 +38,9 @@ const router = <MuiThemeProvider muiTheme={muiTheme}>
         <Route path="login" component={Login} />
         <Route path="register" component={Register} />
         <Route path="dashboard/:userId" component={Dashboard} />
-        <Route path="review/:questionId" component={Review}/>
-        <Route path="review/education" component={Review}/>
-        <Route path="review/experience" component={Review}/>
+        <Route path="review/education" component={ReviewEducation}/>
+        <Route path="review/experience" component={ReviewExperience}/>
+        <Route path="review/question/:questionId" component={ReviewQuestion}/>
       </Route>
     </Router>
   </Provider>
