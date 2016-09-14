@@ -6,6 +6,7 @@ import Register from './components/Register';
 import Dashboard from './components/Dashboard';
 import ReviewQuestion from './components/ReviewQuestion';
 import ReviewEducation from './components/ReviewEducation';
+import ReviewExperience from './components/ReviewExperience';
 
 // dependencies
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -39,9 +40,9 @@ const router = <MuiThemeProvider muiTheme={muiTheme}>
         <Route path="login" component={Login} />
         <Route path="register" component={Register} />
         <Route path="dashboard/:userId" component={Dashboard} />
-        <Route path="review/education" component={ReviewEducation}/>
-        {/* <Route path="review/experience" component={ReviewExperience}/> */}
-        <Route path="review/question/:questionId" component={ReviewQuestion}/>
+        <Route path="review/:jobId/education" component={ReviewEducation}/>
+        <Route path="review/:jobId/experience" component={ReviewExperience}/>
+        <Route path="review/:jobId/question/:questionId" component={ReviewQuestion}/>
       </Route>
     </Router>
   </Provider>

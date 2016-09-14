@@ -3,7 +3,7 @@ import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'mat
 import ButtonForm from 'components/ButtonForm';
 import weakKey from 'weak-key';
 
-const EducationResponse = React.createClass({
+const ExperienceResponse = React.createClass({
 
   render() {
     return <div className="card">
@@ -12,13 +12,19 @@ const EducationResponse = React.createClass({
           title={`Applicant ${this.props.alias}`}
         />
 
-        {this.props.edus.map((edu) => {
-          return <div key={weakKey(edu)}>
+        {this.props.exps.map((exp) => {
+          return <div className="response-item" key={weakKey(exp)}>
             <CardHeader
+              title={exp.title}
+              subtitle={exp.company}
+            >
+              <div>{`${exp.start} - ${exp.end}`}</div>
+            </CardHeader>
+            <CardText
               style={{paddingTop: '0px'}}
-              title={`${edu.school} -- ${edu.degree}, ${edu.major}`}
-              subtitle={`${edu.start} - ${edu.end}`}
-              />
+            >
+              {exp.description}
+            </CardText>
           </div>
         })}
 
@@ -33,4 +39,4 @@ const EducationResponse = React.createClass({
   }
 })
 
-export default EducationResponse;
+export default ExperienceResponse;

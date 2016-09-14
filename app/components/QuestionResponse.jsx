@@ -43,7 +43,7 @@ const EducationResponse = React.createClass({
         <CardTitle
           title={`Applicant ${this.props.alias}`}
         />
-        <CardText>
+        <CardText style={{paddingTop: '0px'}}>
           {this.props.response}
         </CardText>
 
