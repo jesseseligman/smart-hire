@@ -10,10 +10,6 @@ const Login = React.createClass({
       marginBottom: '40px'
     };
 
-    const styleTextField = {
-      width: '50%'
-    };
-
     return <div>
       <div id="login-container">
         <div id="login-box">

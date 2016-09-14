@@ -2,6 +2,8 @@
 import App from './components/App';
 import Landing from './components/Landing';
 import Login from './components/Login';
+import Register from './components/Register';
+import Dashboard from './components/Dashboard';
 
 // dependencies
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -33,7 +35,8 @@ const router = <MuiThemeProvider muiTheme={muiTheme}>
       <Route path="/" component={App}>
         <IndexRoute component={Landing}/>
         <Route path="login" component={Login} />
-
+        <Route path="register" component={Register} />
+        <Route path="dashboard" component={Dashboard} />
       </Route>
     </Router>
   </Provider>
