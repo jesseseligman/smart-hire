@@ -20,7 +20,7 @@ const Dashboard = React.createClass({
         description: 'We are seeking a creative engineer to join a fast paced team. If you love building highly scalable and testable software we want to talk to you. You need to have experience with back end technologies and like Node, Python, PHP or something similar.'
       }
     ];
-    return <div id="dashboard-container">
+    return <div className="dashboard-container">
       {listings.map((listing) => {
         return <EmployerListing
           key={weakKey(listing)}
