@@ -1,5 +1,5 @@
 // components
-import App from './components/App';
+import Main from './components/Main';
 import Landing from './components/Landing';
 import Login from './components/Login';
 import Register from './components/Register';
@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard';
 import ReviewQuestion from './components/ReviewQuestion';
 import ReviewEducation from './components/ReviewEducation';
 import ReviewExperience from './components/ReviewExperience';
+import Results from './components/Results';
 
 // dependencies
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -35,7 +36,7 @@ const muiTheme = getMuiTheme({
 const router = <MuiThemeProvider muiTheme={muiTheme}>
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={App}>
+      <Route path="/" component={Main}>
         <IndexRoute component={Landing}/>
         <Route path="login" component={Login} />
         <Route path="register" component={Register} />
@@ -43,6 +44,7 @@ const router = <MuiThemeProvider muiTheme={muiTheme}>
         <Route path="review/:jobId/education" component={ReviewEducation}/>
         <Route path="review/:jobId/experience" component={ReviewExperience}/>
         <Route path="review/:jobId/question/:questionId" component={ReviewQuestion}/>
+        <Route path="results/:jobId" component={Results} />
       </Route>
     </Router>
   </Provider>
