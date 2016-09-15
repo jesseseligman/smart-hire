@@ -3,7 +3,12 @@
 module.exports = {
   development: {
     client: 'pg',
-    connection: 'postgres://localhost/smokator_dev'
+    connection: 'postgres://localhost/smartHire_dev'
+  },
+
+  test: {
+    client: 'pg',
+    connection: 'postgres://localhost/smartHire_test'
   },
 
   production: {
