@@ -9,7 +9,7 @@ const ExperienceResponse = React.createClass({
     return <div className="card">
       <Card>
         <CardTitle
-          title={`Applicant ${this.props.alias}`}
+          title={this.props.alias ? `Applicant ${this.props.alias}` : 'Experience'}
         />
 
         {this.props.exps.map((exp) => {
@@ -29,7 +29,7 @@ const ExperienceResponse = React.createClass({
         })}
 
         <CardActions>
-          <ButtonForm/>
+          <ButtonForm hidden={this.props.reviewed}/>
         </CardActions>
 
       </Card>

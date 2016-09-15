@@ -14,7 +14,9 @@
     "start": "brunch watch --server"
   },
   "dependencies": {
+    "knex": "^0.12.0",
     "material-ui": "^0.15.4",
+    "pg": "^6.1.0",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-redux": "^4.4.5",

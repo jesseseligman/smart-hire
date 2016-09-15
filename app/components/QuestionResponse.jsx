@@ -5,17 +5,18 @@ import ButtonForm from 'components/ButtonForm';
 const EducationResponse = React.createClass({
 
   render() {
+    const { alias, question, response } = this.props;
     return <div className="card">
       <Card>
         <CardTitle
-          title={`Applicant ${this.props.alias}`}
+          title={ alias ? `Applicant ${alias}` : question }
         />
         <CardText style={{paddingTop: '0px'}}>
-          {this.props.response}
+          {response}
         </CardText>
 
         <CardActions>
-          <ButtonForm/>
+          <ButtonForm hidden={this.props.reviewed}/>
         </CardActions>
       </Card>
 

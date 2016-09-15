@@ -19,9 +19,11 @@ const Landing = React.createClass({
         <img src={"./images/hero-small.jpg"} className="hero" id="hero-small"/>
         <img src={"./images/hero-medium.jpg"} className="hero" id="hero-medium"/>
         <div id="action-button-container">
-          <div id="action-button">
-            START HIRING BETTER
-          </div>
+          <Link to={'/register'}>
+            <div id="action-button">
+              START HIRING BETTER
+            </div>
+          </Link>
         </div>
       </div>
 

@@ -9,7 +9,7 @@ const EducationResponse = React.createClass({
     return <div className="card">
       <Card>
         <CardTitle
-          title={`Applicant ${this.props.alias}`}
+          title={this.props.alias ? `Applicant ${this.props.alias}` : 'Education'}
         />
 
         {this.props.edus.map((edu) => {
@@ -23,7 +23,7 @@ const EducationResponse = React.createClass({
         })}
 
         <CardActions>
-          <ButtonForm/>
+          <ButtonForm hidden={this.props.reviewed}/>
         </CardActions>
 
       </Card>

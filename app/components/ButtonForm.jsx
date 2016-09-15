@@ -14,7 +14,7 @@ const ButtonForm = React.createClass({
   },
 
   render() {
-    return <form>
+    return <form style={this.props.hidden ? {display: 'none'} : {}}>
       <div id="form-container">
       <div className="button-wrapper">
         <label >

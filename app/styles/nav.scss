@@ -20,10 +20,11 @@
   @media (max-width: 340px) {
     font-size: 2.7em;
   }
-  + button {
-    @media (min-width: 851px) {
-      display: none !important;
-    }
+}
+
+#hamburger {
+  @media (min-width: 851px) {
+    display: none !important;
   }
 }
 

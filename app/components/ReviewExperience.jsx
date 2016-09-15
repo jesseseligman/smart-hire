@@ -1,5 +1,5 @@
 import React from 'react';
-import ExperienceResponse from 'components/ExperienceResponse';
+import ExperienceResponse from './ExperienceResponse';
 import weakKey from 'weak-key';
 
 const ReviewExperience = React.createClass({
@@ -110,7 +110,7 @@ const ReviewExperience = React.createClass({
             end: '2008'
           }
         ]
-      }      
+      }
     ];
 
     return <div className="dashboard-container">

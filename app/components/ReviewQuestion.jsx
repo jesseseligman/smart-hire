@@ -1,5 +1,5 @@
 import React from 'react';
-import QuestionResponse from 'components/QuestionResponse';
+import QuestionResponse from './QuestionResponse';
 import weakKey from 'weak-key';
 
 const ReviewQuestion = React.createClass({

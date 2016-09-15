@@ -92,7 +92,7 @@ const Results = React.createClass({
         </TableHeader>
         <TableBody displayRowCheckbox={false}>
           {this.state.reviewedApplications.map((reviewedApplication) => {
-            return <TableRow>
+            return <TableRow key={weakKey(reviewedApplication)}>
               <TableRowColumn>
               {reviewedApplication.anonymous ? 'Anonymous' : `${reviewedApplication.firstName} ${reviewedApplication.lastName}`}
               </TableRowColumn>

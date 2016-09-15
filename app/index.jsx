@@ -4,6 +4,7 @@ import Landing from './components/Landing';
 import Login from './components/Login';
 import Register from './components/Register';
 import Dashboard from './components/Dashboard';
+import ReviewedApplication from './components/ReviewedApplication';
 import ReviewQuestion from './components/ReviewQuestion';
 import ReviewEducation from './components/ReviewEducation';
 import ReviewExperience from './components/ReviewExperience';
@@ -24,7 +25,6 @@ injectTapEventPlugin();
 const muiTheme = getMuiTheme({
 
   palette: {
-
     primary1Color: '#405D63',
     primaryTextColor: '#F9FDFE',
     alternateTextColor: '#F9FDFE',
@@ -45,6 +45,7 @@ const router = <MuiThemeProvider muiTheme={muiTheme}>
         <Route path="review/:jobId/experience" component={ReviewExperience}/>
         <Route path="review/:jobId/question/:questionId" component={ReviewQuestion}/>
         <Route path="results/:jobId" component={Results} />
+        <Route path="application/:applicationId" component={ReviewedApplication} />
       </Route>
     </Router>
   </Provider>
