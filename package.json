@@ -13,7 +13,8 @@
     "lint": "eslint --ext .js,.jsx --ignore-pattern public",
     "start": "brunch watch --server",
     "knex": "knex",
-    "test": "mocha"
+    "test": "mocha",
+    "resetdb": "npm run knex migrate:rollback; npm run knex migrate:latest; npm run knex seed:run"
   },
   "dependencies": {
     "knex": "^0.12.0",

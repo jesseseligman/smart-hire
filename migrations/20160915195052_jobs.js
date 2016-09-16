@@ -8,7 +8,7 @@ exports.up = function(knex) {
     table.text('skills').notNullable().defaultTo('');
     table.string('type').notNullable().defaultTo('');
     table.string('city').notNullable().defaultTo('');
-    table.specificType('state', 'char(60)').notNullable().defaultTo('');
+    table.specificType('state', 'char(2)').notNullable().defaultTo('');
     table.integer('user_id')
           .notNullable()
           .references('id')
