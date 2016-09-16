@@ -218,10 +218,5 @@ exports.seed = function(knex) {
           application_id: 22,
           text: 'My old boss would tell you that I am the hardest worker that they ever had. I regularly put in 14 hour work days, sometimes even on the weekend. They used to call me "desky" because I slept in the office so much. My old boss also will tell you that I stole toilet paper from the bathroom but that is a lie. I loved my old job but I am just ready for something new, a new challenge I guess. Even though my old boss thought I was great.'
       }]);
-    })
-    // .then(() => {
-    //   return knex.raw(
-    //     "SELECT setval('responses_id_seq', (SELECT MAX(id) FROM questions));"
-    //   );
-    // });
+    });
 };

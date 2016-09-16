@@ -157,10 +157,5 @@ exports.seed = function(knex) {
         email: 'cdaniels@gmail.com',
         job_id: 3
       }]);
-    })
-    // .then(() => {
-    //   return knex.raw(
-    //     "SELECT setval('application_id_seq', (SELECT MAX(id) FROM applications));"
-    //   );
-    // });
+    });
 };

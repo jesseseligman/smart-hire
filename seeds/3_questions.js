@@ -27,10 +27,5 @@ exports.seed = function(knex, Promise) {
         job_id: 3,
         text: 'If I asked your old boss about you, what would they say?'
       }]);
-    })
-    // .then(() => {
-    //   return knex.raw(
-    //     "SELECT setval('questions_id_seq', (SELECT MAX(id) FROM questions));"
-    //   );
-    // });
+    });
 };
