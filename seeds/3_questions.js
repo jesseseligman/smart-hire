@@ -28,9 +28,9 @@ exports.seed = function(knex, Promise) {
         text: 'If I asked your old boss about you, what would they say?'
       }]);
     })
-    .then(() => {
-      return knex.raw(
-        "SELECT setval('users_id_seq', (SELECT MAX(id) FROM questions));"
-      );
-    })
+    // .then(() => {
+    //   return knex.raw(
+    //     "SELECT setval('questions_id_seq', (SELECT MAX(id) FROM questions));"
+    //   );
+    // });
 };

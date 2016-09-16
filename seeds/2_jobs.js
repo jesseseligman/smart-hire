@@ -33,9 +33,9 @@ exports.seed = function(knex) {
         user_id: 2
       }]);
     })
-    .then(() => {
-      return knex.raw(
-        "SELECT setval('users_id_seq', (SELECT MAX(id) FROM jobs));"
-      );
-    });
+    // .then(() => {
+    //   return knex.raw(
+    //     "SELECT setval('jobs_id_seq', (SELECT MAX(id) FROM jobs));"
+    //   );
+    // });
 };

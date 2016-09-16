@@ -158,9 +158,9 @@ exports.seed = function(knex) {
         job_id: 3
       }]);
     })
-    .then(() => {
-      return knex.raw(
-        "SELECT setval('users_id_seq', (SELECT MAX(id) FROM applications));"
-      );
-    });
+    // .then(() => {
+    //   return knex.raw(
+    //     "SELECT setval('application_id_seq', (SELECT MAX(id) FROM applications));"
+    //   );
+    // });
 };

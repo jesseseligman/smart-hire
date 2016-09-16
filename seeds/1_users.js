@@ -28,9 +28,9 @@ exports.seed = function(knex) {
         company_description: 'Bjorse is bringing Icelandic horses into the 21st century. We believe that the combined power of Bjork, horses, and geothermal can change the world. We are disrupting the icelandic draft horse market, a 5 trillion dollar economy.'
       }]);
     })
-    .then(() => {
-      return knex.raw(
-        "SELECT setval('users_id_seq', (SELECT MAX(id) FROM users));"
-      );
-    });
+    // .then(() => {
+    //   return knex.raw(
+    //     "SELECT setval('users_id_seq', (SELECT MAX(id) FROM users));"
+    //   );
+    // });
 };
