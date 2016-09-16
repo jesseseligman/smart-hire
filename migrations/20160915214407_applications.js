@@ -5,8 +5,8 @@ exports.up = function(knex) {
     table.increments();
     table.string('first_name').notNullable().defaultTo('');
     table.string('last_name').notNullable().defaultTo('');
-    table.string('phone').unique().notNullable().defaultTo('');
-    table.string('email').unique().notNullable().defaultTo('');
+    table.string('phone').notNullable().defaultTo('');
+    table.string('email').notNullable().defaultTo('');
     table.integer('job_id')
       .notNullable()
       .references('id')
