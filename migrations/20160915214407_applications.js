@@ -15,8 +15,8 @@ exports.up = function(knex) {
       .index();
     table.boolean('anonymous').defaultTo(false);
     table.decimal('overall_score');
-    table.decimal('edus_rating');
-    table.decimal('exps_rating');
+    table.integer('edus_rating');
+    table.integer('exps_rating');
   });
 };
 
