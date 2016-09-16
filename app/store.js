@@ -5,7 +5,7 @@ import { browserHistory } from 'react-router';
 import rootReducer from './reducers/index';
 
 const defaultState = {
-
+  reviewing: 
 };
 
 const enhancers = compose(

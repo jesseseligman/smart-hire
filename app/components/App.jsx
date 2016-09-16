@@ -5,9 +5,10 @@ import Main from './Main';
 
 function mapStateToProps(state) {
   return {
-    posts: state.posts,
-    comments: state.comments
-  }
+    reviewing: state.reviewing,
+    jobs: state.jobs,
+    currentApplication: state.currentApplication
+  };
 }
 
 function mapDispatchToProps(dispatch) {
