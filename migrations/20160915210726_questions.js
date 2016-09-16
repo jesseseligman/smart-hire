@@ -1,7 +1,7 @@
 'use strict';
 
 exports.up = function(knex) {
-  knex.schema.createTable('questions', (table) => {
+  return knex.schema.createTable('questions', (table) => {
     table.increments();
     table.integer('job_id')
       .notNullable()
