@@ -17,6 +17,7 @@ exports.up = function(knex) {
     table.decimal('overall_score');
     table.integer('edus_rating');
     table.integer('exps_rating');
+    table.timestamps(true, true);
   });
 };
 

@@ -17,6 +17,7 @@ exports.up = function(knex) {
       .index();
     table.text('text').notNullable().defaultTo('');
     table.integer('rating');
+    table.timestamps(true, true);
   });
 };
 

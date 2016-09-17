@@ -12,7 +12,9 @@ exports.seed = function(knex) {
         type: 'Web Development',
         city: 'Seattle',
         state: 'WA',
-        user_id: 1
+        user_id: 1,
+        created_at: new Date('2016-08-15 14:26:16 UTC'),
+        updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
         title: 'Back End Developer',
@@ -21,7 +23,9 @@ exports.seed = function(knex) {
         type: 'Web Development',
         city: 'San Francisco',
         state: 'CA',
-        user_id: 1
+        user_id: 1,
+        created_at: new Date('2016-08-15 14:26:16 UTC'),
+        updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
         title: 'Horse Trainer',
@@ -30,7 +34,9 @@ exports.seed = function(knex) {
         type: 'Labor',
         city: 'Asheville',
         state: 'NC',
-        user_id: 2
+        user_id: 2,
+        created_at: new Date('2016-08-15 14:26:16 UTC'),
+        updated_at: new Date('2016-08-15 14:26:16 UTC')
       }]);
     })
 };
