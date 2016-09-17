@@ -19,6 +19,13 @@ exports.seed = function(knex) {
       },
       {
         question_id: 1,
+        application_id: 3,
+        text: 'I am a great fit for this role. I am a self starter. I do all of the things they say to do in the self help books. I love Tim Ferris and I drink lots of soylent to make sure I am as productive as possible. I will fit in so well with your team. I love writing testable, maintainable code. I CAN MAKE CHOCOLATE CHIP COOKIES!!!! I HAVE TROUBLE CONTROLLING THE VOLUME OF MY VOICE!!! I also like clean, elegant code. No need to be overly robust with the syntactic sugar. That is why I am a great fit for this role because I am just such a great fit for this role.',
+        created_at: new Date('2016-08-15 14:26:16 UTC'),
+        updated_at: new Date('2016-08-15 14:26:16 UTC')
+      },
+      {
+        question_id: 1,
         application_id: 4,
         text: 'I am a great fit for this role. I am a self starter. I do all of the things they say to do in the self help books. What makes me such a good fit is that I can change sizes. I also like clean, elegant code. No need to be overly robust with the syntactic sugar. That is why I am a great fit for this role because I am just such a great fit for this role.',
         created_at: new Date('2016-08-15 14:26:16 UTC'),

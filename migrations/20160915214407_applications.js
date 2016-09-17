@@ -13,7 +13,7 @@ exports.up = function(knex) {
       .inTable('jobs')
       .onDelete('CASCADE')
       .index();
-    table.boolean('anonymous').defaultTo(false);
+    table.boolean('anonymous').defaultTo(true);
     table.decimal('overall_score');
     table.integer('edus_rating');
     table.integer('exps_rating');

@@ -44,14 +44,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // REQUIRE IN ROUTERS
 const users = require('./routes/users');
-//const applications = require('./routes/applications');
+const applications = require('./routes/applications');
 //const jobs = require('./routes/jobs');
-
 
 // ROUTE HANDLERS
 // app.use('/api', jobs);
 app.use('/api', users);
-// app.use(places);
+app.use('/api', applications);
 // app.use(token);
 // app.use(users);
 
