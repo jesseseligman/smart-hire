@@ -47,13 +47,14 @@ const users = require('./routes/users');
 const applications = require('./routes/applications');
 const edus = require('./routes/edus');
 const exps = require('./routes/exps');
+const questions = require('./routes/questions');
 
 // ROUTE HANDLERS
-// app.use('/api', jobs);
 app.use('/api', users);
 app.use('/api', applications);
 app.use('/api', edus);
 app.use('/api', exps);
+app.use('/api', questions);
 
 app.use('/api', (_req, res) => {
   res.sendStatus(404);
