@@ -14,7 +14,7 @@ exports.up = function(knex) {
       .onDelete('CASCADE')
       .index();
     table.boolean('anonymous').defaultTo(true);
-    table.decimal('overall_score');
+    table.decimal('overall_score', 2, 1);
     table.integer('edus_rating');
     table.integer('exps_rating');
     table.timestamps(true, true);

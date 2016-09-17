@@ -25,4 +25,41 @@ function separateDates(array) {
   })
 }
 
-module.exports = { getUnrated, separateDates };
+function alreadyContains(applications, appId) {
+
+  for (let application of applications) {
+    if (application.application_id === appId) {
+
+      return applications.indexOf(application);
+    }
+  };
+
+  return false;
+};
+
+function combineData(array) {
+  const result = [];
+
+  for (let element of array) {
+    const resultIndex = alreadyContains(result, element.application_id);
+
+    if (resultIndex !== false) {
+      delete element.application_id;
+
+      result[resultIndex].edus.push(element);
+    }
+    else {
+      result.push({ application_id: element.application_id });
+      delete element.application_id;
+
+      result[result.length - 1].edus = [ element ];
+    }
+  }
+  return result;
+};
+
+module.exports = { getUnrated,
+                   separateDates,
+                   alreadyContains,
+                   combineData
+                 };

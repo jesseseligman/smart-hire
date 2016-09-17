@@ -28,6 +28,23 @@ router.get('/applications/unrated/:jobId', (req, res, next) => {
     });
 });
 
+router.get('/applications/rated/:jobId', (req, res, next) => {
+  const jobId = Number.parseInt(req.params.jobId);
+
+  knex('applications')
+    .whereNotNull('overall_score')
+    .andWhere('job_id', jobId)
+    .orderBy('overall_score')
+    .then((rows) => {
+      const applications = camelizeKeys(rows);
+
+      res.send(applications);
+    })
+    .catch((err) => {
+      next(boom.wrap(err));
+    })
+})
+
 router.get('/applications/:appId', (req, res, next) => {
   const applicationId = Number.parseInt(req.params.appId);
 
