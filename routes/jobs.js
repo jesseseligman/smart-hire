@@ -12,7 +12,7 @@ const { getUnrated } = require('../utils');
 const router = express.Router(); // eslint-disable-line new-cap
 
 // eslint-disable-next-line max-len
-router.get('/users/:userId/jobs', (req, res, next) => {
+router.get('/jobs/:userId', (req, res, next) => {
   const userId = Number.parseInt(req.params.userId);
   let jobs;
 
