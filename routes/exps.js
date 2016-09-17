@@ -7,20 +7,20 @@ const ev = require('express-validation');
 // const validations = require('../validations/applications');
 const { camelizeKeys, decamelizeKeys } = require('humps');
 // const { checkAuth } = require('../middleware');
-const { separateDates, combineEdus, alreadyContains } = require('../utils');
+const { separateDates, combineExps, alreadyContains } = require('../utils');
 
 const router = express.Router(); // eslint-disable-line new-cap
 
-router.get('/edus', (req, res, next) => {
+router.get('/exps', (req, res, next) => {
   const { appIds } = req.body;
 
-  knex('edus')
+  knex('exps')
     .whereIn('application_id', appIds)
     .orderBy('created_at')
     .then((rows) => {
-      const edus = camelizeKeys(combineEdus(separateDates(rows)));
+      const exps = camelizeKeys(combineExps(separateDates(rows)));
 
-      res.send(edus);
+      res.send(exps);
     })
     .catch((err) => {
       next(boom.wrap(err));

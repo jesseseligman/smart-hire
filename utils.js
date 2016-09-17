@@ -37,7 +37,7 @@ function alreadyContains(applications, appId) {
   return false;
 };
 
-function combineData(array) {
+function combineEdus(array) {
   const result = [];
 
   for (let element of array) {
@@ -58,8 +58,30 @@ function combineData(array) {
   return result;
 };
 
+function combineExps(array) {
+  const result = [];
+
+  for (let element of array) {
+    const resultIndex = alreadyContains(result, element.application_id);
+
+    if (resultIndex !== false) {
+      delete element.application_id;
+
+      result[resultIndex].exps.push(element);
+    }
+    else {
+      result.push({ application_id: element.application_id });
+      delete element.application_id;
+
+      result[result.length - 1].exps = [ element ];
+    }
+  }
+  return result;
+};
+
 module.exports = { getUnrated,
                    separateDates,
                    alreadyContains,
-                   combineData
+                   combineEdus,
+                   combineExps
                  };

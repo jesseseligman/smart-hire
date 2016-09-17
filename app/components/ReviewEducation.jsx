@@ -50,8 +50,6 @@ const ReviewEducation = React.createClass({
       }
     ];
 
-
-
     return <div className="dashboard-container">
       <h3>Education</h3>
       {data.map((response, index) => {
