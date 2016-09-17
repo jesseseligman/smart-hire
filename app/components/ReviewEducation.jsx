@@ -50,7 +50,7 @@ const ReviewEducation = React.createClass({
       }
     ];
 
-  
+
 
     return <div className="dashboard-container">
       <h3>Education</h3>
@@ -59,6 +59,7 @@ const ReviewEducation = React.createClass({
           key={weakKey(response)}
           alias={index + 1}
           edus={response.edus}
+          appId={response.applicationId}
         />
       })}
     </div>
