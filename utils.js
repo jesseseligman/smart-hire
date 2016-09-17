@@ -15,4 +15,14 @@ function getUnrated(jobs, applications) {
   return jobs;
 }
 
-module.exports = { getUnrated };
+function separateDates(array) {
+  return array.map((element) => {
+    const [ start, end ] = element.dates.split('.');
+
+    delete element.dates;
+
+    return Object.assign(element, { start, end });
+  })
+}
+
+module.exports = { getUnrated, separateDates };
