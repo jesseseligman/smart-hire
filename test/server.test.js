@@ -6,7 +6,7 @@ const { suite, test } = require('mocha');
 const app = require('../server');
 const knex = require('../knex');
 const supertest = require('supertest');
-createdAt: new Date('2016-08-13 13:00:00 UTC').toISOString()
+
 
 suite('users routes', () => {
   before((done) => {
