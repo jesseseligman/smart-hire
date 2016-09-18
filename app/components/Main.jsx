@@ -141,12 +141,13 @@ const Main = React.createClass({
         </div>
       </nav>
 
-      {React.cloneElement(this.props.children, {
+      {/* {React.cloneElement(this.props.children, {
         jobTitle: 'Senior Engineer',
         unrated: 6,
         reviewedApplication: this.state.currentApplication,
         toggleAnonymous: this.toggleAnonymous
-      })}
+      })} */}
+      {React.cloneElement(this.props.children, this.props)}
     </div>
   }
 });

@@ -17,6 +17,7 @@
     "resetdb": "npm run knex migrate:rollback; npm run knex migrate:latest; npm run knex seed:run"
   },
   "dependencies": {
+    "axios": "^0.14.0",
     "body-parser": "^1.15.2",
     "boom": "^4.0.0",
     "cookie-parser": "^1.4.3",

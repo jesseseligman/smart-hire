@@ -5,7 +5,7 @@ import { browserHistory } from 'react-router';
 import rootReducer from './reducers/index';
 
 const defaultState = {
-  reviewing: []
+  jobs: []
 };
 
 const enhancers = compose(
@@ -16,5 +16,13 @@ const enhancers = compose(
 const store = createStore(rootReducer, defaultState, enhancers);
 
 export const history = syncHistoryWithStore(browserHistory, store);
+
+if (module.hot) {
+  module.hot.accept('./reducers/', () => {
+    const nextRootReducer = require('./reducers/index').default;
+
+    store.replaceReducer(nextRootReducer);
+  });
+}
 
 export default store;

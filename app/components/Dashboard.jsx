@@ -4,6 +4,10 @@ import weakKey from 'weak-key';
 
 const Dashboard = React.createClass({
 
+  componentDidMount() {
+    this.props.getJobs(this.props.params.userId)
+  },
+
   render() {
 
     const listings = [
@@ -21,13 +25,13 @@ const Dashboard = React.createClass({
       }
     ];
     return <div className="dashboard-container">
-      {listings.map((listing) => {
+      {this.props.jobs.map((job) => {
         return <EmployerListing
-          key={weakKey(listing)}
-          jobTitle={listing.jobTitle}
-          postDate={listing.postDate}
-          unrated={listing.unrated}
-          description={listing.description}
+          key={weakKey(job)}
+          jobTitle={job.jobTitle}
+          postDate={job.postDate}
+          unrated={job.unrated}
+          description={job.description}
         />
       })}
     </div>

@@ -6,16 +6,19 @@ function getUnrated(jobs, applications) {
 
     applications.forEach((application) => {
       if (job.id !== application.job_id || application.overall_score !== null) {
+
         return;
       }
+
       job.unrated += 1;
     })
   });
-  console.log(jobs);
+
   return jobs;
-}
+};
 
 function separateDates(array) {
+
   return array.map((element) => {
     const [ start, end ] = element.dates.split('.');
 
@@ -23,7 +26,7 @@ function separateDates(array) {
 
     return Object.assign(element, { start, end });
   })
-}
+};
 
 function alreadyContains(applications, appId) {
 
@@ -55,6 +58,7 @@ function combineEdus(array) {
       result[result.length - 1].edus = [ element ];
     }
   }
+
   return result;
 };
 
@@ -76,6 +80,7 @@ function combineExps(array) {
       result[result.length - 1].exps = [ element ];
     }
   }
+
   return result;
 };
 

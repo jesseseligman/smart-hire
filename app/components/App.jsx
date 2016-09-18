@@ -5,9 +5,7 @@ import Main from './Main';
 
 function mapStateToProps(state) {
   return {
-    reviewing: state.reviewing,
-    jobs: state.jobs,
-    currentApplication: state.currentApplication
+    jobs: state.jobs
   };
 }
 

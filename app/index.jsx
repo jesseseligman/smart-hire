@@ -1,4 +1,5 @@
 // components
+import App from './components/App';
 import Main from './components/Main';
 import Landing from './components/Landing';
 import Login from './components/Login';
@@ -36,7 +37,7 @@ const muiTheme = getMuiTheme({
 const router = <MuiThemeProvider muiTheme={muiTheme}>
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={Main}>
+      <Route path="/" component={App}>
         <IndexRoute component={Landing}/>
         <Route path="login" component={Login} />
         <Route path="register" component={Register} />
