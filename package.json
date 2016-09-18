@@ -24,6 +24,7 @@
     "express": "^4.14.0",
     "express-validation": "^1.0.1",
     "humps": "^1.1.0",
+    "isomorphic-fetch": "^2.2.1",
     "joi": "^9.0.4",
     "jsonwebtoken": "^7.1.9",
     "knex": "^0.12.0",
@@ -37,6 +38,8 @@
     "react-router-redux": "^4.0.5",
     "react-tap-event-plugin": "^1.0.0",
     "redux": "^3.6.0",
+    "redux-logger": "^2.6.1",
+    "redux-thunk": "^2.1.0",
     "weak-key": "^1.0.0"
   },
   "devDependencies": {

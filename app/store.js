@@ -1,14 +1,19 @@
-import { createStore, compose } from 'redux';
+import thunkMiddleware from 'redux-thunk';
+import createLogger from 'redux-logger';
+import { createStore, compose, applyMiddleware } from 'redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 
 import rootReducer from './reducers/index';
 
+const loggerMiddleware = createLogger();
+
 const defaultState = {
-  jobs: []
+  jobs: {items: []}
 };
 
 const enhancers = compose(
+  applyMiddleware(thunkMiddleware, loggerMiddleware),
   window.devToolsExtension ?
   window.devToolsExtension() : f => f
 );

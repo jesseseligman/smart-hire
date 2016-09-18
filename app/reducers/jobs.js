@@ -1,19 +1,15 @@
-import axios from 'axios';
 
 
-function jobs(state=[], action) {
+
+function jobs(state={
+  isFetching: false,
+  items: [] }, action) {
   switch(action.type) {
-    case 'GET_JOBS':
-      const { userId } = action;
+    case 'REQUEST_JOBS':
+      return Object.assign({}, state, {isFetching: true})
 
-      axios.get(`/api/jobs/${userId}`)
-        .then((res) => {
-          return res;
-        })
-        .catch((err) => {
-          console.log(err);
-          return state;
-        })
+    case 'RECEIVE_JOBS':
+      return Object.assign({}, state, {isFetching: false, items: action.jobs});
 
     default:
       return state;
