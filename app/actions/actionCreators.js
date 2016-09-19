@@ -4,6 +4,7 @@ import { push } from 'react-router-redux';
 
 export const REQUEST_JOBS = 'REQUEST_JOBS';
 export const RECEIVE_JOBS = 'RECEIVE_JOBS';
+export const SELECT_JOB = 'SELECT_JOB';
 
 export function requestJobs() {
   return {
@@ -30,6 +31,13 @@ export function fetchJobs(userId) {
       .catch((err) => {
         console.log(err);
       });
+  };
+}
+
+export function selectJob(job) {
+  return {
+    type: SELECT_JOB,
+    job
   };
 }
 

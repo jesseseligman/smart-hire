@@ -5,8 +5,9 @@ import Timestamp from 'react-timestamp';
 
 const EmployerListing = React.createClass({
 
-  handleTouchTapContacts(jobId) {
-    this.props.fetchReviewedApplications(jobId);
+  handleTouchTapContacts(job) {
+    this.props.selectJob(job);
+    return this.props.fetchReviewedApplications(job.id);
   },
 
   render() {
@@ -29,7 +30,7 @@ const EmployerListing = React.createClass({
         <CardActions>
           <FlatButton
             label="View Contacts"
-            onTouchTap={() => this.handleTouchTapContacts(job.id)}
+            onTouchTap={() => this.handleTouchTapContacts(job)}
           />
           <FlatButton
             label="Review Applications"

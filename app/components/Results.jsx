@@ -75,9 +75,10 @@ const Results = React.createClass({
         lastName: 'Moreland'
       }
     ];
+    const { selectedJob } = this.props.jobs;
 
     return <div className="dashboard-container">
-      <h3>{this.props.jobTitle} - {this.props.unrated} unreviewed. Review More</h3>
+      <h3>{selectedJob.title} - {selectedJob.unrated} unreviewed. Review More</h3>
       <h2>Reviewed Applications</h2>
       <Table selectable={false}>
         <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
