@@ -64,7 +64,8 @@ export function fetchCompleteApplication(appId) {
     return axios.get(`/api/applications/${appId}`)
       .then((res) => {
 
-        return dispatch(receiveCompleteApplication(res.data))
+        dispatch(receiveCompleteApplication(res.data))
+        return dispatch(push(`/application/${appId}`));
       })
       .catch((err) => {
         console.log(err);

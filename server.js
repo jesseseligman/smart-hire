@@ -70,7 +70,7 @@ app.use((err, _req, res, _next) => {
   if (err.status || err.output && err.output.statusCode) {
     return res.status(err.status || err.output.statusCode).send(err);
   }
-
+  console.log(err);
   console.error(err.stack); // eslint-disable-line no-console
   res.sendStatus(500);
 });

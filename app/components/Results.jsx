@@ -5,47 +5,19 @@ import FlatButton from 'material-ui/FlatButton';
 
 const Results = React.createClass({
 
-  getInitialState() {
-    return {
-      reviewedApplications: [
-        {
-          score: 4,
-          anonymous: true,
-          phone: '8283751029',
-          email: 'jimmy@mcnulty.com',
-          firstName: 'Sally',
-          lastName: 'Stanfield'
-        },
-        {
-          score: 1,
-          anonymous: false,
-          phone: '8283751029',
-          email: 'jimmy@mcnulty.com',
-          firstName: 'Frank',
-          lastName: 'Sobotka'
-        },
-        {
-          score: 2.3,
-          anonymous: true,
-          phone: '8283751029',
-          email: 'jimmy@mcnulty.com',
-          firstName: 'Bunk',
-          lastName: 'Moreland'
-        }
-      ]
-    }
+  handleTouchTap(app) {
+    // const newReviewedApplications = this.state.reviewedApplications.map((element) => {
+    //   if (element !== app) {
+    //     return element;
+    //   }
+    //   const newApp = Object.assign({}, app, { anonymous: !app.anonymous});
+    //   return newApp;
+    // });
+    // this.setState({ reviewedApplications: newReviewedApplications});
   },
 
-  handleTouchTap(app) {
-    app.anonymous = !app.anonymous;
-    const newReviewedApplications = this.state.reviewedApplications.map((element) => {
-      if (element !== app) {
-        return element;
-      }
-      const newApp = Object.assign({}, app);
-      return newApp;
-    });
-    this.setState({ reviewedApplications: newReviewedApplications});
+  handleTouchTapApplication(appId) {
+    this.props.fetchCompleteApplication(appId);
   },
 
   render() {

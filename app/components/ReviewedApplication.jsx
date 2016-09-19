@@ -3,6 +3,8 @@ import EducationResponse from './EducationResponse';
 import ExperienceResponse from './ExperienceResponse';
 import FlatButton from 'material-ui/FlatButton';
 import QuestionResponse from './QuestionResponse';
+import weakKey from 'weak-key';
+
 const ReviewedApplication = React.createClass({
 
   handleTouchTap() {
@@ -11,7 +13,7 @@ const ReviewedApplication = React.createClass({
 
 
   render() {
-    const { firstName, lastName, phone, email, anonymous, exps, edus, responses, overallRating } = this.props.reviewedApplication;
+    const { firstName, lastName, phone, email, anonymous, exps, edus, responses, overallRating } = this.props.applications.completeReviewedApplication;
 
     return <div id="application-container">
       <div id="applicant-info">
@@ -30,12 +32,13 @@ const ReviewedApplication = React.createClass({
 
       </div>
 
-      <EducationResponse edus={edus.edus} reviewed={true}/>
+      <EducationResponse edus={edus} reviewed={true}/>
 
-      <ExperienceResponse exps={exps.exps} reviewed={true}/>
+      <ExperienceResponse exps={exps} reviewed={true}/>
 
       {responses.map((element) => {
         return <QuestionResponse
+          key={weakKey(element)}
           response={element.response}
           question={element.question}
           reviewed={true}

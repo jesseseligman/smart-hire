@@ -56,16 +56,12 @@ router.get('/applications/:appId', (req, res, next) => {
     .then((application) => {
       result = camelizeKeys(application)
 
+      // select * from questions inner join responses on questions.id = responses.question_id where questions.job_id = 2 AND responses.application_id = 9;
       return knex('questions')
-        .select('id', 'questions.text as question')
-        .where('job_id', application.job_id)
-    })
-    .then((rows) => {
-      result.questions = camelizeKeys(rows);
-
-      return knex('responses')
-        .select('text as response', 'question_id', 'rating')
-        .where('application_id', result.id)
+        .select('questions.text as question', 'responses.text as response')
+        .innerJoin('responses', 'questions.id', 'responses.question_id')
+        .where('questions.job_id', application.job_id)
+        .where('responses.application_id', application.id);
     })
     .then((rows) => {
       result.responses = camelizeKeys(rows);
