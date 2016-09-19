@@ -169,8 +169,50 @@ export function fetchEdus(appIds) {
       const edus = responses.map((response) => {
         return response.data;
       })
-      
+
       return dispatch(receiveEdus(edus))
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  }
+}
+
+export const REQUEST_EXPS = 'REQUEST_EXPS';
+export const RECEIVE_EXPS = 'RECEIVE_EXPS';
+
+export function requestExps() {
+  return {
+    type: REQUEST_EXPS
+  };
+}
+
+export function receiveExps(expsToReview) {
+  return {
+    type: RECEIVE_EXPS,
+    expsToReview
+  };
+}
+
+export function fetchExps(appIds) {
+  return (dispatch) => {
+    dispatch(requestExps());
+
+
+    const axiosCalls = [];
+
+    for (const appId of appIds) {
+
+      axiosCalls.push(axios.get(`/api/exps/${appId}`));
+    }
+
+    axios.all(axiosCalls).then((responses) => {
+      const exps = responses.map((response) => {
+        return response.data;
+      })
+
+      return dispatch(receiveExps(exps))
+      return dispatch(push(`/review/$`))
     })
     .catch((err) => {
       console.log(err);

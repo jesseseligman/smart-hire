@@ -10,8 +10,10 @@ const middleware = routerMiddleware(browserHistory);
 const loggerMiddleware = createLogger();
 
 const defaultState = {
-  jobs: {items: []},
-  applications: {reviewedApplications: [], appsToReview: []}
+  jobs: {items: [] },
+  applications: { reviewedApplications: [], appsToReview: [] },
+  exps: { toReview: [] },
+  edus: { toReview: [] }
 };
 
 const enhancers = compose(

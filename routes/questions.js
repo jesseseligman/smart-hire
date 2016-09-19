@@ -28,7 +28,7 @@ router.get('/questions/:questionId/:appId', (req, res, next) => {
         .andWhere('question_id', questionId)
     })
     .then((rows) => {
-      result.responses = camelizeKeys(rows);
+      result.response = camelizeKeys(rows[0]);
 
       res.send(result);
     })

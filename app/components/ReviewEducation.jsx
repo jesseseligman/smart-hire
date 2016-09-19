@@ -1,6 +1,7 @@
 import React from 'react';
 import EducationResponse from './EducationResponse';
 import weakKey from 'weak-key';
+import RaisedButton from 'material-ui/RaisedButton';
 
 const ReviewEducation = React.createClass({
 
@@ -10,6 +11,14 @@ const ReviewEducation = React.createClass({
     })
 
     return this.props.fetchEdus(appIds);
+  },
+
+  handleTouchTap() {
+    const appIds = this.props.applications.appsToReview.map((app) => {
+      return app.id;
+    });
+
+    return this.props.fetchExps(appIds);
   },
 
   render() {
@@ -25,6 +34,11 @@ const ReviewEducation = React.createClass({
           appId={response.applicationId}
         />
       })}
+
+      <RaisedButton
+        label="Next"
+        onTouchTap={this.handleTouchTap}
+      />
     </div>
   }
 })

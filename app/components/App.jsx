@@ -7,7 +7,8 @@ function mapStateToProps(state) {
   return {
     jobs: state.jobs,
     applications: state.applications,
-    edus: state.edus
+    edus: state.edus,
+    exps: state.exps
   };
 }
 

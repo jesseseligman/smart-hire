@@ -1,4 +1,4 @@
-import { REQUEST_EDUS, RECEIVE_EDUS, SELECT_JOB } from '../actions/actionCreators';
+import { REQUEST_EDUS, RECEIVE_EDUS } from '../actions/actionCreators';
 
 function edus(state={
   isFetching: false,
