@@ -9,9 +9,10 @@ const ReviewedApplication = React.createClass({
     this.props.toggleAnonymous();
   },
 
+
   render() {
     const { firstName, lastName, phone, email, anonymous, exps, edus, responses, overallRating } = this.props.reviewedApplication;
-    
+
     return <div id="application-container">
       <div id="applicant-info">
           <h3>Name: {anonymous ? 'Anonymous' : `${firstName} ${lastName}`}</h3>

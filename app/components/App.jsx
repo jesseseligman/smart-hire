@@ -5,7 +5,8 @@ import Main from './Main';
 
 function mapStateToProps(state) {
   return {
-    jobs: state.jobs
+    jobs: state.jobs,
+    applications: state.applications
   };
 }
 

@@ -91,7 +91,7 @@ const Results = React.createClass({
           </TableRow>
         </TableHeader>
         <TableBody displayRowCheckbox={false}>
-          {this.state.reviewedApplications.map((reviewedApplication) => {
+          {this.props.applications.reviewedApplications.map((reviewedApplication) => {
             return <TableRow key={weakKey(reviewedApplication)}>
               <TableRowColumn>
               {reviewedApplication.anonymous ? 'Anonymous' : `${reviewedApplication.firstName} ${reviewedApplication.lastName}`}
@@ -103,7 +103,7 @@ const Results = React.createClass({
                 {reviewedApplication.phone}
               </TableRowColumn>
               <TableRowColumn>
-                {reviewedApplication.score.toString()}
+                {reviewedApplication.overallScore.toString()}
               </TableRowColumn>
               <TableRowColumn>
                 <FlatButton
@@ -115,6 +115,7 @@ const Results = React.createClass({
               <TableRowColumn>
                 <FlatButton
                   label="View Application"
+                  onTouchTap={() => this.handleTouchTapApplication(reviewedApplication.id)}
                 />
               </TableRowColumn>
             </TableRow>

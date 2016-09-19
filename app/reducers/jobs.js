@@ -1,14 +1,13 @@
-
-
+import { REQUEST_JOBS, RECEIVE_JOBS } from '../actions/actionCreators';
 
 function jobs(state={
   isFetching: false,
   items: [] }, action) {
   switch(action.type) {
-    case 'REQUEST_JOBS':
+    case REQUEST_JOBS:
       return Object.assign({}, state, {isFetching: true})
 
-    case 'RECEIVE_JOBS':
+    case RECEIVE_JOBS:
       return Object.assign({}, state, {isFetching: false, items: action.jobs});
 
     default:
