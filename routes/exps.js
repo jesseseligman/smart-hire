@@ -11,16 +11,15 @@ const { separateDates, combineExps, alreadyContains } = require('../utils');
 
 const router = express.Router(); // eslint-disable-line new-cap
 
-router.get('/exps', (req, res, next) => {
-  const { appIds } = req.body;
+router.get('/exps/:appId', (req, res, next) => {
+  const appId = Number.parseInt(req.params.appId);
 
   knex('exps')
-    .whereIn('application_id', appIds)
-    .orderBy('application_id')
+    .where('application_id', appId)
     .then((rows) => {
-      const exps = camelizeKeys(combineExps(separateDates(rows)));
+      const exp = camelizeKeys(combineExps(separateDates(rows))[0]);
 
-      res.send(exps);
+      res.send(exp);
     })
     .catch((err) => {
       next(boom.wrap(err));

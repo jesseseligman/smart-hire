@@ -11,7 +11,7 @@ const loggerMiddleware = createLogger();
 
 const defaultState = {
   jobs: {items: []},
-  applications: {reviewedApplications: []}
+  applications: {reviewedApplications: [], appsToReview: []}
 };
 
 const enhancers = compose(

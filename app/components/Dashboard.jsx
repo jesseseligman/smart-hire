@@ -17,6 +17,7 @@ const Dashboard = React.createClass({
           key={weakKey(job)}
           job={job}
           fetchReviewedApplications={this.props.fetchReviewedApplications}
+          fetchUnreviewedApplications={this.props.fetchUnreviewedApplications}
           selectJob={this.props.selectJob}
         />
       })}

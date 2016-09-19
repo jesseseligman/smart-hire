@@ -1,4 +1,4 @@
-import { REQUEST_COMPLETE_APPLICATION, RECEIVE_COMPLETE_APPLICATION, REQUEST_REVIEWED_APPLICATIONS, RECEIVE_REVIEWED_APPLICATIONS } from '../actions/actionCreators';
+import { REQUEST_COMPLETE_APPLICATION, RECEIVE_COMPLETE_APPLICATION, REQUEST_REVIEWED_APPLICATIONS, RECEIVE_REVIEWED_APPLICATIONS, REQUEST_UNREVIEWED_APPLICATIONS, RECEIVE_UNREVIEWED_APPLICATIONS } from '../actions/actionCreators';
 
 
 function applications(state={
@@ -8,17 +8,26 @@ function applications(state={
   completeReviewedApplication: {}
   }, action) {
   switch(action.type) {
+    // For entire application object
     case REQUEST_COMPLETE_APPLICATION:
       return Object.assign({}, state, {isFetching: true});
 
     case RECEIVE_COMPLETE_APPLICATION:
       return Object.assign({}, state, {isFetching: false, completeReviewedApplication: action.application});
 
+    // For basic info about applications that have been reviewed
     case REQUEST_REVIEWED_APPLICATIONS:
       return Object.assign({}, state, {isFetching: true});
 
     case RECEIVE_REVIEWED_APPLICATIONS:
       return Object.assign({}, state, {isFetching: false, reviewedApplications: action.reviewedApplications});
+
+    // For next 5 applications to reviewed
+    case REQUEST_UNREVIEWED_APPLICATIONS:
+      return Object.assign({}, state, {isFetching: true});
+
+    case RECEIVE_UNREVIEWED_APPLICATIONS:
+      return Object.assign({}, state, {isFetching: false, appsToReview: action.appsToReview });
 
     default:
       return state;

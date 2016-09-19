@@ -10,6 +10,10 @@ const EmployerListing = React.createClass({
     return this.props.fetchReviewedApplications(job.id);
   },
 
+  handleTouchTapReview(job) {
+    return this.props.fetchUnreviewedApplications(job.id)
+  },
+
   render() {
 
     const { job } = this.props;
@@ -34,6 +38,7 @@ const EmployerListing = React.createClass({
           />
           <FlatButton
             label="Review Applications"
+            onTouchTap={() => this.handleTouchTapReview(job)}
           />
         </CardActions>
       </Card>

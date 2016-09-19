@@ -10,9 +10,9 @@ const { camelizeKeys, decamelizeKeys } = require('humps');
 
 const router = express.Router(); // eslint-disable-line new-cap
 
-router.get('/questions/:questionId', (req, res, next) => {
+router.get('/questions/:questionId/:appId', (req, res, next) => {
   const questionId = Number.parseInt(req.params.questionId);
-  const { appIds } = req.body;
+  const appId = Number.parseInt(req.params.appId);
 
   let result = {};
 
@@ -24,9 +24,8 @@ router.get('/questions/:questionId', (req, res, next) => {
 
       return knex('responses')
         .select('text as response', 'application_id')
-        .whereIn('application_id', appIds)
+        .where('application_id', appId)
         .andWhere('question_id', questionId)
-        .orderBy('application_id')
     })
     .then((rows) => {
       result.responses = camelizeKeys(rows);

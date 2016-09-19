@@ -91,7 +91,7 @@ export function receiveReviewedApplications(reviewedApplications) {
 
 export function fetchReviewedApplications(jobId) {
   return (dispatch) => {
-    dispatch(requestReviewedApplications);
+    dispatch(requestReviewedApplications());
 
     return axios.get(`/api/applications/rated/${jobId}`)
       .then((res) => {
@@ -102,5 +102,78 @@ export function fetchReviewedApplications(jobId) {
       .catch((err) => {
         console.log(err);
       })
+  };
+}
+
+export const REQUEST_UNREVIEWED_APPLICATIONS = 'REQUEST_UNREVIEWED_APPLICATIONS';
+export const RECEIVE_UNREVIEWED_APPLICATIONS = 'RECEIVE_UNREVIEWED_APPLICATIONS';
+
+export function requestUnreviewedApplications() {
+  return {
+    type: REQUEST_UNREVIEWED_APPLICATIONS
+  };
+}
+
+export function receiveUnreviewedApplications(appsToReview) {
+  return {
+    type: RECEIVE_UNREVIEWED_APPLICATIONS,
+    appsToReview
+  };
+}
+
+export function fetchUnreviewedApplications(jobId) {
+  return (dispatch) => {
+    dispatch(requestUnreviewedApplications());
+
+    return axios.get(`/api/applications/unrated/${jobId}`)
+      .then((res) => {
+
+        dispatch(receiveUnreviewedApplications(res.data));
+        return dispatch(push(`/review/${jobId}/education`));
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+  }
+}
+
+export const REQUEST_EDUS = 'REQUEST_EDUS';
+export const RECEIVE_EDUS = 'RECEIVE_EDUS';
+
+export function requestEdus() {
+  return {
+    type: REQUEST_EDUS
+  };
+}
+
+export function receiveEdus(edusToReview) {
+  return {
+    type: RECEIVE_EDUS,
+    edusToReview
+  };
+}
+
+export function fetchEdus(appIds) {
+  return (dispatch) => {
+    dispatch(requestEdus());
+
+
+    const axiosCalls = [];
+
+    for (const appId of appIds) {
+
+      axiosCalls.push(axios.get(`/api/edus/${appId}`));
+    }
+
+    axios.all(axiosCalls).then((responses) => {
+      const edus = responses.map((response) => {
+        return response.data;
+      })
+      
+      return dispatch(receiveEdus(edus))
+    })
+    .catch((err) => {
+      console.log(err);
+    })
   }
 }
