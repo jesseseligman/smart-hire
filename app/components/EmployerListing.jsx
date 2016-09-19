@@ -11,6 +11,7 @@ const EmployerListing = React.createClass({
   },
 
   handleTouchTapReview(job) {
+    this.props.selectJob(job);
     return this.props.fetchUnreviewedApplications(job.id)
   },
 

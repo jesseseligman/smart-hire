@@ -194,7 +194,7 @@ export function receiveExps(expsToReview) {
   };
 }
 
-export function fetchExps(appIds) {
+export function fetchExps(appIds, jobId) {
   return (dispatch) => {
     dispatch(requestExps());
 
@@ -211,7 +211,49 @@ export function fetchExps(appIds) {
         return response.data;
       })
 
-      return dispatch(receiveExps(exps))
+      dispatch(receiveExps(exps))
+      return dispatch(push(`/review/${jobId}/experience`))
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  }
+}
+
+export const REQUEST_QUESTIONS = 'REQUEST_QUESTIONS';
+export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
+
+export function requestQuestions() {
+  return {
+    type: REQUEST_QUESTIONS
+  };
+}
+
+export function receiveQuestions(questionsToReview) {
+  return {
+    type: RECEIVE_QUESTIONS,
+    questionsToReview
+  };
+}
+
+export function fetchQuestions(appIds, questionId) {
+  return (dispatch) => {
+    dispatch(requestQuestions());
+
+
+    const axiosCalls = [];
+
+    for (const appId of appIds) {
+
+      axiosCalls.push(axios.get(`/api/questions/${questionID}/${appId}`));
+    }
+
+    axios.all(axiosCalls).then((responses) => {
+      const questions = responses.map((response) => {
+        return response.data;
+      })
+
+      return dispatch(receiveQuestions(questions))
       return dispatch(push(`/review/$`))
     })
     .catch((err) => {

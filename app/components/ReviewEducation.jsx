@@ -18,7 +18,7 @@ const ReviewEducation = React.createClass({
       return app.id;
     });
 
-    return this.props.fetchExps(appIds);
+    return this.props.fetchExps(appIds, this.props.jobs.selectedJob.id);
   },
 
   render() {
