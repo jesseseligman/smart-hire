@@ -10,31 +10,25 @@ const { camelizeKeys, decamelizeKeys } = require('humps');
 
 const router = express.Router(); // eslint-disable-line new-cap
 
-router.get('/questions/:questionId/:appId', (req, res, next) => {
-  const questionId = Number.parseInt(req.params.questionId);
+router.get('/questions/:jobId/:appId', (req, res, next) => {
+  const jobId = Number.parseInt(req.params.jobId);
   const appId = Number.parseInt(req.params.appId);
 
   let result = {};
 
   knex('questions')
-    .where('id', questionId)
-    .first()
-    .then((question) => {
-      result.question = question.text;
-
-      return knex('responses')
-        .select('text as response', 'application_id')
-        .where('application_id', appId)
-        .andWhere('question_id', questionId)
-    })
+    .select('questions.text as question', 'responses.text as response', 'questions.id as question_id', 'application_id')
+    .innerJoin('responses', 'questions.id', 'responses.question_id')
+    .where('questions.job_id', jobId)
+    .where('responses.application_id', appId)
     .then((rows) => {
-      result.response = camelizeKeys(rows[0]);
 
-      res.send(result);
+      res.send(camelizeKeys(rows));
     })
     .catch((err) => {
       next(boom.wrap(err));
     });
 });
+
 
 module.exports = router;

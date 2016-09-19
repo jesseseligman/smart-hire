@@ -6,6 +6,14 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 const ReviewExperience = React.createClass({
 
+  handleTouchTap() {
+    const appIds = this.props.applications.appsToReview.map((app) => {
+      return app.id;
+    });
+
+    return this.props.fetchQuestions(appIds, this.props.jobs.selectedJob.id);
+  },
+
   render() {
     const responses = this.props.exps.toReview;
 

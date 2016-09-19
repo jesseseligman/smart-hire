@@ -11,7 +11,8 @@ const defaultState = {
   jobs: {items: [] },
   applications: { reviewedApplications: [], appsToReview: [] },
   exps: { toReview: [] },
-  edus: { toReview: [] }
+  edus: { toReview: [] },
+  questions: { toReview: [] }
 };
 
 const enhancers = compose(

@@ -8,7 +8,8 @@ function mapStateToProps(state) {
     jobs: state.jobs,
     applications: state.applications,
     edus: state.edus,
-    exps: state.exps
+    exps: state.exps,
+    questions: state.questions
   };
 }
 

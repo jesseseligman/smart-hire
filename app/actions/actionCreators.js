@@ -236,7 +236,7 @@ export function receiveQuestions(questionsToReview) {
   };
 }
 
-export function fetchQuestions(appIds, questionId) {
+export function fetchQuestions(appIds, jobId) {
   return (dispatch) => {
     dispatch(requestQuestions());
 
@@ -245,13 +245,14 @@ export function fetchQuestions(appIds, questionId) {
 
     for (const appId of appIds) {
 
-      axiosCalls.push(axios.get(`/api/questions/${questionID}/${appId}`));
+      axiosCalls.push(axios.get(`/api/questions/${jobId}/${appId}`));
     }
 
     axios.all(axiosCalls).then((responses) => {
       const questions = responses.map((response) => {
+
         return response.data;
-      })
+      });
 
       return dispatch(receiveQuestions(questions))
       return dispatch(push(`/review/$`))
