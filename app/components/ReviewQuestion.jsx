@@ -33,6 +33,9 @@ const ReviewQuestion = React.createClass({
       <h3>{questionSet.question}</h3>
       {questionSet.responses.map((response, index) => {
         return <QuestionResponse
+          rateResponse={this.props.rateResponse}
+          questionsIndex={toReview.indexOf(questionSet)}
+          responseIndex={index}
           key={weakKey(response)}
           alias={index + 1}
           response={response.response}

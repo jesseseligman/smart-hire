@@ -345,3 +345,15 @@ export function fetchQuestions(appIds, jobId) {
     })
   }
 }
+
+export const RATE_RESPONSE = 'RATE_RESPONSE';
+
+export function rateResponse(data) {
+  return {
+    type: RATE_RESPONSE,
+    questionsIndex: data.questionsIndex,
+    responseIndex: data.responseIndex,
+    rating: data.rating,
+    responseId: data.responseId
+  };
+}

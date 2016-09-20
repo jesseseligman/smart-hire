@@ -11,6 +11,8 @@ const EducationResponse = React.createClass({
   },
 
   render() {
+    const styleHidden = { display: 'none' };
+
     return <div className="card">
       <Card>
         <CardTitle
@@ -31,6 +33,7 @@ const EducationResponse = React.createClass({
           <RadioButtonGroup
             name={`edu${this.props.appId}`}
             onChange={this.handleChange}
+            style={this.props.reviewed ? styleHidden : {}}
           >
             <RadioButton
               value={1}
