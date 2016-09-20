@@ -84,4 +84,22 @@ router.get('/applications/:appId', (req, res, next) => {
     })
 });
 
+router.patch('/applications/:appId/edus', (req, res, next) => {
+  const appId = Number.parseInt(req.params.appId);
+  const { edusRating } = req.body;
+
+  console.log(edusRating);
+
+  knex('applications')
+    .where('id', appId)
+    .update({edus_rating: edusRating}, '*')
+    .then((rows) => {
+
+      res.send(rows);
+    })
+    .catch((err) => {
+      next(boom.wrap(err));
+    });
+});
+
 module.exports = router;
