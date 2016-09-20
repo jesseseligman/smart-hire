@@ -3,11 +3,14 @@ import ExperienceResponse from './ExperienceResponse';
 import weakKey from 'weak-key';
 import RaisedButton from 'material-ui/RaisedButton';
 
-
 const ReviewExperience = React.createClass({
 
   handleTouchTap() {
-    const appIds = this.props.applications.appsToReview.map((app) => {
+    const applications = this.props.applications.appsToReview;
+
+    this.props.patchExps(applications);
+
+    const appIds = applications.map((app) => {
       return app.id;
     });
 
@@ -21,6 +24,7 @@ const ReviewExperience = React.createClass({
       <h3>Experience</h3>
       {responses.map((response, index) => {
         return <ExperienceResponse
+          rateExps={this.props.rateExps}
           key={weakKey(response)}
           alias={index + 1}
           exps={response.exps}

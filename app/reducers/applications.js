@@ -1,4 +1,4 @@
-import { REQUEST_COMPLETE_APPLICATION, RECEIVE_COMPLETE_APPLICATION, REQUEST_REVIEWED_APPLICATIONS, RECEIVE_REVIEWED_APPLICATIONS, REQUEST_UNREVIEWED_APPLICATIONS, RECEIVE_UNREVIEWED_APPLICATIONS, RATE_EDUS } from '../actions/actionCreators';
+import { REQUEST_COMPLETE_APPLICATION, RECEIVE_COMPLETE_APPLICATION, REQUEST_REVIEWED_APPLICATIONS, RECEIVE_REVIEWED_APPLICATIONS, REQUEST_UNREVIEWED_APPLICATIONS, RECEIVE_UNREVIEWED_APPLICATIONS, RATE_EDUS, RATE_EXPS } from '../actions/actionCreators';
 
 
 function applications(state={
@@ -30,13 +30,25 @@ function applications(state={
       return Object.assign({}, state, {isFetching: false, appsToReview: action.appsToReview });
 
     case RATE_EDUS:
-      const nextAppsToReview = state.appsToReview.map((app) => {
+      let nextAppsToReview = state.appsToReview.map((app) => {
         if (app.id !== action.appId) {
 
           return app;
         }
 
         return Object.assign({}, app, { edusRating: action.rating });
+      })
+
+      return Object.assign({}, state, { appsToReview: nextAppsToReview });
+
+    case RATE_EXPS:
+      nextAppsToReview = state.appsToReview.map((app) => {
+        if (app.id !== action.appId) {
+
+          return app;
+        }
+
+        return Object.assign({}, app, { expsRating: action.rating });
       })
 
       return Object.assign({}, state, { appsToReview: nextAppsToReview });

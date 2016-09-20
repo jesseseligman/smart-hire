@@ -88,11 +88,25 @@ router.patch('/applications/:appId/edus', (req, res, next) => {
   const appId = Number.parseInt(req.params.appId);
   const { edusRating } = req.body;
 
-  console.log(edusRating);
-
   knex('applications')
     .where('id', appId)
     .update({edus_rating: edusRating}, '*')
+    .then((rows) => {
+
+      res.send(rows);
+    })
+    .catch((err) => {
+      next(boom.wrap(err));
+    });
+});
+
+router.patch('/applications/:appId/exps', (req, res, next) => {
+  const appId = Number.parseInt(req.params.appId);
+  const { expsRating } = req.body;
+
+  knex('applications')
+    .where('id', appId)
+    .update({exps_rating: expsRating}, '*')
     .then((rows) => {
 
       res.send(rows);

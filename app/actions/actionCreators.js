@@ -169,6 +169,35 @@ export function patchEdus(applications) {
     });
   };
 }
+
+export const RATE_EXPS = 'RATE_EXPS';
+
+export function rateExps(appId, rating) {
+  return {
+    type: RATE_EXPS,
+    appId,
+    rating
+  };
+}
+
+export function patchExps(applications) {
+  return(dispatch) => {
+    const axiosCalls = [];
+
+    for (const application of applications) {
+      const { id, expsRating } = application;
+
+      axiosCalls.push(axios.patch(`/api/applications/${id}/exps`, { expsRating }));
+    }
+
+    axios.all(axiosCalls).then((res) => {
+      return dispatch(() => { type: null });
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+  };
+}
 // ============================= Edus Actions ===============================
 
 export const REQUEST_EDUS = 'REQUEST_EDUS';
