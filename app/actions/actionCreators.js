@@ -357,3 +357,25 @@ export function rateResponse(data) {
     responseId: data.responseId
   };
 }
+
+// =============================== Responses Actions ===========================
+
+export function patchResponses(responses) {
+  return (dispatch) => {
+    const axiosCalls = [];
+
+    for (const response of responses) {
+      const { responseId } = response;
+      const responseRating = response.rating;
+
+      axiosCalls.push(axios.patch(`/api/responses/${responseId}`, { responseRating }));
+    }
+
+    axios.all(axiosCalls).then((res) => {
+      return dispatch(() => { type: null });
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+  };
+}

@@ -7,6 +7,9 @@ import { browserHistory } from 'react-router';
 const ReviewQuestion = React.createClass({
 
   handleTouchTap(toReview, index) {
+
+    this.props.patchResponses(toReview[index].responses);
+    
     if (index === toReview.length - 1) {
       const userId = 1;
 
@@ -34,7 +37,7 @@ const ReviewQuestion = React.createClass({
       {questionSet.responses.map((response, index) => {
         return <QuestionResponse
           rateResponse={this.props.rateResponse}
-          questionsIndex={toReview.indexOf(questionSet)}
+          questionsIndex={questionSet.index}
           responseIndex={index}
           key={weakKey(response)}
           alias={index + 1}

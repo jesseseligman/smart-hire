@@ -17,7 +17,7 @@ router.get('/questions/:jobId/:appId', (req, res, next) => {
   let result = {};
 
   knex('questions')
-    .select('questions.text as question', 'responses.text as response', 'responses.rating', 'questions.id as question_id', 'application_id')
+    .select('questions.text as question', 'responses.id as response_id', 'responses.text as response', 'responses.rating', 'questions.id as question_id', 'application_id')
     .innerJoin('responses', 'questions.id', 'responses.question_id')
     .where('questions.job_id', jobId)
     .where('responses.application_id', appId)

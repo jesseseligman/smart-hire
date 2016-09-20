@@ -23,7 +23,7 @@ router.patch('/responses/:responseId', (req, res, next) => {
     })
     .catch((err) => {
 
-      next
+      next(boom.wrap(err));
     });
 });
 

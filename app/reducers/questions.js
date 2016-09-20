@@ -12,14 +12,11 @@ function questions(state={
 
     case RATE_RESPONSE:
       const { questionsIndex, responseIndex, responseId } = action;
-
       const newRating = action.rating;
       const { toReview } = state;
-
       const questionSet = toReview[questionsIndex];
-
       const { responses } = questionSet;
-
+      
       const updatedResponse = Object.assign(responses[responseIndex], { rating: newRating });
 
       const nextResponses = [
