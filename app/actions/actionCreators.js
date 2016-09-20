@@ -254,12 +254,13 @@ export function fetchQuestions(appIds, jobId) {
         return response.data;
       });
 
-      const questions = parsed[0].map((element) => {
+      const questions = parsed[0].map((element, index) => {
 
         return { question: element.question,
                  questionId: element.questionId,
+                 index, 
                  responses: [] };
-      })
+      });
 
       parsed.forEach((responseSet) => {
         responseSet.forEach((response, index) => {
