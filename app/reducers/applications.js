@@ -36,7 +36,7 @@ function applications(state={
           return app;
         }
 
-        return Object.assign({}, app, { eduRating: action.rating });
+        return Object.assign({}, app, { edusRating: action.rating });
       })
 
       return Object.assign({}, state, { appsToReview: nextAppsToReview });

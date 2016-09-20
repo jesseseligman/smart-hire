@@ -150,6 +150,25 @@ export function rateEdus(appId, rating) {
     rating
   };
 }
+
+export function patchEdus(applications) {
+  return(dispatch) => {
+    const axiosCalls = [];
+
+    for (const application of applications) {
+      const { id, edusRating } = application;
+
+      axiosCalls.push(axios.patch(`/api/applications/${id}/edus`, { edusRating }));
+    }
+
+    axios.all(axiosCalls).then((res) => {
+      return dispatch(() => { type: null });
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+  };
+}
 // ============================= Edus Actions ===============================
 
 export const REQUEST_EDUS = 'REQUEST_EDUS';
@@ -171,7 +190,6 @@ export function receiveEdus(edusToReview) {
 export function fetchEdus(appIds) {
   return (dispatch) => {
     dispatch(requestEdus());
-
 
     const axiosCalls = [];
 

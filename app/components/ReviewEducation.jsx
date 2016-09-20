@@ -14,7 +14,12 @@ const ReviewEducation = React.createClass({
   },
 
   handleTouchTap() {
-    const appIds = this.props.applications.appsToReview.map((app) => {
+    const applications = this.props.applications.appsToReview;
+
+    console.log(applications);
+    this.props.patchEdus(applications);
+
+    const appIds = applications.map((app) => {
       return app.id;
     });
 
