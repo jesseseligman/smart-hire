@@ -16,6 +16,7 @@ router.get('/exps/:appId', (req, res, next) => {
 
   knex('exps')
     .where('application_id', appId)
+    .orderBy('application_id')
     .then((rows) => {
       const exp = camelizeKeys(combineExps(separateDates(rows))[0]);
 

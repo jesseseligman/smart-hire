@@ -249,13 +249,29 @@ export function fetchQuestions(appIds, jobId) {
     }
 
     axios.all(axiosCalls).then((responses) => {
-      const questions = responses.map((response) => {
+      const parsed = responses.map((response) => {
 
         return response.data;
       });
 
-      return dispatch(receiveQuestions(questions))
-      return dispatch(push(`/review/$`))
+      const questions = parsed[0].map((element) => {
+
+        return { question: element.question,
+                 questionId: element.questionId,
+                 responses: [] };
+      })
+
+      parsed.forEach((responseSet) => {
+        responseSet.forEach((response, index) => {
+          delete response.question;
+          delete response.questionId;
+
+          questions[index].responses.push(response);
+        })
+      })
+
+      dispatch(receiveQuestions(questions))
+      return dispatch(push(`/review/${jobId}/question/${questions[0].questionId}`))
     })
     .catch((err) => {
       console.log(err);

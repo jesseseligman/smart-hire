@@ -21,6 +21,7 @@ router.get('/questions/:jobId/:appId', (req, res, next) => {
     .innerJoin('responses', 'questions.id', 'responses.question_id')
     .where('questions.job_id', jobId)
     .where('responses.application_id', appId)
+    .orderBy('application_id')
     .then((rows) => {
 
       res.send(camelizeKeys(rows));

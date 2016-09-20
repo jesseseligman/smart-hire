@@ -16,6 +16,7 @@ router.get('/edus/:appId', (req, res, next) => {
 
   knex('edus')
     .where('application_id', appId)
+    .orderBy('application_id')
     .then((rows) => {
       const edu = camelizeKeys(combineEdus(separateDates(rows))[0]);
 
