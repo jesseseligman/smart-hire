@@ -28,6 +28,7 @@ const ReviewEducation = React.createClass({
       <h3>Education</h3>
       {responses.map((response, index) => {
         return <EducationResponse
+          rateEdus={this.props.rateEdus}
           key={weakKey(response)}
           alias={index + 1}
           edus={response.edus}

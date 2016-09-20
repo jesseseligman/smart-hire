@@ -2,6 +2,8 @@ import fetch from 'isomorphic-fetch';
 import axios from 'axios';
 import { push } from 'react-router-redux';
 
+// ============================= Job Actions ================================
+
 export const REQUEST_JOBS = 'REQUEST_JOBS';
 export const RECEIVE_JOBS = 'RECEIVE_JOBS';
 export const SELECT_JOB = 'SELECT_JOB';
@@ -40,6 +42,8 @@ export function selectJob(job) {
     job
   };
 }
+
+// ======================== Application Actions =============================
 
 export const REQUEST_COMPLETE_APPLICATION = 'REQUEST_COMPLETE_APPLICATION';
 export const RECEIVE_COMPLETE_APPLICATION = 'RECEIVE_COMPLETE_APPLICATION';
@@ -133,9 +137,20 @@ export function fetchUnreviewedApplications(jobId) {
       })
       .catch((err) => {
         console.log(err);
-      })
-  }
+      });
+  };
 }
+
+export const RATE_EDUS = 'RATE_EDUS';
+
+export function rateEdus(appId, rating) {
+  return {
+    type: RATE_EDUS,
+    appId,
+    rating
+  };
+}
+// ============================= Edus Actions ===============================
 
 export const REQUEST_EDUS = 'REQUEST_EDUS';
 export const RECEIVE_EDUS = 'RECEIVE_EDUS';
@@ -177,6 +192,8 @@ export function fetchEdus(appIds) {
     })
   }
 }
+
+// ============================ Exps Actions ================================
 
 export const REQUEST_EXPS = 'REQUEST_EXPS';
 export const RECEIVE_EXPS = 'RECEIVE_EXPS';
@@ -220,6 +237,8 @@ export function fetchExps(appIds, jobId) {
   }
 }
 
+// ========================= Questions Actions ================================
+
 export const REQUEST_QUESTIONS = 'REQUEST_QUESTIONS';
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
 
@@ -258,7 +277,7 @@ export function fetchQuestions(appIds, jobId) {
 
         return { question: element.question,
                  questionId: element.questionId,
-                 index, 
+                 index,
                  responses: [] };
       });
 
