@@ -1,7 +1,7 @@
 'use strict';
-// if (process.env.NODE_ENV !== 'production') {
-//   require('dotenv').config();
-// }
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
 
 const express = require('express');
 const port = process.env.PORT || 8000;
@@ -49,6 +49,7 @@ const edus = require('./routes/edus');
 const exps = require('./routes/exps');
 const questions = require('./routes/questions');
 const responses = require('./routes/responses');
+const users = require('./routes/users');
 
 // ROUTE HANDLERS
 app.use('/api', jobs);
@@ -57,6 +58,7 @@ app.use('/api', edus);
 app.use('/api', exps);
 app.use('/api', questions);
 app.use('/api', responses);
+app.use('/api', users);
 
 app.use('/api', (_req, res) => {
   res.sendStatus(404);
