@@ -4,6 +4,7 @@ exports.seed = function(knex) {
   return knex('responses').del()
     .then(() => {
       return knex('responses').insert([{
+        id: 1,
         question_id: 1,
         application_id: 1,
         text: 'I am a great fit for this role. I am a self starter. I do all of the things they say to do in the self help books. I love Tim Ferris and I drink lots of soylent to make sure I am as productive as possible. I will fit in so well with your team. I love writing testable, maintainable code. I also like clean, elegant code. No need to be overly robust with the syntactic sugar. That is why I am a great fit for this role because I am just such a great fit for this role.',
@@ -11,6 +12,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 2,
         question_id: 1,
         application_id: 2,
         text: 'I am a great fit for this role. I am a self starter. I do all of the things they say to do in the self help books. I love Tim Ferris and I drink lots of soylent to make sure I am as productive as possible. I will fit in so well with your team. I love writing testable, maintainable code. I CAN MAKE CHOCOLATE CHIP COOKIES!!!! I HAVE TROUBLE CONTROLLING THE VOLUME OF MY VOICE!!! I also like clean, elegant code. No need to be overly robust with the syntactic sugar. That is why I am a great fit for this role because I am just such a great fit for this role.',
@@ -18,6 +20,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 3,
         question_id: 1,
         application_id: 3,
         text: 'I am a great fit for this role. I am a self starter. I do all of the things they say to do in the self help books. I love Tim Ferris and I drink lots of soylent to make sure I am as productive as possible. I will fit in so well with your team. I love writing testable, maintainable code. I CAN MAKE CHOCOLATE CHIP COOKIES!!!! I HAVE TROUBLE CONTROLLING THE VOLUME OF MY VOICE!!! I also like clean, elegant code. No need to be overly robust with the syntactic sugar. That is why I am a great fit for this role because I am just such a great fit for this role.',
@@ -25,6 +28,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 4,
         question_id: 1,
         application_id: 4,
         text: 'I am a great fit for this role. I am a self starter. I do all of the things they say to do in the self help books. What makes me such a good fit is that I can change sizes. I also like clean, elegant code. No need to be overly robust with the syntactic sugar. That is why I am a great fit for this role because I am just such a great fit for this role.',
@@ -32,6 +36,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 5,
         question_id: 1,
         application_id: 5,
         text: 'I am a great fit for this role. I am a self starter. I do all of the things they say to do in the self help books. What makes me such a good fit is that I can change sizes. I also like clean, elegant code. No need to be overly robust with the syntactic sugar. That is why I am a great fit for this role because I am just such a great fit for this role.',
@@ -39,6 +44,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 6,
         question_id: 1,
         application_id: 6,
         text: 'I am a great fit for this role. I am a self starter. I do all of the things they say to do in the self help books. What makes me such a good fit is that I can change sizes. I also like clean, elegant code. No need to be overly robust with the syntactic sugar. That is why I am a great fit for this role because I am just such a great fit for this role.',
@@ -46,6 +52,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 7,
         question_id: 1,
         application_id: 7,
         text: 'I am a great fit for this role. I am a self starter. I do all of the things they say to do in the self help books. What makes me such a good fit is that I can change sizes. I also like clean, elegant code. No need to be overly robust with the syntactic sugar. That is why I am a great fit for this role because I am just such a great fit for this role.',
@@ -53,6 +60,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 8,
         question_id: 1,
         application_id: 8,
         text: 'I am a great fit for this role. I am a self starter. I do all of the things they say to do in the self help books. What makes me such a good fit is that I can change sizes. I also like clean, elegant code. No need to be overly robust with the syntactic sugar. That is why I am a great fit for this role because I am just such a great fit for this role.',
@@ -60,6 +68,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 9,
         question_id: 2,
         application_id: 1,
         text: 'My strengths are that I know my weaknesses. That is what makes me so special. I also have invented a number of life saving technologies. I am fluent in 43 languages. I don\'t need to sleep. I can sing three operas from memory. You never need to tell me to do something twice. I love work and I am a workaholic and that is all I care about!',
@@ -67,6 +76,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 10,
         question_id: 2,
         application_id: 2,
         text: 'My strengths are that I know my weaknesses. That is what makes me so special. I also have invented a number of life saving technologies. I am fluent in 43 languages. I don\'t need to sleep. I can sing three operas from memory. You never need to tell me to do something twice. I love work and I am a workaholic and that is all I care about!',
@@ -74,6 +84,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 11,
         question_id: 2,
         application_id: 3,
         text: 'My strengths are that I know my weaknesses. That is what makes me so special. I also have invented a number of life saving technologies. I am fluent in 43 languages. I don\'t need to sleep. I can sing three operas from memory. You never need to tell me to do something twice. I love work and I am a workaholic and that is all I care about!',
@@ -81,6 +92,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 12,
         question_id: 2,
         application_id: 4,
         text: 'My strengths are that I know my weaknesses. That is what makes me so special. I also have invented a number of life saving technologies. I am fluent in 43 languages. I don\'t need to sleep. I can sing three operas from memory. You never need to tell me to do something twice. I love work and I am a workaholic and that is all I care about!',
@@ -88,6 +100,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 13,
         question_id: 2,
         application_id: 5,
         text: 'My strengths are that I know my weaknesses. That is what makes me so special. I also have invented a number of life saving technologies. I am fluent in 43 languages. I don\'t need to sleep. I can sing three operas from memory. You never need to tell me to do something twice. I love work and I am a workaholic and that is all I care about!',
@@ -95,6 +108,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 14,
         question_id: 2,
         application_id: 6,
         text: 'My strengths are that I know my weaknesses. That is what makes me so special. I also have invented a number of life saving technologies. I am fluent in 43 languages. I don\'t need to sleep. I can sing three operas from memory. You never need to tell me to do something twice. I love work and I am a workaholic and that is all I care about!',
@@ -102,6 +116,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 15,
         question_id: 2,
         application_id: 7,
         text: 'My strengths are that I know my weaknesses. That is what makes me so special. I also have invented a number of life saving technologies. I am fluent in 43 languages. I don\'t need to sleep. I can sing three operas from memory. You never need to tell me to do something twice. I love work and I am a workaholic and that is all I care about!',
@@ -109,6 +124,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 16,
         question_id: 2,
         application_id: 8,
         text: 'My strengths are that I know my weaknesses. That is what makes me so special. I also have invented a number of life saving technologies. I am fluent in 43 languages. I don\'t need to sleep. I can sing three operas from memory. You never need to tell me to do something twice. I love work and I am a workaholic and that is all I care about!',
@@ -116,6 +132,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 17,
         question_id: 3,
         application_id: 9,
         text: 'I bring excellent leadership skills to any team. Being a leader does not necessarily mean being the loudest voice in the room. It is the ability to work with a group of people and assess how you and your team can work together to maximize your productivity. Sometimes that means listening to others and empowering them to work independently. Other times it involves taking more direct control of a project and driving it yourself. I understand this balance.',
@@ -123,6 +140,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 18,
         question_id: 3,
         application_id: 10,
         text: 'I bring excellent leadership skills to any team. Being a leader does not necessarily mean being the loudest voice in the room. It is the ability to work with a group of people and assess how you and your team can work together to maximize your productivity. Sometimes that means listening to others and empowering them to work independently. Other times it involves taking more direct control of a project and driving it yourself. I understand this balance.',
@@ -130,6 +148,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 19,
         question_id: 3,
         application_id: 11,
         text: 'I bring excellent leadership skills to any team. Being a leader does not necessarily mean being the loudest voice in the room. It is the ability to work with a group of people and assess how you and your team can work together to maximize your productivity. Sometimes that means listening to others and empowering them to work independently. Other times it involves taking more direct control of a project and driving it yourself. I understand this balance.',
@@ -137,6 +156,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 20,
         question_id: 3,
         application_id: 12,
         text: 'I bring excellent leadership skills to any team. Being a leader does not necessarily mean being the loudest voice in the room. It is the ability to work with a group of people and assess how you and your team can work together to maximize your productivity. Sometimes that means listening to others and empowering them to work independently. Other times it involves taking more direct control of a project and driving it yourself. I understand this balance.',
@@ -144,6 +164,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 21,
         question_id: 3,
         application_id: 13,
         text: 'I bring excellent leadership skills to any team. Being a leader does not necessarily mean being the loudest voice in the room. It is the ability to work with a group of people and assess how you and your team can work together to maximize your productivity. Sometimes that means listening to others and empowering them to work independently. Other times it involves taking more direct control of a project and driving it yourself. I understand this balance.',
@@ -151,6 +172,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 22,
         question_id: 3,
         application_id: 14,
         text: 'I bring excellent leadership skills to any team. Being a leader does not necessarily mean being the loudest voice in the room. It is the ability to work with a group of people and assess how you and your team can work together to maximize your productivity. Sometimes that means listening to others and empowering them to work independently. Other times it involves taking more direct control of a project and driving it yourself. I understand this balance.',
@@ -158,6 +180,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 23,
         question_id: 3,
         application_id: 15,
         text: 'I bring excellent leadership skills to any team. Being a leader does not necessarily mean being the loudest voice in the room. It is the ability to work with a group of people and assess how you and your team can work together to maximize your productivity. Sometimes that means listening to others and empowering them to work independently. Other times it involves taking more direct control of a project and driving it yourself. I understand this balance.',
@@ -165,6 +188,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 24,
         question_id: 4,
         application_id: 9,
         text: 'I love changing directions because it forces me to think in new ways. When I have to pivot is when I shine. I also have a background in sailing which feels extremely relevant to the current discussion. Because in sailing it\'s all about how you point your sails so that you catch the right wind. And then you can choose your direction. See how the sailing connects to the question?',
@@ -172,6 +196,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 25,
         question_id: 4,
         application_id: 10,
         text: 'I love changing directions because it forces me to think in new ways. When I have to pivot is when I shine. I also have a background in sailing which feels extremely relevant to the current discussion. Because in sailing it\'s all about how you point your sails so that you catch the right wind. And then you can choose your direction. See how the sailing connects to the question?',
@@ -179,6 +204,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 26,
         question_id: 4,
         application_id: 11,
         text: 'I love changing directions because it forces me to think in new ways. When I have to pivot is when I shine. I also have a background in sailing which feels extremely relevant to the current discussion. Because in sailing it\'s all about how you point your sails so that you catch the right wind. And then you can choose your direction. See how the sailing connects to the question?',
@@ -186,6 +212,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 27,
         question_id: 4,
         application_id: 12,
         text: 'I love changing directions because it forces me to think in new ways. When I have to pivot is when I shine. I also have a background in sailing which feels extremely relevant to the current discussion. Because in sailing it\'s all about how you point your sails so that you catch the right wind. And then you can choose your direction. See how the sailing connects to the question?',
@@ -193,6 +220,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 28,
         question_id: 4,
         application_id: 13,
         text: 'I love changing directions because it forces me to think in new ways. When I have to pivot is when I shine. I also have a background in sailing which feels extremely relevant to the current discussion. Because in sailing it\'s all about how you point your sails so that you catch the right wind. And then you can choose your direction. See how the sailing connects to the question?',
@@ -200,6 +228,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 29,
         question_id: 4,
         application_id: 14,
         text: 'I love changing directions because it forces me to think in new ways. When I have to pivot is when I shine. I also have a background in sailing which feels extremely relevant to the current discussion. Because in sailing it\'s all about how you point your sails so that you catch the right wind. And then you can choose your direction. See how the sailing connects to the question?',
@@ -207,6 +236,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 30,
         question_id: 4,
         application_id: 15,
         text: 'I love changing directions because it forces me to think in new ways. When I have to pivot is when I shine. I also have a background in sailing which feels extremely relevant to the current discussion. Because in sailing it\'s all about how you point your sails so that you catch the right wind. And then you can choose your direction. See how the sailing connects to the question?',
@@ -214,6 +244,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 31,
         question_id: 5,
         application_id: 16,
         text: 'I am good at a great assortment of things. I have excellent communication skills which is really what makes me vibrant. I am good at archery. I am also very skilled in martial arts including kung fu. I can play the cello and have perfect pitch. I am a journeyman electrician. I have studied classic literature and can recite the Odyssey from memory.',
@@ -221,6 +252,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 32,
         question_id: 5,
         application_id: 17,
         text: 'I am good at a great assortment of things. I have excellent communication skills which is really what makes me vibrant. I am good at archery. I am also very skilled in martial arts including kung fu. I can play the cello and have perfect pitch. I am a journeyman electrician. I have studied classic literature and can recite the Odyssey from memory.',
@@ -228,6 +260,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 33,
         question_id: 5,
         application_id: 18,
         text: 'I am good at a great assortment of things. I have excellent communication skills which is really what makes me vibrant. I am good at archery. I am also very skilled in martial arts including kung fu. I can play the cello and have perfect pitch. I am a journeyman electrician. I have studied classic literature and can recite the Odyssey from memory.',
@@ -235,6 +268,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 34,
         question_id: 5,
         application_id: 19,
         text: 'I am good at a great assortment of things. I have excellent communication skills which is really what makes me vibrant. I am good at archery. I am also very skilled in martial arts including kung fu. I can play the cello and have perfect pitch. I am a journeyman electrician. I have studied classic literature and can recite the Odyssey from memory.',
@@ -242,6 +276,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 35,
         question_id: 5,
         application_id: 20,
         text: 'I am good at a great assortment of things. I have excellent communication skills which is really what makes me vibrant. I am good at archery. I am also very skilled in martial arts including kung fu. I can play the cello and have perfect pitch. I am a journeyman electrician. I have studied classic literature and can recite the Odyssey from memory.',
@@ -249,6 +284,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 36,
         question_id: 5,
         application_id: 21,
         text: 'I am good at a great assortment of things. I have excellent communication skills which is really what makes me vibrant. I am good at archery. I am also very skilled in martial arts including kung fu. I can play the cello and have perfect pitch. I am a journeyman electrician. I have studied classic literature and can recite the Odyssey from memory.',
@@ -256,6 +292,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 37,
         question_id: 5,
         application_id: 22,
         text: 'I am good at a great assortment of things. I have excellent communication skills which is really what makes me vibrant. I am good at archery. I am also very skilled in martial arts including kung fu. I can play the cello and have perfect pitch. I am a journeyman electrician. I have studied classic literature and can recite the Odyssey from memory.',
@@ -263,6 +300,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 38,
         question_id: 6,
         application_id: 16,
         text: 'My old boss would tell you that I am the hardest worker that they ever had. I regularly put in 14 hour work days, sometimes even on the weekend. They used to call me "desky" because I slept in the office so much. My old boss also will tell you that I stole toilet paper from the bathroom but that is a lie. I loved my old job but I am just ready for something new, a new challenge I guess. Even though my old boss thought I was great.',
@@ -270,6 +308,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 39,
         question_id: 6,
         application_id: 17,
         text: 'My old boss would tell you that I am the hardest worker that they ever had. I regularly put in 14 hour work days, sometimes even on the weekend. They used to call me "desky" because I slept in the office so much. My old boss also will tell you that I stole toilet paper from the bathroom but that is a lie. I loved my old job but I am just ready for something new, a new challenge I guess. Even though my old boss thought I was great.',
@@ -277,6 +316,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 40,
         question_id: 6,
         application_id: 18,
         text: 'My old boss would tell you that I am the hardest worker that they ever had. I regularly put in 14 hour work days, sometimes even on the weekend. They used to call me "desky" because I slept in the office so much. My old boss also will tell you that I stole toilet paper from the bathroom but that is a lie. I loved my old job but I am just ready for something new, a new challenge I guess. Even though my old boss thought I was great.',
@@ -284,6 +324,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 41,
         question_id: 6,
         application_id: 19,
         text: 'My old boss would tell you that I am the hardest worker that they ever had. I regularly put in 14 hour work days, sometimes even on the weekend. They used to call me "desky" because I slept in the office so much. My old boss also will tell you that I stole toilet paper from the bathroom but that is a lie. I loved my old job but I am just ready for something new, a new challenge I guess. Even though my old boss thought I was great.',
@@ -291,6 +332,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 42,
         question_id: 6,
         application_id: 20,
         text: 'My old boss would tell you that I am the hardest worker that they ever had. I regularly put in 14 hour work days, sometimes even on the weekend. They used to call me "desky" because I slept in the office so much. My old boss also will tell you that I stole toilet paper from the bathroom but that is a lie. I loved my old job but I am just ready for something new, a new challenge I guess. Even though my old boss thought I was great.',
@@ -298,6 +340,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 43,
         question_id: 6,
         application_id: 21,
         text: 'My old boss would tell you that I am the hardest worker that they ever had. I regularly put in 14 hour work days, sometimes even on the weekend. They used to call me "desky" because I slept in the office so much. My old boss also will tell you that I stole toilet paper from the bathroom but that is a lie. I loved my old job but I am just ready for something new, a new challenge I guess. Even though my old boss thought I was great.',
@@ -305,11 +348,17 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 44,
         question_id: 6,
         application_id: 22,
         text: 'My old boss would tell you that I am the hardest worker that they ever had. I regularly put in 14 hour work days, sometimes even on the weekend. They used to call me "desky" because I slept in the office so much. My old boss also will tell you that I stole toilet paper from the bathroom but that is a lie. I loved my old job but I am just ready for something new, a new challenge I guess. Even though my old boss thought I was great.',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       }]);
+    })
+    .then(() => {
+      return knex.raw(
+        "SELECT setval('responses_id_seq', (SELECT MAX(id) FROM responses));"
+      );
     });
 };

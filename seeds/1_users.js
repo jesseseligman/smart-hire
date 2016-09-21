@@ -6,6 +6,7 @@ exports.seed = function(knex) {
   return knex('users').del()
     .then(() => {
       return knex('users').insert([{
+        id: 1,
         email: 'shanelovesbeer@beer.com',
         hashed_password: '$2a$12$Q3fh1jeJZ2Q19Yr12aVOxO54a/IvBhS01qWCqxNAZc0ABRxq0NnYq',
         first_name: 'Shane',
@@ -19,6 +20,7 @@ exports.seed = function(knex) {
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
       {
+        id: 2,
         email: 'blainelovescigs@cigs.com',
         hashed_password: '$2a$12$Q3fh1jeQZ2Q19Yr12aVOxO54a/IvBhS01qWCqxNAZc0ABRxq0NnYq',
         first_name: 'Blaine',
@@ -31,5 +33,10 @@ exports.seed = function(knex) {
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       }]);
+    })
+    .then(() => {
+      return knex.raw(
+        "SELECT setval('users_id_seq', (SELECT MAX(id) FROM users));"
+      );
     });
 };

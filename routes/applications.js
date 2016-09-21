@@ -67,12 +67,14 @@ router.get('/applications/:appId', (req, res, next) => {
 
       return knex('exps')
         .where('application_id', result.id)
+        .orderBy('application_id')
     })
     .then((rows) => {
       result.exps = camelizeKeys(separateDates(rows));
 
       return knex('edus')
         .where('application_id', result.id)
+        .orderBy('application_id')
     })
     .then((rows) => {
       result.edus = camelizeKeys(separateDates(rows));
