@@ -165,7 +165,7 @@ export function patchEdus(applications) {
       return;
     })
     .catch((err) => {
-      console.error(err);
+      console.log(err);
     });
   };
 }
@@ -194,7 +194,7 @@ export function patchExps(applications) {
       return;
     })
     .catch((err) => {
-      console.error(err);
+      console.log(err);
     });
   };
 }
@@ -209,6 +209,26 @@ export function toggleAnonymous(appId, isAnonymous) {
   };
 }
 
+export function patchOverallScores(apps) {
+
+  return (dispatch) => {
+    const axiosCalls = [];
+
+    for (const app of apps) {
+      axiosCalls.push(axios.patch(`/api/applications/${app.id}/overallScore`));
+    }
+
+    axios.all(axiosCalls).then((res) => {
+      const userId = 1;
+
+      return dispatch(push(`/dashboard/${userId}`))
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  }
+}
+
 export function patchAnonymous(appId, isAnonymous) {
   return (dispatch) => {
 
@@ -217,7 +237,7 @@ export function patchAnonymous(appId, isAnonymous) {
         return;
       })
       .catch((err) => {
-        console.error(err);
+        console.log(err);
       });
   };
 }

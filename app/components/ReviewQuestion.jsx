@@ -9,10 +9,11 @@ const ReviewQuestion = React.createClass({
   handleTouchTap(toReview, index) {
 
     this.props.patchResponses(toReview[index].responses);
-    
+
     if (index === toReview.length - 1) {
       const userId = 1;
 
+      return this.props.patchOverallScores(this.props.applications.appsToReview);
       return browserHistory.push(`/dashboard/${userId}`);
     }
 

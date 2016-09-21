@@ -34,7 +34,7 @@ router.get('/applications/rated/:jobId', (req, res, next) => {
   knex('applications')
     .whereNotNull('overall_score')
     .andWhere('job_id', jobId)
-    .orderBy('overall_score')
+    .orderBy('overall_score', 'desc')
     .then((rows) => {
       const applications = camelizeKeys(rows);
 
@@ -125,6 +125,56 @@ router.patch('/applications/:appId/anonymous', (req, res, next) => {
   knex('applications')
     .where('id', appId)
     .update({anonymous: isAnonymous}, '*')
+    .then((rows) => {
+
+      res.send(rows);
+    })
+    .catch((err) => {
+      next(boom.wrap(err));
+    });
+});
+
+router.patch('/applications/:appId/overallScore', (req, res, next) => {
+  const appId = Number.parseInt(req.params.appId);
+
+  let total = 0;
+
+  knex('applications')
+    .select('exps_rating')
+    .where('id', appId)
+    .first()
+    .then((row) => {
+      total = row.exps_rating;
+
+      return knex('applications')
+        .select('edus_rating')
+        .where('id', appId)
+        .first()
+    })
+    .then((row) => {
+      total += row.edus_rating;
+
+      return knex('responses')
+        .sum('rating')
+        .where('application_id', appId)
+        .first()
+    })
+    .then((responseTotal) => {
+      total += Number.parseInt(responseTotal.sum);
+
+      return knex('responses')
+        .count('rating')
+        .where('application_id', appId)
+        .first()
+    })
+    .then((numberOfResponses) => {
+      const numberOfCriteria = Number.parseInt(numberOfResponses.count) + 2;
+      const overallScore = (total / numberOfCriteria).toFixed(1);
+
+      return knex('applications')
+        .where('id', appId)
+        .update({ overall_score: overallScore }, '*')
+    })
     .then((rows) => {
 
       res.send(rows);
