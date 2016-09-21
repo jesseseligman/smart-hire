@@ -7,13 +7,14 @@ import weakKey from 'weak-key';
 
 const ReviewedApplication = React.createClass({
 
-  handleTouchTap() {
-    this.props.toggleAnonymous();
+  handleTouchTap(id, anonymous) {
+    this.props.toggleAnonymous(id, !anonymous);
+    this.props.patchAnonymous(id, !anonymous);
   },
 
 
   render() {
-    const { firstName, lastName, phone, email, anonymous, exps, edus, responses, overallRating } = this.props.applications.completeReviewedApplication;
+    const { firstName, lastName, phone, email, anonymous, exps, edus, responses, overallRating, id } = this.props.applications.completeReviewedApplication;
 
     return <div id="application-container">
       <div id="applicant-info">
@@ -27,7 +28,7 @@ const ReviewedApplication = React.createClass({
             label={anonymous ? "Show Name and Email" :
             "Hide Name and Email"}
             labelStyle={{color: '#F9FDFE'}}
-            onTouchTap={this.handleTouchTap}
+            onTouchTap={() => this.handleTouchTap(id, anonymous)}
           />
 
       </div>

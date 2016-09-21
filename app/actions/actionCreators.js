@@ -162,7 +162,7 @@ export function patchEdus(applications) {
     }
 
     axios.all(axiosCalls).then((res) => {
-      return dispatch(() => { type: null });
+      return;
     })
     .catch((err) => {
       console.error(err);
@@ -191,11 +191,34 @@ export function patchExps(applications) {
     }
 
     axios.all(axiosCalls).then((res) => {
-      return dispatch(() => { type: null });
+      return;
     })
     .catch((err) => {
       console.error(err);
     });
+  };
+}
+
+export const TOGGLE_ANONYMOUS = 'TOGGLE_ANONYMOUS';
+
+export function toggleAnonymous(appId, isAnonymous) {
+  return {
+    type: TOGGLE_ANONYMOUS,
+    appId,
+    isAnonymous
+  };
+}
+
+export function patchAnonymous(appId, isAnonymous) {
+  return (dispatch) => {
+
+    axios.patch(`/api/applications/${appId}/anonymous`, { isAnonymous })
+      .then((res) => {
+        return;
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   };
 }
 // ============================= Edus Actions ===============================
@@ -372,7 +395,7 @@ export function patchResponses(responses) {
     }
 
     axios.all(axiosCalls).then((res) => {
-      return dispatch(() => { type: null });
+      return;
     })
     .catch((err) => {
       console.error(err);

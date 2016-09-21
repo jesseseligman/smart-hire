@@ -116,4 +116,20 @@ router.patch('/applications/:appId/exps', (req, res, next) => {
     });
 });
 
+router.patch('/applications/:appId/anonymous', (req, res, next) => {
+  const appId = Number.parseInt(req.params.appId);
+  const { isAnonymous } = req.body;
+
+  knex('applications')
+    .where('id', appId)
+    .update({anonymous: isAnonymous}, '*')
+    .then((rows) => {
+
+      res.send(rows);
+    })
+    .catch((err) => {
+      next(boom.wrap(err));
+    });
+});
+
 module.exports = router;

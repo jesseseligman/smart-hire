@@ -6,14 +6,8 @@ import FlatButton from 'material-ui/FlatButton';
 const Results = React.createClass({
 
   handleTouchTap(app) {
-    // const newReviewedApplications = this.state.reviewedApplications.map((element) => {
-    //   if (element !== app) {
-    //     return element;
-    //   }
-    //   const newApp = Object.assign({}, app, { anonymous: !app.anonymous});
-    //   return newApp;
-    // });
-    // this.setState({ reviewedApplications: newReviewedApplications});
+    this.props.toggleAnonymous(app.id, !app.anonymous);
+    this.props.patchAnonymous(app.id, !app.anonymous);
   },
 
   handleTouchTapApplication(appId) {
@@ -21,32 +15,7 @@ const Results = React.createClass({
   },
 
   render() {
-    const reviewedApplications = [
-      {
-        score: 4,
-        anonymous: true,
-        phone: '8283751029',
-        email: 'jimmy@mcnulty.com',
-        firstName: 'Sally',
-        lastName: 'Stanfield'
-      },
-      {
-        score: 1,
-        anonymous: false,
-        phone: '8283751029',
-        email: 'lester@freeman.com',
-        firstName: 'Frank',
-        lastName: 'Sobotka'
-      },
-      {
-        score: 2.3,
-        anonymous: true,
-        phone: '8283751029',
-        email: 'kima@greggs.com',
-        firstName: 'Bunk',
-        lastName: 'Moreland'
-      }
-    ];
+
     const { selectedJob } = this.props.jobs;
 
     return <div className="dashboard-container">
