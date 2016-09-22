@@ -49,6 +49,7 @@ const Login = React.createClass({
   render() {
 
     const styleButton = {
+      marginTop: '20px',
       marginBottom: '40px'
     };
 
