@@ -9,7 +9,7 @@ function mapStateToProps(state) {
     applications: state.applications,
     edus: state.edus,
     exps: state.exps,
-    questions: state.questions
+    questions: state.questions,
   };
 }
 

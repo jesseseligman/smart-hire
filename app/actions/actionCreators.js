@@ -422,3 +422,21 @@ export function patchResponses(responses) {
     });
   };
 }
+
+// ============================ Registration Form Actions ======================
+
+export function submitRegistration(user) {
+  return (dispatch) => {
+
+    axios.post('/api/users', user)
+      .then((res) => {
+
+        const user = res.data;
+
+        return dispatch(push(`/dashboard/${user.id}`));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+}

@@ -8,7 +8,7 @@ exports.up = function(knex) {
     table.string('last_name').notNullable().defaultTo('');
     table.string('company_name').notNullable().defaultTo('');
     table.text('company_description').notNullable().defaultTo('');
-    table.specificType('state', 'char(2)').notNullable().defaultTo('');
+    table.string('state').notNullable().defaultTo('');
     table.string('city').notNullable().defaultTo('');
     table.string('email').unique().notNullable().defaultTo('');
     table.specificType('hashed_password', 'char(60)').notNullable();
