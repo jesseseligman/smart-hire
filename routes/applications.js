@@ -138,13 +138,15 @@ router.patch('/applications/:appId/overallScore', (req, res, next) => {
   const appId = Number.parseInt(req.params.appId);
 
   let total = 0;
+  let numberOfCriteria = 0;
 
   knex('applications')
     .select('exps_rating')
     .where('id', appId)
     .first()
     .then((row) => {
-      total = row.exps_rating;
+        total = row.exps_rating;
+        numberOfCriteria += 1;
 
       return knex('applications')
         .select('edus_rating')
@@ -152,7 +154,9 @@ router.patch('/applications/:appId/overallScore', (req, res, next) => {
         .first()
     })
     .then((row) => {
-      total += row.edus_rating;
+        total += row.edus_rating;
+        numberOfCriteria += 1;
+
 
       return knex('responses')
         .sum('rating')
@@ -168,7 +172,7 @@ router.patch('/applications/:appId/overallScore', (req, res, next) => {
         .first()
     })
     .then((numberOfResponses) => {
-      const numberOfCriteria = Number.parseInt(numberOfResponses.count) + 2;
+      numberOfCriteria = Number.parseInt(numberOfResponses.count);
       const overallScore = (total / numberOfCriteria).toFixed(1);
 
       return knex('applications')

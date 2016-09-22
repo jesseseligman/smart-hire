@@ -2,11 +2,24 @@ import React from 'react';
 import ExperienceResponse from './ExperienceResponse';
 import weakKey from 'weak-key';
 import RaisedButton from 'material-ui/RaisedButton';
+import Snackbar from 'material-ui/Snackbar';
 
 const ReviewExperience = React.createClass({
 
+  getInitialState() {
+    return {
+      open: false
+    }
+  },
+
   handleTouchTap() {
     const applications = this.props.applications.appsToReview;
+
+    for (const application of applications) {
+      if (!application.expsRating) {
+        return this.alertIncomplete();
+      }
+    }
 
     this.props.patchExps(applications);
 
@@ -15,6 +28,14 @@ const ReviewExperience = React.createClass({
     });
 
     return this.props.fetchQuestions(appIds, this.props.jobs.selectedJob.id);
+  },
+
+  alertIncomplete() {
+    this.setState({ open: true });
+  },
+
+  handleRequestClose() {
+    this.setState({ open: false });
   },
 
   render() {
@@ -36,6 +57,13 @@ const ReviewExperience = React.createClass({
         label="Next"
         onTouchTap={this.handleTouchTap}
       />
+
+      <Snackbar
+         open={this.state.open}
+         message='Please provide rating for each applicant.'
+         autoHideDuration={2500}
+         onRequestClose={this.handleRequestClose}
+       />
     </div>
   }
 })
