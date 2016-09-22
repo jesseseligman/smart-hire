@@ -4,9 +4,9 @@ import weakKey from 'weak-key';
 
 const Dashboard = React.createClass({
 
-  // componentWillMount() {
-  //   this.props.fetchJobs(this.props.params.userId)
-  // },
+  componentWillMount() {
+    this.props.fetchJobs(this.props.params.userId)
+  },
 
   render() {
 

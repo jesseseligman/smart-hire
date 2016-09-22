@@ -51,27 +51,47 @@ const Main = React.createClass({
         </div>
 
         <div id="nav-button-container">
-          <Link to={'/register'}>
-            <FlatButton
-              label="Sign Up"
-              labelStyle={styleButton}
-              style={{color: '#F9FDFE'}}
-            />
-          </Link>
-          <Link to={'/login'}>
-            <FlatButton
-              label="Login"
-              labelStyle={styleButton}
-              style={{color: '#F9FDFE'}}
-            />
-          </Link>
-          <Link>
-            <FlatButton
-              label="Find a job"
-              labelStyle={styleButton}
-              style={{color: '#F9FDFE'}}
-            />
-          </Link>
+
+          <div style={isLoggedIn ? styleHidden : {} }>
+            <Link to={'/register'}>
+              <FlatButton
+                label="Sign Up"
+                labelStyle={styleButton}
+                style={{color: '#F9FDFE'}}
+              />
+            </Link>
+          </div>
+
+          <div style={isLoggedIn ? styleHidden : {} }>
+            <Link to={'/login'}>
+              <FlatButton
+                label="Login"
+                labelStyle={styleButton}
+                style={{color: '#F9FDFE'}}
+              />
+            </Link>
+          </div>
+
+          <div style={isLoggedIn ? styleHidden : {} }>
+            <Link>
+              <FlatButton
+                label="Find a job"
+                labelStyle={styleButton}
+                style={{color: '#F9FDFE'}}
+              />
+            </Link>
+          </div>
+
+          <div style={isLoggedIn ? {} : styleHidden}>
+            <Link to={`/dashboard/${cookie.load('userId')}`}>
+              <FlatButton
+                label="Your Jobs"
+                labelStyle={styleButton}
+                style={{color: '#F9FDFE'}}
+              />
+            </Link>
+          </div>
+
           <div style={isLoggedIn ? {} : styleHidden}>
             <FlatButton
               label="Logout"

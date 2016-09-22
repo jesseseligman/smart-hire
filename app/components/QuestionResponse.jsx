@@ -1,7 +1,8 @@
 import React from 'react';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import ButtonForm from 'components/ButtonForm';
-import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
+import RadioButtons from 'components/RadioButtons';
+
 
 const QuestionResponse = React.createClass({
 
@@ -31,32 +32,11 @@ const QuestionResponse = React.createClass({
         </CardText>
 
         <CardActions>
-          <RadioButtonGroup
-            name={`edu${this.props.appId}`}
-            onChange={this.handleChange}
+          <RadioButtons
+            appId={this.props.appId}
             style={this.props.reviewed ? styleHidden : {}}
-          >
-            <RadioButton
-              value={1}
-              label="1"
-            />
-            <RadioButton
-              value={2}
-              label="2"
-            />
-            <RadioButton
-              value={3}
-              label="3"
-            />
-            <RadioButton
-              value={4}
-              label="4"
-            />
-            <RadioButton
-              value={5}
-              label="5"
-            />
-          </RadioButtonGroup>
+            handleChange={this.handleChange}
+          />
         </CardActions>
       </Card>
 

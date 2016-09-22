@@ -172,7 +172,7 @@ router.patch('/applications/:appId/overallScore', (req, res, next) => {
         .first()
     })
     .then((numberOfResponses) => {
-      numberOfCriteria = Number.parseInt(numberOfResponses.count);
+      numberOfCriteria += Number.parseInt(numberOfResponses.count);
       const overallScore = (total / numberOfCriteria).toFixed(1);
 
       return knex('applications')

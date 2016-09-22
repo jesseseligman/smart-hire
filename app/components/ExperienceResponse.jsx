@@ -2,7 +2,8 @@ import React from 'react';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import ButtonForm from 'components/ButtonForm';
 import weakKey from 'weak-key';
-import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
+import RadioButtons from 'components/RadioButtons';
+
 
 const ExperienceResponse = React.createClass({
 
@@ -36,33 +37,11 @@ const ExperienceResponse = React.createClass({
         })}
 
         <CardActions>
-          <RadioButtonGroup
-            name={`exp${this.props.appId}`}
-            onChange={this.handleChange}
+          <RadioButtons
+            appId={this.props.appId}
             style={this.props.reviewed ? styleHidden : {}}
-            >
-            <RadioButton
-              value={1}
-              label="1"
-            />
-            <RadioButton
-              value={2}
-              label="2"
-            />
-            <RadioButton
-              value={3}
-              label="3"
-            />
-            <RadioButton
-              value={4}
-              label="4"
-            />
-            <RadioButton
-              value={5}
-              label="5"
-            />
-          </RadioButtonGroup>
-          {/* <ButtonForm hidden={this.props.reviewed}/> */}
+            handleChange={this.handleChange}
+          />
         </CardActions>
 
       </Card>

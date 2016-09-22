@@ -1,6 +1,7 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import Snackbar from 'material-ui/Snackbar';
 
 const Login = React.createClass({
 
@@ -9,7 +10,8 @@ const Login = React.createClass({
       credentials: {
         email: '',
         password: ''
-      }
+      },
+      open: false
     };
   },
 
@@ -24,6 +26,24 @@ const Login = React.createClass({
 
   handleTouchTap() {
     this.props.submitLogin(this.state.credentials);
+  },
+
+  handleRequestClose() {
+    this.setState({ open: false });
+  },
+
+  handleKeyPress(event) {
+    if (event.key !== 'Enter') {
+      return;
+    }
+
+    const { email, password } = this.state.credentials;
+
+    if (email.trim() && password.trim()) {
+      return this.props.submitLogin(this.state.credentials);
+    }
+
+    this.setState({ open: true })
   },
 
   render() {
@@ -54,6 +74,7 @@ const Login = React.createClass({
             floatingLabelText="Password"
             // onBlur={this.handleBlur}
             onChange={this.handleChange}
+            onKeyPress={this.handleKeyPress}
             // onFocus={this.handleFocus}
             //placeholder="Password"
             type="password"
@@ -67,13 +88,16 @@ const Login = React.createClass({
             secondary={true}
             style={styleButton}
           />
-          {/* <label for="email">Email</label>
-          <input id="email" type="text" ref="email" placeholder="email"/>
-          <label for="password">Password</label>
-          <input id="password" type="password" ref="password" placeholder="password"/>
-          <input type="submit"/> */}
+
         </div>
       </div>
+
+      <Snackbar
+         open={this.state.open}
+         message='Please enter a username and a password.'
+         autoHideDuration={2500}
+         onRequestClose={this.handleRequestClose}
+       />
     </div>
   }
 })

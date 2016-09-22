@@ -16,16 +16,23 @@ const EmployerListing = React.createClass({
   },
 
   render() {
-
     const { job } = this.props;
+    const location = <div className="posted">
+      {`${job.city} - ${job.state}`}
+    </div>
+    const posted = <div className="posted">
+      Posted: <Timestamp time={job.createdAt} />
+    </div>
+    const subheader = <div>{location} {posted} </div>
 
     return <div className="card">
       <Card>
         <CardHeader
-          title={job.title}
+          title={`${job.title}`}
+          children={subheader}
           showExpandableButton={true}
         />
-        <h6>Job Posted: <Timestamp time={job.createdAt} /></h6>
+
         <CardText>
           This job has {job.unrated.toString()}  unrated applications.
         </CardText>

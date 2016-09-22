@@ -449,7 +449,6 @@ export function submitLogin(credentials) {
       .then((res) => {
         const { id } = res.data;
 
-        dispatch(fetchJobs(id));
         return dispatch(push(`/dashboard/${id}`));
       })
       .catch((err) => {
