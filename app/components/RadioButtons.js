@@ -4,6 +4,10 @@ import { RadioButton, RadioButtonGroup } from 'material-ui/RadioButton';
 const RadioButtons = React.createClass({
 
   render() {
+    const styleHidden = {
+      display: 'none'
+    };
+
     return <div>
       <RadioButtonGroup
         name={`edu${this.props.appId}`}

@@ -32,7 +32,7 @@ const EducationResponse = React.createClass({
         <CardActions>
           <RadioButtons
             appId={this.props.appId}
-            style={this.props.reviewed ? styleHidden : {}}
+            reviewed={this.props.reviewed}
             handleChange={this.handleChange}
           />
         </CardActions>

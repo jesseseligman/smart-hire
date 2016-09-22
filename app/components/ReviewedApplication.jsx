@@ -4,6 +4,7 @@ import ExperienceResponse from './ExperienceResponse';
 import FlatButton from 'material-ui/FlatButton';
 import QuestionResponse from './QuestionResponse';
 import weakKey from 'weak-key';
+import { hyphenizePhone } from '../utils';
 
 const ReviewedApplication = React.createClass({
 
@@ -21,7 +22,7 @@ const ReviewedApplication = React.createClass({
           <h3>Name: {anonymous ? 'Anonymous' : `${firstName} ${lastName}`}</h3>
           <h3>Email: {anonymous ? 'Anonymous' :
           email}</h3>
-          <h3>Phone: {phone}</h3>
+          <h3>Phone: {hyphenizePhone(phone)}</h3>
           <h3>Overall Rating: {overallRating}</h3>
 
           <FlatButton

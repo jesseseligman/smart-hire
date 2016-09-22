@@ -34,8 +34,8 @@ const QuestionResponse = React.createClass({
         <CardActions>
           <RadioButtons
             appId={this.props.appId}
-            style={this.props.reviewed ? styleHidden : {}}
             handleChange={this.handleChange}
+            reviewed={this.props.reviewed}
           />
         </CardActions>
       </Card>

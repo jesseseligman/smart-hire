@@ -2,6 +2,7 @@ import React from 'react';
 import weakKey from 'weak-key';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 import FlatButton from 'material-ui/FlatButton';
+import { hyphenizePhone } from '../utils';
 
 const Results = React.createClass({
 
@@ -42,7 +43,7 @@ const Results = React.createClass({
                 {reviewedApplication.anonymous ? 'Anonymous' : `${reviewedApplication.email}`}
               </TableRowColumn>
               <TableRowColumn>
-                {reviewedApplication.phone}
+                {hyphenizePhone(reviewedApplication.phone)}
               </TableRowColumn>
               <TableRowColumn>
                 {reviewedApplication.overallScore.toString()}
