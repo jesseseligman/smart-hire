@@ -37,8 +37,13 @@ const Main = React.createClass({
 
     return <div>
       <nav id="nav-bar">
-        <Link to={'/'}>
-          <div id="logo">Smart Hire</div>
+        <Link to={isLoggedIn ? `/dashboard/${cookie.load('userId')}` : '/'}>
+          <div id="logo-container">
+            <div id="logo">
+              Smart Hire
+            </div>
+            <img id="handshake" src={'./images/handshake.svg'} />
+          </div>
         </Link>
 
         <div id="hamburger">

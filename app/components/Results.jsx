@@ -21,7 +21,10 @@ const Results = React.createClass({
 
     return <div className="dashboard-container">
       <h3>{selectedJob.title} - {selectedJob.unrated} unreviewed. Review More</h3>
-      <h2>Reviewed Applications</h2>
+
+      <div className="page-title-conatiner">
+        <h3 className="page-title">Reviewed Applications</h3>
+      </div>
       <Table selectable={false}>
         <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
           <TableRow style={{textAlign: 'center'}}>

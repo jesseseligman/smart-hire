@@ -42,7 +42,10 @@ const ReviewExperience = React.createClass({
     const responses = this.props.exps.toReview;
 
     return <div className="dashboard-container">
-      <h3>Experience</h3>
+
+      <div className="page-title-conatiner">
+        <h3 className="page-title"> - Experience - </h3>
+      </div>
       {responses.map((response, index) => {
         return <ExperienceResponse
           rateExps={this.props.rateExps}
@@ -53,10 +56,12 @@ const ReviewExperience = React.createClass({
         />
       })}
 
-      <RaisedButton
-        label="Next"
-        onTouchTap={this.handleTouchTap}
-      />
+      <div className="next-button">
+        <RaisedButton
+          label="Next"
+          onTouchTap={this.handleTouchTap}
+        />
+      </div>
 
       <Snackbar
          open={this.state.open}

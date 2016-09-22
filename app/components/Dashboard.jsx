@@ -11,6 +11,10 @@ const Dashboard = React.createClass({
   render() {
 
     return <div className="dashboard-container">
+
+      <div className="page-title-conatiner">
+        <h3 className="page-title">Your Jobs</h3>
+      </div>
       {this.props.jobs.items.map((job) => {
 
         return <EmployerListing

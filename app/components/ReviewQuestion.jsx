@@ -34,7 +34,9 @@ const ReviewQuestion = React.createClass({
     const questionSet = array[0];
 
     return <div className="dashboard-container">
-      <h3>{questionSet.question}</h3>
+      <div className="page-title-conatiner">
+        <h3 className="page-title">{questionSet.question}</h3>
+      </div>
       {questionSet.responses.map((response, index) => {
         return <QuestionResponse
           rateResponse={this.props.rateResponse}
@@ -46,10 +48,13 @@ const ReviewQuestion = React.createClass({
         />
       })}
 
-      <RaisedButton
-        label={questionSet.index === toReview.length - 1 ? "Finish" : "Next"}
-        onTouchTap={() => this.handleTouchTap(toReview, questionSet.index)}
-      />
+      <div className="next-button">
+        <RaisedButton
+          label={questionSet.index === toReview.length - 1 ? "Finish" : "Next"}
+          onTouchTap={() => this.handleTouchTap(toReview, questionSet.index)}
+        />
+      </div>
+
     </div>
   }
 })
