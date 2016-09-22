@@ -4,6 +4,28 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 const Login = React.createClass({
 
+  getInitialState() {
+    return {
+      credentials: {
+        email: '',
+        password: ''
+      }
+    };
+  },
+
+  handleChange(event) {
+    const { name, value } = event.target;
+    const nextCredentials = Object.assign({}, this.state.credentials, {
+      [name]: value
+    });
+
+    this.setState({ credentials: nextCredentials });
+  },
+
+  handleTouchTap() {
+    this.props.submitLogin(this.state.credentials);
+  },
+
   render() {
 
     const styleButton = {
@@ -18,7 +40,7 @@ const Login = React.createClass({
             name="email"
             floatingLabelText="Email"
             // onBlur={this.handleBlur}
-            // onChange={this.handleChange}
+            onChange={this.handleChange}
             // onFocus={this.handleFocus}
             //placeholder="Email"
             // style={styleTextField}
@@ -31,7 +53,7 @@ const Login = React.createClass({
             name="password"
             floatingLabelText="Password"
             // onBlur={this.handleBlur}
-            //onChange={this.handleChange}
+            onChange={this.handleChange}
             // onFocus={this.handleFocus}
             //placeholder="Password"
             type="password"
@@ -41,7 +63,7 @@ const Login = React.createClass({
 
           <RaisedButton
             label="Login"
-            //onTouchTap={this.handleTouchTap}
+            onTouchTap={this.handleTouchTap}
             secondary={true}
             style={styleButton}
           />

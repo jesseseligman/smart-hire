@@ -50,6 +50,7 @@ const exps = require('./routes/exps');
 const questions = require('./routes/questions');
 const responses = require('./routes/responses');
 const users = require('./routes/users');
+const token = require('./routes/token');
 
 // ROUTE HANDLERS
 app.use('/api', jobs);
@@ -59,6 +60,7 @@ app.use('/api', exps);
 app.use('/api', questions);
 app.use('/api', responses);
 app.use('/api', users);
+app.use('/api', token);
 
 app.use('/api', (_req, res) => {
   res.sendStatus(404);

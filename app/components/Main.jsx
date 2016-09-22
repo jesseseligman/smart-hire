@@ -7,6 +7,10 @@ import cookie from 'react-cookie';
 
 const Main = React.createClass({
 
+  handleTouchTap() {
+    this.props.submitLogout();
+  },
+
   render() {
 
     const styleHamburger = {
@@ -73,6 +77,7 @@ const Main = React.createClass({
               label="Logout"
               labelStyle={styleButton}
               style={{color: '#F9FDFE'}}
+              onTouchTap={this.handleTouchTap}
             />
           </div>
         </div>

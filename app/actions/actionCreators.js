@@ -440,3 +440,40 @@ export function submitRegistration(user) {
       });
   };
 }
+
+// =============================== Login Actions =============================
+
+export function submitLogin(credentials) {
+  return (dispatch) => {
+    axios.post('/api/token', credentials)
+      .then((res) => {
+        const { id } = res.data;
+
+        dispatch(fetchJobs(id));
+        return dispatch(push(`/dashboard/${id}`));
+      })
+      .catch((err) => {
+
+        if (err.response.status === 401) {
+          console.log('login error');
+
+        }
+        else {
+          console.log('uh oh we messed up.');
+        }
+      });
+  };
+}
+
+export function submitLogout() {
+  return (dispatch) => {
+    axios.delete('/api/token')
+      .then(() => {
+
+        return dispatch(push('/'));
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+}
