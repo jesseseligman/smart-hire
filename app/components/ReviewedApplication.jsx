@@ -15,37 +15,62 @@ const ReviewedApplication = React.createClass({
 
 
   render() {
-    const { firstName, lastName, phone, email, anonymous, exps, edus, responses, overallRating, id } = this.props.applications.completeReviewedApplication;
+
+    const { firstName, lastName, phone, email, anonymous, exps, edus, responses, overallScore, id } = this.props.applications.completeReviewedApplication;
 
     return <div id="application-container">
-      <div id="applicant-info">
-          <h3>Name: {anonymous ? 'Anonymous' : `${firstName} ${lastName}`}</h3>
-          <h3>Email: {anonymous ? 'Anonymous' :
-          email}</h3>
-          <h3>Phone: {hyphenizePhone(phone)}</h3>
-          <h3>Overall Rating: {overallRating}</h3>
+      <h2 id="title-label">Applicant for:  {this.props.jobs.selectedJob.title}
+      </h2>
+      <div className="row-container">
+
+        <div id="applicant-info">
+
+          <h4>{anonymous ? 'Name: Anonymous' : `${firstName} ${lastName}`}</h4>
+          <h4>{anonymous ? 'Email: Anonymous' :
+            email}
+            </h4>
+          <h4>Phone: {hyphenizePhone(phone)}</h4>
+          <h4>Overall Rating: {overallScore}</h4>
 
           <FlatButton
             label={anonymous ? "Show Name and Email" :
-            "Hide Name and Email"}
-            labelStyle={{color: '#F9FDFE'}}
+              "Hide Name and Email"}
+            labelStyle={{color: '#174859'}}
             onTouchTap={() => this.handleTouchTap(id, anonymous)}
           />
-
+        </div>
       </div>
 
-      <EducationResponse edus={edus} reviewed={true}/>
 
-      <ExperienceResponse exps={exps} reviewed={true}/>
+      <div id="application-body-container">
+        <div id="background-container">
 
-      {responses.map((element) => {
-        return <QuestionResponse
-          key={weakKey(element)}
-          response={element.response}
-          question={element.question}
+        <div id="education">
+
+          <EducationResponse
+          edus={edus}
           reviewed={true}
-        />
-      })}
+          />
+        </div>
+
+          <div id="experience">
+            <ExperienceResponse
+            exps={exps}
+            reviewed={true}
+            />
+          </div>
+
+        </div>
+
+        {responses.map((element) => {
+          return <QuestionResponse
+            key={weakKey(element)}
+            response={element.response}
+            question={element.question}
+            reviewed={true}
+          />
+        })}
+      </div>
 
     </div>
   }
