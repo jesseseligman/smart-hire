@@ -13,7 +13,7 @@
     "lint": "eslint --ext .js,.jsx --ignore-pattern public",
     "start": "brunch watch --server",
     "knex": "knex",
-    "heroku-postbuild": "knex migrate:latest",
+    "heroku-postbuild": "brunch build --production; knex migrate:latest",
     "nodemon": "nodemon server.js",
     "nf": "nf start",
     "test": "mocha",
