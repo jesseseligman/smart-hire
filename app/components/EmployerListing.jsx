@@ -7,6 +7,7 @@ const EmployerListing = React.createClass({
 
   handleTouchTapContacts(job) {
     this.props.selectJob(job);
+    this.props.fetchUnreviewedApplications(job.id);
     return this.props.fetchReviewedApplications(job.id);
   },
 

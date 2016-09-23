@@ -3,6 +3,7 @@ import weakKey from 'weak-key';
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
 import FlatButton from 'material-ui/FlatButton';
 import { hyphenizePhone } from '../utils';
+import { Link } from 'react-router';
 
 const Results = React.createClass({
 
@@ -16,23 +17,36 @@ const Results = React.createClass({
   },
 
   render() {
+    const styleScoreWidth = { width: '2em' };
+    const styleButtonWidth = { width: '6em' };
 
     const { selectedJob } = this.props.jobs;
 
     return <div className="dashboard-container">
-      <h3>{selectedJob.title} - {selectedJob.unrated} unreviewed. Review More</h3>
+
 
       <div className="page-title-conatiner">
         <h3 className="page-title">Reviewed Applications</h3>
+        <div>
+          <h3 id="job-header">
+            {selectedJob.title} - {selectedJob.unrated} unreviewed.
+          </h3>
+          <div id="review">
+            <Link to={`/review/${this.props.jobs.selectedJob.id}/education`}>
+              Review More
+            </Link>
+          </div>
+        </div>
       </div>
+
       <Table selectable={false}>
         <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
           <TableRow style={{textAlign: 'center'}}>
             <TableHeaderColumn>Applicant</TableHeaderColumn>
             <TableHeaderColumn>Email</TableHeaderColumn>
             <TableHeaderColumn>Phone</TableHeaderColumn>
-            <TableHeaderColumn>Score</TableHeaderColumn>
-            <TableHeaderColumn></TableHeaderColumn>
+            <TableHeaderColumn style={styleScoreWidth}>Score</TableHeaderColumn>
+            <TableHeaderColumn style={styleButtonWidth}></TableHeaderColumn>
             <TableHeaderColumn></TableHeaderColumn>
           </TableRow>
         </TableHeader>
@@ -48,10 +62,10 @@ const Results = React.createClass({
               <TableRowColumn>
                 {hyphenizePhone(reviewedApplication.phone)}
               </TableRowColumn>
-              <TableRowColumn>
+              <TableRowColumn style={styleScoreWidth}>
                 {reviewedApplication.overallScore.toString()}
               </TableRowColumn>
-              <TableRowColumn>
+              <TableRowColumn style={styleButtonWidth}>
                 <FlatButton
                   label={reviewedApplication.anonymous ? 'Show Name' :
                   'Hide Name'}

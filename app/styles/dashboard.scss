@@ -11,13 +11,28 @@
 .page-title {
   font-family: 'Scope One';
   font-size: 2em;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
 }
 
 .page-title-conatiner {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#job-header {
+  font-family: 'Scope One';
+  font-size: 1em;
+  display: inline;
+}
+
+#review {
+  font-family: 'Scope One';
+  font-size: 1em;
+  display: inline;
+  color: #B85948;
+  margin-left: 5px;
 }
