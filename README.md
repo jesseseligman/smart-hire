@@ -1,83 +1,28 @@
-# with-react-material
+##What is it?
+Smart hire is a tool for minimizing the impact of implicit bias on hiring decisions. It allows employers to review and rate applications without showing them any identifying information about the applicants. After they have rated applications they can choose whether or not to reveal contact information.
 
-Ryan Sobol's React and Material skeleton for Brunch
+This project was inspired by an [episode](http://freakonomics.com/podcast/gender-barriers/) of the podcast Freakonomics. In particular, it was inspired by the discussion with [Iris Bohnet](http://scholar.harvard.edu/iris_bohnet/home), a behavioral economist at Harvard, in which she lays out a basic methodology for making the hiring process more fair and better at predicting job performance. 
 
-## Dependencies
+##Who has this problem?
+While the level of interest in mitigating implicit bias varies, all employers have this problem to some extent or another. Social science research suggests that everyone holds unconscious biases regarding race, gender identity, sexual orientation, etc, and that these biases affect our behavior. In order to create a hiring process that is truly equitable and that is based solely on merit, employers must actively seek to mitigate the impact of implicit bias.
 
-Install the [Brunch](http://brunch.io) package globally with NPM.
+##How does this project solve this problem?
+This project makes it easy for employers to review job applications without revealing the applicants' names and emails, information that may give clues about someone's race or gender. By hiding this information during the review process, employers using Smart Hire can simply rate the different parts of an application and then receive an aggregate overall score for each application. 
 
-```shell
-npm install -g brunch
-```
+##What tech was used?
 
-## Usage
+####Client side
+* React
+* Redux
+* Material UI
 
-Create a new React application based on this Brunch skeleton and install its dependencies.
+####Server side
+* Node.js
+* Express
+* Knex
+* PostgreSQL
 
-```shell
-brunch new path/to/app --skeleton ryansobol/with-react-material
-```
+####Testing
+* Mocha
+* Supertest
 
-The application's code lives in the `app` directory.
-
-```shell
-la app
-```
-
-Static files are placed in the `app/assets` directory and are copied to the `public` directory on build.
-
-```shell
-la app/assets
-```
-
-React components are placed in the `app/components` directory and are combined into the `public/app.js` file on build.
-
-**NOTE:** Each React component lives in a module so can be shared with other modules using [ES6 module](https://hacks.mozilla.org/2015/08/es6-in-depth-modules/) syntax.
-
-```shell
-la app/components
-```
-
-CSS stylesheets are placed in the `app/styles` directory and are combined into the `public/app.css` file on build.
-
-```shell
-la app/styles
-```
-
-On each build, the application's files are saved to the `public` directory and served by the HTTP server.
-
-```shell
-la public
-```
-
-Watch the project for changes and launch an HTTP server.
-
-**NOTE:** Press `Ctrl + C` to quit.
-
-```shell
-npm start
-```
-
-In a new Terminal tab, navigate back the the project directory.
-
-```shell
-cd path/to/app
-```
-
-Take a look at the `public` directory to see what Brunch created.
-
-```shell
-la public
-```
-
-Open the application in your default browser.
-
-```shell
-open http://localhost:8000/
-```
-
-## Resources
-
-- [Brunch](http://brunch.io)
-- [Material-UI](http://www.material-ui.com/)
-- [React](https://facebook.github.io/react/)
