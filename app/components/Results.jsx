@@ -1,9 +1,10 @@
-import React from 'react';
-import weakKey from 'weak-key';
-import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
+/* eslint-disable max-len */
+import { Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn } from 'material-ui/Table';
 import FlatButton from 'material-ui/FlatButton';
-import { hyphenizePhone } from '../utils';
 import { Link } from 'react-router';
+import React from 'react';
+import { hyphenizePhone } from '../utils';
+import weakKey from 'weak-key';
 
 const Results = React.createClass({
 
@@ -19,11 +20,9 @@ const Results = React.createClass({
   render() {
     const styleScoreWidth = { width: '2em' };
     const styleButtonWidth = { width: '6em' };
-
     const { selectedJob } = this.props.jobs;
 
     return <div className="dashboard-container">
-
 
       <div className="page-title-conatiner">
         <h3 className="page-title">Reviewed Applications</h3>
@@ -40,21 +39,21 @@ const Results = React.createClass({
       </div>
 
       <Table selectable={false}>
-        <TableHeader displaySelectAll={false} adjustForCheckbox={false}>
-          <TableRow style={{textAlign: 'center'}}>
+        <TableHeader adjustForCheckbox={false} displaySelectAll={false}>
+          <TableRow style={{ textAlign: 'center' }}>
             <TableHeaderColumn>Applicant</TableHeaderColumn>
             <TableHeaderColumn>Email</TableHeaderColumn>
             <TableHeaderColumn>Phone</TableHeaderColumn>
             <TableHeaderColumn style={styleScoreWidth}>Score</TableHeaderColumn>
-            <TableHeaderColumn style={styleButtonWidth}></TableHeaderColumn>
-            <TableHeaderColumn></TableHeaderColumn>
+            <TableHeaderColumn style={styleButtonWidth} />
+            <TableHeaderColumn />
           </TableRow>
         </TableHeader>
         <TableBody displayRowCheckbox={false}>
           {this.props.applications.reviewedApplications.map((reviewedApplication) => {
             return <TableRow key={weakKey(reviewedApplication)}>
               <TableRowColumn>
-              {reviewedApplication.anonymous ? 'Anonymous' : `${reviewedApplication.firstName} ${reviewedApplication.lastName}`}
+                {reviewedApplication.anonymous ? 'Anonymous' : `${reviewedApplication.firstName} ${reviewedApplication.lastName}`}
               </TableRowColumn>
               <TableRowColumn>
                 {reviewedApplication.anonymous ? 'Anonymous' : `${reviewedApplication.email}`}
@@ -67,8 +66,7 @@ const Results = React.createClass({
               </TableRowColumn>
               <TableRowColumn style={styleButtonWidth}>
                 <FlatButton
-                  label={reviewedApplication.anonymous ? 'Show Name' :
-                  'Hide Name'}
+                  label={reviewedApplication.anonymous ? 'Show Name' : 'Hide Name'}
                   onTouchTap={() => this.handleTouchTap(reviewedApplication)}
                 />
               </TableRowColumn>
@@ -78,12 +76,12 @@ const Results = React.createClass({
                   onTouchTap={() => this.handleTouchTapApplication(reviewedApplication.id)}
                 />
               </TableRowColumn>
-            </TableRow>
+            </TableRow>;
           })}
         </TableBody>
       </Table>
-    </div>
+    </div>;
   }
-})
+});
 
 export default Results;

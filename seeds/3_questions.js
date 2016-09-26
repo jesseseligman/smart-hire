@@ -1,6 +1,8 @@
 'use strict';
 
-exports.seed = function(knex, Promise) {
+/* eslint-disable camelcase, max-len */
+
+exports.seed = function(knex) {
   return knex('questions').del()
     .then(() => {
       return knex('questions').insert([{

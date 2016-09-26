@@ -3,11 +3,12 @@
 const boom = require('boom');
 const express = require('express');
 const knex = require('../knex');
-const ev = require('express-validation');
-// const validations = require('../validations/users');
-const { camelizeKeys, decamelizeKeys } = require('humps');
-// const { checkAuth } = require('../middleware');
+const { camelizeKeys } = require('humps');
 const { getUnrated } = require('../utils');
+
+// const ev = require('express-validation');
+// const validations = require('../validations/users');
+// const { checkAuth } = require('../middleware');
 
 const router = express.Router(); // eslint-disable-line new-cap
 
@@ -24,7 +25,7 @@ router.get('/jobs/:userId', (req, res, next) => {
 
       return knex('jobs')
         .select('overall_score', 'job_id')
-        .innerJoin('applications', 'jobs.id', 'applications.job_id')
+        .innerJoin('applications', 'jobs.id', 'applications.job_id');
     })
     .then((applications) => {
       getUnrated(jobs, applications);
@@ -34,7 +35,5 @@ router.get('/jobs/:userId', (req, res, next) => {
       next(boom.wrap(err));
     });
 });
-
-
 
 module.exports = router;

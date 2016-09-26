@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router';
 import FlatButton from 'material-ui/FlatButton';
 import IconButton from 'material-ui/IconButton';
+import { Link } from 'react-router';
 import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
+import React from 'react';
 import cookie from 'react-cookie';
 
 const Main = React.createClass({
@@ -12,17 +12,16 @@ const Main = React.createClass({
   },
 
   render() {
-
     const styleHamburger = {
       mediumIcon: {
         width: 48,
-        height: 48,
+        height: 48
       },
       medium: {
         width: 96,
         height: 96,
-        padding: 24,
-      },
+        padding: 24
+      }
     };
 
     const styleButton = {
@@ -57,32 +56,32 @@ const Main = React.createClass({
 
         <div id="nav-button-container">
 
-          <div style={isLoggedIn ? styleHidden : {} }>
+          <div style={isLoggedIn ? styleHidden : {}}>
             <Link to={'/register'}>
               <FlatButton
                 label="Sign Up"
                 labelStyle={styleButton}
-                style={{color: '#F9FDFE'}}
+                style={{ color: '#F9FDFE' }}
               />
             </Link>
           </div>
 
-          <div style={isLoggedIn ? styleHidden : {} }>
+          <div style={isLoggedIn ? styleHidden : {}}>
             <Link to={'/login'}>
               <FlatButton
                 label="Login"
                 labelStyle={styleButton}
-                style={{color: '#F9FDFE'}}
+                style={{ color: '#F9FDFE' }}
               />
             </Link>
           </div>
 
-          <div style={isLoggedIn ? styleHidden : {} }>
+          <div style={isLoggedIn ? styleHidden : {}}>
             <Link>
               <FlatButton
                 label="Find a job"
                 labelStyle={styleButton}
-                style={{color: '#F9FDFE'}}
+                style={{ color: '#F9FDFE' }}
               />
             </Link>
           </div>
@@ -92,7 +91,7 @@ const Main = React.createClass({
               <FlatButton
                 label="Your Jobs"
                 labelStyle={styleButton}
-                style={{color: '#F9FDFE'}}
+                style={{ color: '#F9FDFE' }}
               />
             </Link>
           </div>
@@ -101,18 +100,16 @@ const Main = React.createClass({
             <FlatButton
               label="Logout"
               labelStyle={styleButton}
-              style={{color: '#F9FDFE'}}
               onTouchTap={this.handleTouchTap}
+              style={{ color: '#F9FDFE' }}
             />
           </div>
         </div>
       </nav>
 
       {React.cloneElement(this.props.children, this.props)}
-    </div>
+    </div>;
   }
 });
-
-
 
 export default Main;

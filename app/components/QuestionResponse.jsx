@@ -1,8 +1,7 @@
-import React from 'react';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import ButtonForm from 'components/ButtonForm';
+// eslint-disable-next-line max-len
+import { Card, CardActions, CardText, CardTitle } from 'material-ui/Card';
 import RadioButtons from 'components/RadioButtons';
-
+import React from 'react';
 
 const QuestionResponse = React.createClass({
 
@@ -20,29 +19,25 @@ const QuestionResponse = React.createClass({
   render() {
     const { alias, question, response } = this.props;
 
-    const styleHidden = { display: 'none' };
-
     return <div className="card">
       <Card>
         <CardTitle
-          title={ alias ? `Applicant ${alias}` : question }
+          title={alias ? `Applicant ${alias}` : question}
         />
-        <CardText style={{paddingTop: '0px'}}>
+        <CardText style={{ paddingTop: '0px' }}>
           {response}
         </CardText>
 
         <CardActions>
           <RadioButtons
             appId={this.props.appId}
-            handleChange={this.handleChange}
+            onChange={this.handleChange}
             reviewed={this.props.reviewed}
           />
         </CardActions>
       </Card>
-
-
-    </div>
+    </div>;
   }
-})
+});
 
 export default QuestionResponse;

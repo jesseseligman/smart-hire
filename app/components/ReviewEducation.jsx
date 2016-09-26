@@ -1,21 +1,21 @@
-import React from 'react';
 import EducationResponse from './EducationResponse';
-import weakKey from 'weak-key';
 import RaisedButton from 'material-ui/RaisedButton';
+import React from 'react';
 import Snackbar from 'material-ui/Snackbar';
+import weakKey from 'weak-key';
 
 const ReviewEducation = React.createClass({
 
   getInitialState() {
     return {
       open: false
-    }
+    };
   },
 
   componentWillMount() {
     const appIds = this.props.applications.appsToReview.map((app) => {
       return app.id;
-    })
+    });
 
     return this.props.fetchEdus(appIds);
   },
@@ -47,7 +47,6 @@ const ReviewEducation = React.createClass({
   },
 
   render() {
-
     const responses = this.props.edus.toReview;
 
     return <div className="dashboard-container">
@@ -57,12 +56,12 @@ const ReviewEducation = React.createClass({
 
       {responses.map((response, index) => {
         return <EducationResponse
-          rateEdus={this.props.rateEdus}
-          key={weakKey(response)}
           alias={index + 1}
-          edus={response.edus}
           appId={response.applicationId}
-        />
+          edus={response.edus}
+          key={weakKey(response)}
+          rateEdus={this.props.rateEdus}
+        />;
       })}
 
       <div className="next-button">
@@ -73,13 +72,13 @@ const ReviewEducation = React.createClass({
       </div>
 
       <Snackbar
-         open={this.state.open}
-         message='Please provide rating for each applicant.'
-         autoHideDuration={2500}
-         onRequestClose={this.handleRequestClose}
-       />
-    </div>
+        autoHideDuration={2500}
+        message="Please provide rating for each applicant."
+        onRequestClose={this.handleRequestClose}
+        open={this.state.open}
+      />
+    </div>;
   }
-})
+});
 
 export default ReviewEducation;

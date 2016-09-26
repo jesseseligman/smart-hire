@@ -1,9 +1,8 @@
-import React from 'react';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import ButtonForm from 'components/ButtonForm';
-import weakKey from 'weak-key';
+// eslint-disable-next-line max-len
+import { Card, CardActions, CardHeader, CardText, CardTitle } from 'material-ui/Card';
 import RadioButtons from 'components/RadioButtons';
-
+import React from 'react';
+import weakKey from 'weak-key';
 
 const ExperienceResponse = React.createClass({
 
@@ -12,43 +11,41 @@ const ExperienceResponse = React.createClass({
   },
 
   render() {
-    const styleHidden = { display: 'none' };
-
     return <div className="card">
       <Card>
         <CardTitle
+
+          // eslint-disable-next-line max-len
           title={this.props.alias ? `Applicant ${this.props.alias}` : 'Experience'}
         />
 
         {this.props.exps.map((exp) => {
           return <div className="response-item" key={weakKey(exp)}>
             <CardHeader
-              title={exp.title}
               subtitle={exp.company}
+              title={exp.title}
             >
               <div>{`${exp.start} - ${exp.end}`}</div>
             </CardHeader>
             <CardText
-              style={{paddingTop: '0px'}}
+              style={{ paddingTop: '0px' }}
             >
               {exp.description}
             </CardText>
-          </div>
+          </div>;
         })}
 
         <CardActions>
           <RadioButtons
             appId={this.props.appId}
+            onChange={this.handleChange}
             reviewed={this.props.reviewed}
-            handleChange={this.handleChange}
           />
         </CardActions>
-
       </Card>
 
-
-    </div>
+    </div>;
   }
-})
+});
 
 export default ExperienceResponse;

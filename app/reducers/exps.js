@@ -1,18 +1,19 @@
-import { REQUEST_EXPS, RECEIVE_EXPS } from '../actions/actionCreators';
+import { RECEIVE_EXPS, REQUEST_EXPS } from '../actions/actionCreators';
 
-function exps(state={
+const exps = (state = {
   isFetching: false,
-  toReview: [] }, action) {
-  switch(action.type) {
+  toReview: [] }, action) => {
+  switch (action.type) {
     case REQUEST_EXPS:
-      return Object.assign({}, state, {isFetching: true});
+      return Object.assign({}, state, { isFetching: true });
 
     case RECEIVE_EXPS:
-      return Object.assign({}, state, {isFetching: false, toReview: action.expsToReview});
+      // eslint-disable-next-line max-len
+      return Object.assign({}, state, { isFetching: false, toReview: action.expsToReview });
 
     default:
       return state;
   }
-}
+};
 
 export default exps;

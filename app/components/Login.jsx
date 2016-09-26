@@ -1,7 +1,7 @@
-import React from 'react';
-import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import React from 'react';
 import Snackbar from 'material-ui/Snackbar';
+import TextField from 'material-ui/TextField';
 
 const Login = React.createClass({
 
@@ -43,11 +43,10 @@ const Login = React.createClass({
       return this.props.submitLogin(this.state.credentials);
     }
 
-    this.setState({ open: true })
+    this.setState({ open: true });
   },
 
   render() {
-
     const styleButton = {
       marginTop: '20px',
       marginBottom: '40px'
@@ -58,29 +57,18 @@ const Login = React.createClass({
         <div id="login-box">
           <h3 id="login-header">Login to Smart Hire</h3>
           <TextField
-            name="email"
             floatingLabelText="Email"
-            // onBlur={this.handleBlur}
+            name="email"
             onChange={this.handleChange}
-            // onFocus={this.handleFocus}
-            //placeholder="Email"
-            // style={styleTextField}
             type="email"
-            // underlineFocusStyle={styleLabel}
-            // value={credentials.email}
           />
 
           <TextField
-            name="password"
             floatingLabelText="Password"
-            // onBlur={this.handleBlur}
+            name="password"
             onChange={this.handleChange}
             onKeyPress={this.handleKeyPress}
-            // onFocus={this.handleFocus}
-            //placeholder="Password"
             type="password"
-            //underlineFocusStyle={styleLabel}
-            //value={credentials.password}
           />
 
           <RaisedButton
@@ -94,14 +82,14 @@ const Login = React.createClass({
       </div>
 
       <Snackbar
-         open={this.state.open}
-         message='Please enter a username and a password.'
-         autoHideDuration={2500}
-         onRequestClose={this.handleRequestClose}
-       />
+        autoHideDuration={2500}
+        message="Please enter a username and a password."
+        onRequestClose={this.handleRequestClose}
+        open={this.state.open}
+      />
 
-    </div>
+    </div>;
   }
-})
+});
 
 export default Login;

@@ -1,9 +1,7 @@
-import React from 'react';
-import MenuItem from 'material-ui/MenuItem';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
-import SelectField from 'material-ui/SelectField';
 import Joi from 'joi';
+import RaisedButton from 'material-ui/RaisedButton';
+import React from 'react';
+import TextField from 'material-ui/TextField';
 
 const schema = {
   email: Joi.string()
@@ -49,22 +47,6 @@ const schema = {
 };
 
 const Register = React.createClass({
-  // getInitialState() {
-  //   return {
-  //     selectedState: null
-  //   }
-  // },
-  //
-  // handleChange(event) {
-  //   const { name, value } = event.target;
-  //
-  //   const update = { [name]: value };
-  //
-  //   this.props.updateRegistration(update);
-  //
-  //   this.props.validateRegistration(name, value);
-  // },
-
   getInitialState() {
     return {
       errors: {},
@@ -135,167 +117,124 @@ const Register = React.createClass({
     const { errors, user } = this.state;
 
     return <div>
-    <div id="register-container">
-      <div id="register-box">
-        <h3 id="register-header">Register for Smart Hire</h3>
+      <div id="register-container">
+        <div id="register-box">
+          <h3 id="register-header">Register for Smart Hire</h3>
 
-        <div className="pair-container">
+          <div className="pair-container">
+            <TextField
+              errorText={errors.firstName}
+              floatingLabelText="First Name"
+              name="firstName"
+              onChange={this.handleChange}
+              type="text"
+              value={user.firstName}
+            />
+
+            <TextField
+              errorText={errors.lastName}
+              floatingLabelText="Last Name"
+              name="lastName"
+              onChange={this.handleChange}
+              type="text"
+              value={user.lastName}
+            />
+          </div>
+
+          <div className="pair-container">
+            <TextField
+              errorText={errors.email}
+              floatingLabelText="Email"
+              name="email"
+              onChange={this.handleChange}
+              type="email"
+              value={user.email}
+            />
+
+            <TextField
+              errorText={errors.phone}
+              floatingLabelText="Phone"
+              name="phone"
+              onChange={this.handleChange}
+              type="text"
+              value={user.phone}
+            />
+          </div>
+
+          <div className="pair-container">
+            <TextField
+              errorText={errors.password}
+              floatingLabelText="Password"
+              name="password"
+              onChange={this.handleChange}
+              type="password"
+              value={user.password}
+            />
+
+            <TextField
+              floatingLabelText="Confirm Password"
+              name="confirmPassword"
+              onChange={this.handleChange}
+              type="password"
+              value={user.confirmPassword}
+            />
+          </div>
+
+          <div className="pair-container">
+
+            <TextField
+              errorText={errors.companyName}
+              floatingLabelText="Company Name"
+              name="companyName"
+              onChange={this.handleChange}
+              style={{ width: '30%', marginLeft: '20px' }}
+              type="text"
+              value={user.companyName}
+            />
+
+            <TextField
+              errorText={errors.city}
+              floatingLabelText="City"
+              name="city"
+              onChange={this.handleChange}
+              style={{ width: '30%' }}
+              type="text"
+              value={user.city}
+            />
+
+            <TextField
+              errorText={errors.state}
+              floatingLabelText="State"
+              name="state"
+              onChange={this.handleChange}
+              style={{ width: '13%' }}
+              type="text"
+              value={user.state}
+            />
+          </div>
+
           <TextField
-            name="firstName"
-            floatingLabelText="First Name"
-            errorText={errors.firstName}
-            // onBlur={this.handleBlur}
+            floatingLabelText="Describe your company:"
+            inputStyle={{ height: '120px' }}
+            multiLine={true}
+            name="companyDescription"
             onChange={this.handleChange}
-            // onFocus={this.handleFocus}
-            //placeholder="Password"
+            style={{ width: '88%' }}
+            textareaStyle={{ height: '70px', width: '100%' }}
             type="text"
-            //underlineFocusStyle={styleLabel}
-            value={user.firstName}
+            value={user.companyDescription}
           />
 
-          <TextField
-            name="lastName"
-            floatingLabelText="Last Name"
-            errorText={errors.lastName}
-            // onBlur={this.handleBlur}
-            onChange={this.handleChange}
-            // onFocus={this.handleFocus}
-            //placeholder="Password"
-            type="text"
-            //underlineFocusStyle={styleLabel}
-            value={user.lastName}
+          <RaisedButton
+            label="Register"
+            onTouchTap={this.handleTouchTap}
+            secondary={true}
+            style={styleButton}
           />
         </div>
-
-        <div className="pair-container">
-          <TextField
-            name="email"
-            floatingLabelText="Email"
-            errorText={errors.email}
-            // onBlur={this.handleBlur}
-            onChange={this.handleChange}
-            // onFocus={this.handleFocus}
-            //placeholder="Email"
-            // style={styleTextField}
-            type="email"
-            // underlineFocusStyle={styleLabel}
-            value={user.email}
-          />
-
-          <TextField
-            name="phone"
-            floatingLabelText="Phone"
-            errorText={errors.phone}
-            // onBlur={this.handleBlur}
-            onChange={this.handleChange}
-            // onFocus={this.handleFocus}
-            //placeholder="Email"
-            // style={styleTextField}
-            type="text"
-            // underlineFocusStyle={styleLabel}
-            value={user.phone}
-          />
-        </div>
-
-        <div className="pair-container">
-          <TextField
-            name="password"
-            floatingLabelText="Password"
-            errorText={errors.password}
-            // onBlur={this.handleBlur}
-            onChange={this.handleChange}
-            // onFocus={this.handleFocus}
-            //placeholder="Password"
-            type="password"
-            //underlineFocusStyle={styleLabel}
-            value={user.password}
-          />
-
-          <TextField
-            name="confirmPassword"
-            floatingLabelText="Confirm Password"
-            // onBlur={this.handleBlur}
-            onChange={this.handleChange}
-            // onFocus={this.handleFocus}
-            //placeholder="Password"
-            type="password"
-            //underlineFocusStyle={styleLabel}
-            value={user.confirmPassword}
-          />
-        </div>
-
-        <div className="pair-container">
-
-          <TextField
-            name="companyName"
-            floatingLabelText="Company Name"
-            errorText={errors.companyName}
-            style={{width: '30%', marginLeft: '20px'}}
-            // onBlur={this.handleBlur}
-            onChange={this.handleChange}
-            // onFocus={this.handleFocus}
-            //placeholder="Password"
-            type="text"
-            //underlineFocusStyle={styleLabel}
-            value={user.companyName}
-          />
-
-          <TextField
-            name="city"
-            floatingLabelText="City"
-            errorText={errors.city}
-            style={{width: '30%'}}
-            // onBlur={this.handleBlur}
-            onChange={this.handleChange}
-            // onFocus={this.handleFocus}
-            //placeholder="Password"
-            type="text"
-            //underlineFocusStyle={styleLabel}
-            value={user.city}
-          />
-
-          <TextField
-            name="state"
-            floatingLabelText="State"
-            errorText={errors.state}
-            style={{width: '13%'}}
-            // onBlur={this.handleBlur}
-            onChange={this.handleChange}
-            // onFocus={this.handleFocus}
-            //placeholder="Password"
-            type="text"
-            //underlineFocusStyle={styleLabel}
-            value={user.state}
-          />
-        </div>
-
-        <TextField
-          name="companyDescription"
-          floatingLabelText="Describe your company:"
-          // onBlur={this.handleBlur}
-          onChange={this.handleChange}
-          // onFocus={this.handleFocus}
-          //placeholder="Password"
-          multiLine={true}
-          style={{width: '88%'}}
-          inputStyle={{ height: '120px' }}
-          textareaStyle={{ height: '70px', width: '100%'}}
-          type="text"
-          //underlineFocusStyle={styleLabel}
-          value={user.companyDescription}
-        />
-
-        <RaisedButton
-          label="Register"
-          secondary={true}
-          style={styleButton}
-          onTouchTap={this.handleTouchTap}
-        />
       </div>
-    </div>
-
-    </div>
+    </div>;
   }
-})
+});
 
 export default Register;

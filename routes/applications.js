@@ -1,15 +1,19 @@
 'use strict';
 
+/* eslint-disable camelcase */
+
 const boom = require('boom');
 const express = require('express');
 const knex = require('../knex');
-const ev = require('express-validation');
-// const validations = require('../validations/applications');
-const { camelizeKeys, decamelizeKeys } = require('humps');
-// const { checkAuth } = require('../middleware');
+const { camelizeKeys } = require('humps');
 const { separateDates } = require('../utils');
 
+// const ev = require('express-validation');
+// const validations = require('../validations/applications');
+// const { checkAuth } = require('../middleware');
+
 const router = express.Router(); // eslint-disable-line new-cap
+
 router.get('/applications/unrated/:jobId', (req, res, next) => {
   const jobId = Number.parseInt(req.params.jobId);
 
@@ -42,8 +46,8 @@ router.get('/applications/rated/:jobId', (req, res, next) => {
     })
     .catch((err) => {
       next(boom.wrap(err));
-    })
-})
+    });
+});
 
 router.get('/applications/:appId', (req, res, next) => {
   const applicationId = Number.parseInt(req.params.appId);
@@ -54,7 +58,7 @@ router.get('/applications/:appId', (req, res, next) => {
     .where('id', applicationId)
     .first()
     .then((application) => {
-      result = camelizeKeys(application)
+      result = camelizeKeys(application);
 
       return knex('questions')
         .select('questions.text as question', 'responses.text as response')
@@ -67,14 +71,14 @@ router.get('/applications/:appId', (req, res, next) => {
 
       return knex('exps')
         .where('application_id', result.id)
-        .orderBy('application_id')
+        .orderBy('application_id');
     })
     .then((rows) => {
       result.exps = camelizeKeys(separateDates(rows));
 
       return knex('edus')
         .where('application_id', result.id)
-        .orderBy('application_id')
+        .orderBy('application_id');
     })
     .then((rows) => {
       result.edus = camelizeKeys(separateDates(rows));
@@ -83,7 +87,7 @@ router.get('/applications/:appId', (req, res, next) => {
     })
     .catch((err) => {
       next(boom.wrap(err));
-    })
+    });
 });
 
 router.patch('/applications/:appId/edus', (req, res, next) => {
@@ -92,9 +96,8 @@ router.patch('/applications/:appId/edus', (req, res, next) => {
 
   knex('applications')
     .where('id', appId)
-    .update({edus_rating: edusRating}, '*')
+    .update({ edus_rating: edusRating }, '*')
     .then((rows) => {
-
       res.send(rows);
     })
     .catch((err) => {
@@ -108,9 +111,8 @@ router.patch('/applications/:appId/exps', (req, res, next) => {
 
   knex('applications')
     .where('id', appId)
-    .update({exps_rating: expsRating}, '*')
+    .update({ exps_rating: expsRating }, '*')
     .then((rows) => {
-
       res.send(rows);
     })
     .catch((err) => {
@@ -124,9 +126,8 @@ router.patch('/applications/:appId/anonymous', (req, res, next) => {
 
   knex('applications')
     .where('id', appId)
-    .update({anonymous: isAnonymous}, '*')
+    .update({ anonymous: isAnonymous }, '*')
     .then((rows) => {
-
       res.send(rows);
     })
     .catch((err) => {
@@ -145,23 +146,22 @@ router.patch('/applications/:appId/overallScore', (req, res, next) => {
     .where('id', appId)
     .first()
     .then((row) => {
-        total = row.exps_rating;
-        numberOfCriteria += 1;
+      total = row.exps_rating;
+      numberOfCriteria += 1;
 
       return knex('applications')
         .select('edus_rating')
         .where('id', appId)
-        .first()
+        .first();
     })
     .then((row) => {
-        total += row.edus_rating;
-        numberOfCriteria += 1;
-
+      total += row.edus_rating;
+      numberOfCriteria += 1;
 
       return knex('responses')
         .sum('rating')
         .where('application_id', appId)
-        .first()
+        .first();
     })
     .then((responseTotal) => {
       total += Number.parseInt(responseTotal.sum);
@@ -169,7 +169,7 @@ router.patch('/applications/:appId/overallScore', (req, res, next) => {
       return knex('responses')
         .count('rating')
         .where('application_id', appId)
-        .first()
+        .first();
     })
     .then((numberOfResponses) => {
       numberOfCriteria += Number.parseInt(numberOfResponses.count);
@@ -177,10 +177,9 @@ router.patch('/applications/:appId/overallScore', (req, res, next) => {
 
       return knex('applications')
         .where('id', appId)
-        .update({ overall_score: overallScore }, '*')
+        .update({ overall_score: overallScore }, '*');
     })
     .then((rows) => {
-
       res.send(rows);
     })
     .catch((err) => {

@@ -1,15 +1,15 @@
-import React from 'react';
 import ExperienceResponse from './ExperienceResponse';
-import weakKey from 'weak-key';
 import RaisedButton from 'material-ui/RaisedButton';
+import React from 'react';
 import Snackbar from 'material-ui/Snackbar';
+import weakKey from 'weak-key';
 
 const ReviewExperience = React.createClass({
 
   getInitialState() {
     return {
       open: false
-    }
+    };
   },
 
   handleTouchTap() {
@@ -48,12 +48,12 @@ const ReviewExperience = React.createClass({
       </div>
       {responses.map((response, index) => {
         return <ExperienceResponse
-          rateExps={this.props.rateExps}
-          key={weakKey(response)}
           alias={index + 1}
-          exps={response.exps}
           appId={response.applicationId}
-        />
+          exps={response.exps}
+          key={weakKey(response)}
+          rateExps={this.props.rateExps}
+        />;
       })}
 
       <div className="next-button">
@@ -64,13 +64,13 @@ const ReviewExperience = React.createClass({
       </div>
 
       <Snackbar
-         open={this.state.open}
-         message='Please provide rating for each applicant.'
-         autoHideDuration={2500}
-         onRequestClose={this.handleRequestClose}
-       />
-    </div>
+        autoHideDuration={2500}
+        message="Please provide rating for each applicant."
+        onRequestClose={this.handleRequestClose}
+        open={this.state.open}
+      />
+    </div>;
   }
-})
+});
 
 export default ReviewExperience;

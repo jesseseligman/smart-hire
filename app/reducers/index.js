@@ -1,13 +1,12 @@
-import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
-
-import jobs from './jobs';
 import applications from './applications';
+import { combineReducers } from 'redux';
 import edus from './edus';
 import exps from './exps';
-import questions from './questions'
+import jobs from './jobs';
+import questions from './questions';
+import { routerReducer } from 'react-router-redux';
 
-
+// eslint-disable-next-line max-len
 const rootReducer = combineReducers({ questions, exps, edus, jobs, applications, routing: routerReducer });
 
 export default rootReducer;

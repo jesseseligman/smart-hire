@@ -17,8 +17,8 @@ module.exports = {
   },
 
   paths: {
-   watched: ['app', 'vendor']
- },
+    watched: ['app', 'vendor']
+  },
 
   plugins: {
     babel: {

@@ -1,5 +1,7 @@
 'use strict';
 
+/* eslint-disable camelcase, max-len */
+
 exports.seed = function(knex) {
   return knex('applications').del()
     .then(() => {

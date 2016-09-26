@@ -34,13 +34,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // CSRF protection
-// app.use('/api', (req, res, next) => {
-//   if (/json/.test(req.get('Accept'))) {
-//     return next();
-//   }
-//
-//   res.sendStatus(406);
-// });
+app.use('/api', (req, res, next) => {
+  if (/json/.test(req.get('Accept'))) {
+    return next();
+  }
+
+  res.sendStatus(406);
+});
 
 // REQUIRE IN ROUTERS
 const jobs = require('./routes/jobs');
@@ -66,7 +66,6 @@ app.use('/api', (_req, res) => {
   res.sendStatus(404);
 });
 
-
 app.use((_req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
@@ -76,7 +75,7 @@ app.use((err, _req, res, _next) => {
   if (err.status || err.output && err.output.statusCode) {
     return res.status(err.status || err.output.statusCode).send(err);
   }
-  console.log(err);
+
   console.error(err.stack); // eslint-disable-line no-console
   res.sendStatus(500);
 });

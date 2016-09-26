@@ -7,5 +7,10 @@ module.exports = {
 
   parserOptions: {
     sourceType: 'module'
+  },
+
+  rules: {
+    "react/jsx-no-bind": 'off',
+    "max-lines": 'off'
   }
 };

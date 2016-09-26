@@ -13,7 +13,7 @@ exports.up = function(knex) {
       .inTable('applications')
       .onDelete('CASCADE')
       .index();
-      table.timestamps(true, true);
+    table.timestamps(true, true);
   });
 };
 

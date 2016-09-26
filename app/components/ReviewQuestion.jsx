@@ -1,20 +1,16 @@
-import React from 'react';
 import QuestionResponse from './QuestionResponse';
-import weakKey from 'weak-key';
 import RaisedButton from 'material-ui/RaisedButton';
+import React from 'react';
 import { browserHistory } from 'react-router';
+import weakKey from 'weak-key';
 
 const ReviewQuestion = React.createClass({
-
   handleTouchTap(toReview, index) {
-
     this.props.patchResponses(toReview[index].responses);
 
     if (index === toReview.length - 1) {
-      const userId = 1;
-
+      // eslint-disable-next-line max-len
       return this.props.patchOverallScores(this.props.applications.appsToReview);
-      return browserHistory.push(`/dashboard/${userId}`);
     }
 
     const questionId = toReview[index + 1].questionId;
@@ -24,13 +20,11 @@ const ReviewQuestion = React.createClass({
   },
 
   render() {
-    const { toReview }  = this.props.questions;
-
+    const { toReview } = this.props.questions;
     const array = toReview.filter((questions) => {
-
+      // eslint-disable-next-line max-len
       return questions.questionId === Number.parseInt(this.props.params.questionId);
     });
-
     const questionSet = array[0];
 
     return <div className="dashboard-container">
@@ -39,24 +33,23 @@ const ReviewQuestion = React.createClass({
       </div>
       {questionSet.responses.map((response, index) => {
         return <QuestionResponse
-          rateResponse={this.props.rateResponse}
-          questionsIndex={questionSet.index}
-          responseIndex={index}
-          key={weakKey(response)}
           alias={index + 1}
+          key={weakKey(response)}
+          questionsIndex={questionSet.index}
+          rateResponse={this.props.rateResponse}
           response={response.response}
-        />
+          responseIndex={index}
+        />;
       })}
 
       <div className="next-button">
         <RaisedButton
-          label={questionSet.index === toReview.length - 1 ? "Finish" : "Next"}
+          label={questionSet.index === toReview.length - 1 ? 'Finish' : 'Next'}
           onTouchTap={() => this.handleTouchTap(toReview, questionSet.index)}
         />
       </div>
-
-    </div>
+    </div>;
   }
-})
+});
 
 export default ReviewQuestion;

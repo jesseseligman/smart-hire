@@ -3,11 +3,12 @@
 const boom = require('boom');
 const express = require('express');
 const knex = require('../knex');
-const ev = require('express-validation');
+const { camelizeKeys } = require('humps');
+const { separateDates, combineExps } = require('../utils');
+
+// const ev = require('express-validation');
 // const validations = require('../validations/applications');
-const { camelizeKeys, decamelizeKeys } = require('humps');
 // const { checkAuth } = require('../middleware');
-const { separateDates, combineExps, alreadyContains } = require('../utils');
 
 const router = express.Router(); // eslint-disable-line new-cap
 

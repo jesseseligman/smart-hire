@@ -1,22 +1,29 @@
-import { REQUEST_QUESTIONS, RECEIVE_QUESTIONS, RATE_RESPONSE } from '../actions/actionCreators';
+/* eslint-disable no-case-declarations */
 
-function questions(state={
+// eslint-disable-next-line max-len
+import { RATE_RESPONSE, RECEIVE_QUESTIONS, REQUEST_QUESTIONS } from '../actions/actionCreators';
+
+const questions = (state = {
   isFetching: false,
-  toReview: [] }, action) {
-  switch(action.type) {
+  toReview: [] }, action) => {
+  switch (action.type) {
+
     case REQUEST_QUESTIONS:
-      return Object.assign({}, state, {isFetching: true});
+      return Object.assign({}, state, { isFetching: true });
 
     case RECEIVE_QUESTIONS:
-      return Object.assign({}, state, {isFetching: false, toReview: action.questionsToReview});
+
+      // eslint-disable-next-line max-len
+      return Object.assign({}, state, { isFetching: false, toReview: action.questionsToReview });
 
     case RATE_RESPONSE:
-      const { questionsIndex, responseIndex, responseId } = action;
+      const { questionsIndex, responseIndex } = action;
       const newRating = action.rating;
       const { toReview } = state;
       const questionSet = toReview[questionsIndex];
       const { responses } = questionSet;
-      
+
+      // eslint-disable-next-line max-len
       const updatedResponse = Object.assign(responses[responseIndex], { rating: newRating });
 
       const nextResponses = [
@@ -25,7 +32,8 @@ function questions(state={
         ...responses.slice(responseIndex + 1)
       ];
 
-      const nextQuestionSet = Object.assign(questionSet, {responses: nextResponses});
+      // eslint-disable-next-line max-len
+      const nextQuestionSet = Object.assign(questionSet, { responses: nextResponses });
 
       const nextToReview = [...toReview.slice(0, questionsIndex),
       nextQuestionSet,
@@ -36,6 +44,6 @@ function questions(state={
     default:
       return state;
   }
-}
+};
 
 export default questions;

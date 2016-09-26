@@ -1,21 +1,21 @@
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
 import * as actionCreators from '../actions/actionCreators';
 import Main from './Main';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
     jobs: state.jobs,
     applications: state.applications,
     edus: state.edus,
     exps: state.exps,
-    questions: state.questions,
+    questions: state.questions
   };
-}
+};
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(actionCreators, dispatch);
-}
+};
 
 const App = connect(mapStateToProps, mapDispatchToProps)(Main);
 

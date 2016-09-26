@@ -1,6 +1,6 @@
 'use strict';
 
-/* eslint-disable */
+/* eslint-disable camelcase, max-len */
 
 exports.seed = function(knex) {
   return knex('jobs').del()

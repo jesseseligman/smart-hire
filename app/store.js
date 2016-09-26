@@ -1,14 +1,13 @@
-import thunkMiddleware from 'redux-thunk';
-import { createStore, compose, applyMiddleware } from 'redux';
-import { syncHistoryWithStore, routerMiddleware } from 'react-router-redux';
+import { applyMiddleware, compose, createStore } from 'redux';
+import { routerMiddleware, syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
-
 import rootReducer from './reducers/index';
+import thunkMiddleware from 'redux-thunk';
 
 const middleware = routerMiddleware(browserHistory);
 
 const defaultState = {
-  jobs: {items: [] },
+  jobs: { items: [] },
   applications: { reviewedApplications: [], appsToReview: [] },
   exps: { toReview: [] },
   edus: { toReview: [] },
@@ -17,9 +16,8 @@ const defaultState = {
 
 const enhancers = compose(
   applyMiddleware(thunkMiddleware, middleware),
-  window.devToolsExtension ?
-  window.devToolsExtension() : f => f
-);
+  window.devToolsExtension
+  ? window.devToolsExtension() : (func) => func);
 
 const store = createStore(rootReducer, defaultState, enhancers);
 

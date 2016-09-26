@@ -8,8 +8,10 @@ const router = express.Router(); // eslint-disable-line new-cap
 const boom = require('boom');
 const bcrypt = require('bcrypt-as-promised');
 const { camelizeKeys, decamelizeKeys } = require('humps');
+
 // const ev = require('express-validation');
 // const validations = require('../validations/users');
+
 const jwt = require('jsonwebtoken');
 const knex = require('../knex');
 
@@ -28,9 +30,11 @@ router.post('/users', (req, res, next) => {
       return bcrypt.hash(password, 12);
     })
     .then((hashedPassword) => {
+      // eslint-disable-next-line max-len
       const { firstName, lastName, phone, companyName, companyDescription, city, state } = req.body;
-      const user = { firstName, lastName, email, phone,
-        hashedPassword };
+
+      // eslint-disable-next-line max-len
+      const user = { firstName, lastName, email, phone, companyDescription, companyName, city, state, hashedPassword };
       const row = decamelizeKeys(user);
 
       return knex('users').insert(row, '*');

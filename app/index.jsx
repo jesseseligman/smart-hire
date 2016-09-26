@@ -1,25 +1,23 @@
-// components
+/* eslint-disable max-len */
+
+import { IndexRoute, Route, Router } from 'react-router';
+import store, { history } from './store';
 import App from './components/App';
-import Main from './components/Main';
+import Dashboard from './components/Dashboard';
 import Landing from './components/Landing';
 import Login from './components/Login';
-import Register from './components/Register';
-import Dashboard from './components/Dashboard';
-import ReviewedApplication from './components/ReviewedApplication';
-import ReviewQuestion from './components/ReviewQuestion';
-import ReviewEducation from './components/ReviewEducation';
-import ReviewExperience from './components/ReviewExperience';
-import Results from './components/Results';
-
-// dependencies
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import { Provider } from 'react-redux';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Register from './components/Register';
+import Results from './components/Results';
+import ReviewEducation from './components/ReviewEducation';
+import ReviewExperience from './components/ReviewExperience';
+import ReviewQuestion from './components/ReviewQuestion';
+import ReviewedApplication from './components/ReviewedApplication';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import { Provider } from 'react-redux';
-import store, { history } from './store';
 
 injectTapEventPlugin();
 
@@ -37,21 +35,20 @@ const muiTheme = getMuiTheme({
 const router = <MuiThemeProvider muiTheme={muiTheme}>
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={App}>
-        <IndexRoute component={Landing}/>
-        <Route path="login" component={Login} />
-        <Route path="register" component={Register} />
-        <Route path="dashboard/:userId" component={Dashboard} />
-        <Route path="review/:jobId/education" component={ReviewEducation}/>
-        <Route path="review/:jobId/experience" component={ReviewExperience}/>
-        <Route path="review/:jobId/question/:questionId" component={ReviewQuestion}/>
-        <Route path="results/:jobId" component={Results} />
-        <Route path="application/:applicationId" component={ReviewedApplication} />
+      <Route component={App} path="/" >
+        <IndexRoute component={Landing} />
+        <Route component={Login} path="login" />
+        <Route component={Register} path="register" />
+        <Route component={Dashboard} path="dashboard/:userId" />
+        <Route component={ReviewEducation} path="review/:jobId/education" />
+        <Route component={ReviewExperience} path="review/:jobId/experience" />
+        <Route component={ReviewQuestion} path="review/:jobId/question/:questionId" />
+        <Route component={Results} path="results/:jobId" />
+        <Route component={ReviewedApplication} path="application/:applicationId" />
       </Route>
     </Router>
   </Provider>
-</MuiThemeProvider>
-
+</MuiThemeProvider>;
 
 ReactDOM.render(
   router,
