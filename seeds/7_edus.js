@@ -208,9 +208,9 @@ exports.seed = function(knex) {
       {
         id: 21,
         application_id: 11,
-        school: 'Harvard',
+        school: 'Tufts',
         degree: 'Bachelors of Science',
-        major: 'Biology',
+        major: 'Computer Science',
         dates: '02/2004.07/2008',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
@@ -219,8 +219,8 @@ exports.seed = function(knex) {
         id: 22,
         application_id: 11,
         school: 'UC Davis',
-        degree: 'MFA',
-        major: 'Writing',
+        degree: 'Ph.D.',
+        major: 'Computer Science',
         dates: '04/2014.08/2016',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
@@ -229,8 +229,8 @@ exports.seed = function(knex) {
         id: 23,
         application_id: 12,
         school: 'MIT',
-        degree: 'Bachelors of Arts',
-        major: 'Clown Studies',
+        degree: 'Bachelors of Science',
+        major: 'Mathematics',
         dates: '05/2000.08/2004',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
@@ -239,8 +239,8 @@ exports.seed = function(knex) {
         id: 24,
         application_id: 12,
         school: 'Smith College',
-        degree: 'Bachelors of Arts',
-        major: 'Global Studies',
+        degree: 'MFA',
+        major: 'Photography',
         dates: '09/2009.05/2013',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
@@ -248,9 +248,9 @@ exports.seed = function(knex) {
       {
         id: 25,
         application_id: 13,
-        school: 'Harvard',
+        school: 'Yale',
         degree: 'Bachelors of Science',
-        major: 'Biology',
+        major: 'Physics',
         dates: '02/2004.07/2008',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
@@ -259,8 +259,8 @@ exports.seed = function(knex) {
         id: 26,
         application_id: 13,
         school: 'UC Davis',
-        degree: 'MFA',
-        major: 'Writing',
+        degree: 'MS',
+        major: 'Physics',
         dates: '04/2014.08/2016',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
@@ -288,9 +288,9 @@ exports.seed = function(knex) {
       {
         id: 29,
         application_id: 15,
-        school: 'Harvard',
+        school: 'University of Maryland',
         degree: 'Bachelors of Science',
-        major: 'Biology',
+        major: 'Chemistry',
         dates: '02/2004.07/2008',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
@@ -298,9 +298,9 @@ exports.seed = function(knex) {
       {
         id: 30,
         application_id: 15,
-        school: 'UC Davis',
-        degree: 'MFA',
-        major: 'Writing',
+        school: 'UC Irvine',
+        degree: 'Ph.D.',
+        major: 'Computer Science',
         dates: '04/2014.08/2016',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')

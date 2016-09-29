@@ -153,7 +153,7 @@ exports.seed = function(knex) {
         id: 19,
         question_id: 3,
         application_id: 11,
-        text: 'I bring excellent leadership skills to any team. Being a leader does not necessarily mean being the loudest voice in the room. It is the ability to work with a group of people and assess how you and your team can work together to maximize your productivity. Sometimes that means listening to others and empowering them to work independently. Other times it involves taking more direct control of a project and driving it yourself. I understand this balance.',
+        text: 'I have the experience and the know-how to be an effective leader on both big and small teams. My experience as a manager has honed my ability to look at my team and determine exactly what strengths my different team members have. This way I am able to maximize my entire team. Another key component of this is communication. Making sure that the entire team is communicating effectively is key to the success of any team.',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
@@ -161,7 +161,7 @@ exports.seed = function(knex) {
         id: 20,
         question_id: 3,
         application_id: 12,
-        text: 'I bring excellent leadership skills to any team. Being a leader does not necessarily mean being the loudest voice in the room. It is the ability to work with a group of people and assess how you and your team can work together to maximize your productivity. Sometimes that means listening to others and empowering them to work independently. Other times it involves taking more direct control of a project and driving it yourself. I understand this balance.',
+        text: 'I\'m a pretty good leader. People seem to respond to me well overall. I do not have a ton of experience being the point person but I try my best and that is all you can ask really.',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
@@ -169,7 +169,7 @@ exports.seed = function(knex) {
         id: 21,
         question_id: 3,
         application_id: 13,
-        text: 'I bring excellent leadership skills to any team. Being a leader does not necessarily mean being the loudest voice in the room. It is the ability to work with a group of people and assess how you and your team can work together to maximize your productivity. Sometimes that means listening to others and empowering them to work independently. Other times it involves taking more direct control of a project and driving it yourself. I understand this balance.',
+        text: 'There are three things that are essential to any leader. First, they must have a strong tolerance for uncertainty and adversity. You never know starting out, how a project will go, and you need to roll with the punches. Second, you need to posess good judgement and strong decision making skills. Lastly, you need to practice active followership, which means being able to empower your other team members to rise to new challenges and support them in their endeavors. I am an excellent leader because I have mastered all three of these traits.',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
@@ -185,7 +185,7 @@ exports.seed = function(knex) {
         id: 23,
         question_id: 3,
         application_id: 15,
-        text: 'I bring excellent leadership skills to any team. Being a leader does not necessarily mean being the loudest voice in the room. It is the ability to work with a group of people and assess how you and your team can work together to maximize your productivity. Sometimes that means listening to others and empowering them to work independently. Other times it involves taking more direct control of a project and driving it yourself. I understand this balance.',
+        text: 'Leadership, leadership, leadership. I have taught seminars on what this elusive quality really means and how to develop as a leader. That should tell you something about my leadership skills. I am well versed in the four essential qualities, the nine steps to success and all the other nonsense leadership jargon. But let me be real. It is all nonsense. What I provide is real. I get things done.',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
@@ -209,7 +209,7 @@ exports.seed = function(knex) {
         id: 26,
         question_id: 4,
         application_id: 11,
-        text: 'I love changing directions because it forces me to think in new ways. When I have to pivot is when I shine. I also have a background in sailing which feels extremely relevant to the current discussion. Because in sailing it\'s all about how you point your sails so that you catch the right wind. And then you can choose your direction. See how the sailing connects to the question?',
+        text: 'Agile development is essential to being competitive in modern software development. Constant iteration and shipping code quickly allows us as engineers to keep our customers in the loop throughout product development. We are able to respond to feedback on a weekly basis rather than a longer term schedule. I understand that software is about people, and I have the perspective to realize that changing a product based on customer feedback is not only necessary, but it\'s the whole point!',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
@@ -217,7 +217,7 @@ exports.seed = function(knex) {
         id: 27,
         question_id: 4,
         application_id: 12,
-        text: 'I love changing directions because it forces me to think in new ways. When I have to pivot is when I shine. I also have a background in sailing which feels extremely relevant to the current discussion. Because in sailing it\'s all about how you point your sails so that you catch the right wind. And then you can choose your direction. See how the sailing connects to the question?',
+        text: 'Being able to respond to changing demands is the name of the game in modern software development. If you cannot handle the heat please get out of the kitchen I say. I know how to change directions quickly in the process of developing software and understand the importance of being nimble.',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
@@ -233,7 +233,7 @@ exports.seed = function(knex) {
         id: 29,
         question_id: 4,
         application_id: 14,
-        text: 'I love changing directions because it forces me to think in new ways. When I have to pivot is when I shine. I also have a background in sailing which feels extremely relevant to the current discussion. Because in sailing it\'s all about how you point your sails so that you catch the right wind. And then you can choose your direction. See how the sailing connects to the question?',
+        text: 'The thing that I love most about software engineering is the opportunities for creative problem solving that it provides. When a customer\'s needs change and we need to pivot as a development team I just see it as another opportunity to reexamine the problem. I find that changing directions is actually the thing that has most contributed to my development as a programmer. When you are able to step back from a problem and challenge assumptions, it forces you to recontextualize the problem such that your understanding is that much deeper. I embrace changing directions on a project.',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
@@ -241,7 +241,7 @@ exports.seed = function(knex) {
         id: 30,
         question_id: 4,
         application_id: 15,
-        text: 'I love changing directions because it forces me to think in new ways. When I have to pivot is when I shine. I also have a background in sailing which feels extremely relevant to the current discussion. Because in sailing it\'s all about how you point your sails so that you catch the right wind. And then you can choose your direction. See how the sailing connects to the question?',
+        text: 'I find it really difficult to change directions. I have a pretty one track mind so when things change I kind of just freak out. I need the security of knowing that things are going to stay the same forever.',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },

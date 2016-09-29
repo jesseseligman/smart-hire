@@ -1,6 +1,7 @@
 import EducationResponse from './EducationResponse';
 import ExperienceResponse from './ExperienceResponse';
 import FlatButton from 'material-ui/FlatButton';
+import { Link } from 'react-router';
 import QuestionResponse from './QuestionResponse';
 import React from 'react';
 import { hyphenizePhone } from '../utils';
@@ -17,8 +18,13 @@ const ReviewedApplication = React.createClass({
     // eslint-disable-next-line max-len
     const { firstName, lastName, phone, email, anonymous, exps, edus, responses, overallScore, id } = this.props.applications.completeReviewedApplication;
 
+    const { selectedJob } = this.props.jobs;
+
     return <div id="application-container">
-      <h2 id="title-label">Applicant for: {this.props.jobs.selectedJob.title}
+      <h2 id="title-label">Applicant for:
+        <span style={{color: '#B85948'}}>
+          <Link to={`/results/${selectedJob.id}`}> {selectedJob.title}</Link>
+        </span>
       </h2>
       <div className="row-container">
 

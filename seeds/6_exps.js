@@ -168,7 +168,7 @@ exports.seed = function(knex) {
         application_id: 9,
         title: 'Principal Analyst',
         company: 'Boeing',
-        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+        description: 'This role involved providing diagnostic support for flamability engineering team. I was responsible for evaluating and improving the chemical resistance for all of our enterprise level products.',
         dates: '03/2004.10/2008',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
@@ -178,7 +178,7 @@ exports.seed = function(knex) {
         application_id: 9,
         title: 'Project Manager',
         company: 'Synergy Group',
-        description: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.',
+        description: 'I oversaw the four full fledged projects during my time at Synergy Group. I was the point person for connecting our engineering, marketing, and sales teams. In addition I led company initiatives that resulted in a 15% increase in sales over a two year period. I helped lead my team to a significant increase in employee satisfaction while simultaneously cutting costs. This role was the stepping stone for me in terms of emerging as a true team leader.',
         dates: '01/2009.05/2011',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
@@ -206,9 +206,9 @@ exports.seed = function(knex) {
       {
         id: 21,
         application_id: 11,
-        title: 'Principal Analyst',
-        company: 'Boeing',
-        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+        title: 'Chief Technologist',
+        company: 'Mind Head',
+        description: 'I was in charge of choosing our stack, as well as overseeing our mobile engineering team. I programmed in Lisp, and Python primarily however, I was something of a jack of all trades, filling in whatever gaps were necessary. The variety of responsibilities that this job entailed helped to fully round out my skillset as a software engineer. I also led our testing team in writing automated tests that ultimately saved enoromous amounts of time, money, and energy.',
         dates: '03/2004.10/2008',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
@@ -216,9 +216,9 @@ exports.seed = function(knex) {
       {
         id: 22,
         application_id: 11,
-        title: 'Project Manager',
+        title: 'Senior Engineer',
         company: 'Synergy Group',
-        description: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.',
+        description: 'I was able to easily relate to the product given that we have all been through technical interviews.  I worked in a Ruby and Unix environment, practiced continuous integration and regularly unit tested code. As a young company, I provided close mentorship to aspiring junior developers as I helped to shape the premium interviewing experience we are endeavoring to create. In addition, I was in charge of hiring and growing our staff. I know how to work with all kinds of people and how to get the most out of everyone.',
         dates: '01/2009.05/2011',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
@@ -226,9 +226,9 @@ exports.seed = function(knex) {
       {
         id: 23,
         application_id: 12,
-        title: 'Principal Analyst',
-        company: 'Boeing',
-        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+        title: 'Sales Rep',
+        company: 'Kasky Partners',
+        description: 'I serviced existing accounts, obtained orders, and established new accounts by planning and organizing daily work schedule to call on existing or potential sales outlets and other trade factors. I adjusted content of sales presentations by studying the type of sales outlet or trade factor. I focused sales efforts by studying existing and potential volume of dealers. I submitted orders by referring to price lists and product literature. I kept management informed by submitting activity and results reports, such as daily call reports, weekly work plans, and monthly and annual territory analyses. I monitored competition by gathering current marketplace information on pricing, products, new products, delivery schedules, merchandising techniques, etc. Basically, I was a jack of all trades.',
         dates: '03/2004.10/2008',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
@@ -237,8 +237,8 @@ exports.seed = function(knex) {
         id: 24,
         application_id: 12,
         title: 'Project Manager',
-        company: 'Synergy Group',
-        description: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.',
+        company: 'Stanley Investments',
+        description: 'I oversaw the four full fledged projects during my time at Synergy Group. I was the point person for connecting our engineering, marketing, and sales teams, as well as client relations. This entailed connecting client concerns with our product team in order to make sure we were producing a product that our clients wanted and to do it in a reasonable time frame. In addition I led company initiatives that resulted in a 15% increase in sales over a two year period. This role was the stepping stone for me in terms of emerging as a true team leader.',
         dates: '01/2009.05/2011',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
@@ -246,9 +246,9 @@ exports.seed = function(knex) {
       {
         id: 25,
         application_id: 13,
-        title: 'Principal Analyst',
-        company: 'Boeing',
-        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+        title: 'Software Architect',
+        company: 'Stanley Investments',
+        description: 'I ensured that new systems were built in a way that best ensures that functional requirements are met whilst also ensuring that service qualities (performance, scalability, extensibility etc) for the present and for the future are achievable. I reviewed and improved on existing systems, making use of new technologies and methodologies to continually improve existing systems. I provided high level guidance and direction on project work, making sure tha new projects fit in with an overall strategic vision.',
         dates: '03/2004.10/2008',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
@@ -256,9 +256,9 @@ exports.seed = function(knex) {
       {
         id: 26,
         application_id: 13,
-        title: 'Project Manager',
-        company: 'Synergy Group',
-        description: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.',
+        title: 'Quality Assurance',
+        company: 'Technosurge',
+        description: 'I reviewed requirements specifications and technical design documents to provide timely and meaningful feedback. I created detailed, comprehensive and well-structured test plans and test cases. I estimated, prioritized, planned, and coordinated testing activities. I designed, developed and executed automation scripts using open source tools. Latly, I identified, recorded, documented thoroughly and tracked bugs to minimize costly bugs entering produciton.',
         dates: '01/2009.05/2011',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
@@ -286,9 +286,9 @@ exports.seed = function(knex) {
       {
         id: 29,
         application_id: 15,
-        title: 'Principal Analyst',
-        company: 'Boeing',
-        description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+        title: 'Software Engineer',
+        company: 'Technology Core',
+        description: 'I worked to meet the exact design specifications of my product manager in accordance with a rapidly iterative agile development process. Day to day responsibilities included writing automated tests, building maintainable, and scalable RESTful APIs, and whatever other bug fixes or feature building was required. I mentored a team of junior engineers, providing weekly feedback. I also helped to build a fully functional cloud computing interface that resulted an a 12% increase in user participation over two years.',
         dates: '03/2004.10/2008',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
@@ -298,7 +298,7 @@ exports.seed = function(knex) {
         application_id: 15,
         title: 'Project Manager',
         company: 'Synergy Group',
-        description: 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.',
+        description: 'I was able to easily relate to the product given that we have all been through technical interviews. I worked in a Ruby and Unix environment, practiced continuous integration and regularly unit tested code. As a young company, I provided close mentorship to aspiring junior developers as I helped to shape the premium interviewing experience we are endeavoring to create. In addition, I was in charge of hiring and growing our staff. I know how to work with all kinds of people and how to get the most out of everyone.',
         dates: '01/2009.05/2011',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
