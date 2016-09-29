@@ -7,9 +7,6 @@ const { camelizeKeys } = require('humps');
 const { getUnrated } = require('../utils');
 const checkAuth = require('../middleware');
 
-// const ev = require('express-validation');
-// const validations = require('../validations/users');
-
 const router = express.Router(); // eslint-disable-line new-cap
 
 // eslint-disable-next-line max-len

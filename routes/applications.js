@@ -8,9 +8,8 @@ const knex = require('../knex');
 const { camelizeKeys } = require('humps');
 const { separateDates } = require('../utils');
 const checkAuth = require('../middleware');
-
-// const ev = require('express-validation');
-// const validations = require('../validations/applications');
+const ev = require('express-validation');
+const validations = require('../validations/applications');
 
 const router = express.Router(); // eslint-disable-line new-cap
 
@@ -90,7 +89,7 @@ router.get('/applications/:appId', checkAuth, (req, res, next) => {
     });
 });
 
-router.patch('/applications/:appId/edus', checkAuth, (req, res, next) => {
+router.patch('/applications/:appId/edus', checkAuth, ev(validations.patch), (req, res, next) => {
   const appId = Number.parseInt(req.params.appId);
   const { edusRating } = req.body;
 
@@ -105,7 +104,7 @@ router.patch('/applications/:appId/edus', checkAuth, (req, res, next) => {
     });
 });
 
-router.patch('/applications/:appId/exps', checkAuth, (req, res, next) => {
+router.patch('/applications/:appId/exps', checkAuth, ev(validations.patch), (req, res, next) => {
   const appId = Number.parseInt(req.params.appId);
   const { expsRating } = req.body;
 
