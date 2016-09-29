@@ -4,14 +4,14 @@ const boom = require('boom');
 const express = require('express');
 const knex = require('../knex');
 const { camelizeKeys } = require('humps');
+const checkAuth = require('../middleware');
 
 // const ev = require('express-validation');
 // const validations = require('../validations/applications');
-// const { checkAuth } = require('../middleware');
 
 const router = express.Router(); // eslint-disable-line new-cap
 
-router.get('/questions/:jobId/:appId', (req, res, next) => {
+router.get('/questions/:jobId/:appId', checkAuth, (req, res, next) => {
   const jobId = Number.parseInt(req.params.jobId);
   const appId = Number.parseInt(req.params.appId);
 

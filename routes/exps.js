@@ -5,14 +5,14 @@ const express = require('express');
 const knex = require('../knex');
 const { camelizeKeys } = require('humps');
 const { separateDates, combineExps } = require('../utils');
+const checkAuth = require('../middleware');
 
 // const ev = require('express-validation');
 // const validations = require('../validations/applications');
-// const { checkAuth } = require('../middleware');
 
 const router = express.Router(); // eslint-disable-line new-cap
 
-router.get('/exps/:appId', (req, res, next) => {
+router.get('/exps/:appId', checkAuth, (req, res, next) => {
   const appId = Number.parseInt(req.params.appId);
 
   knex('exps')

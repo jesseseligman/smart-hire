@@ -7,14 +7,14 @@ const express = require('express');
 const knex = require('../knex');
 const { camelizeKeys } = require('humps');
 const { separateDates } = require('../utils');
+const checkAuth = require('../middleware');
 
 // const ev = require('express-validation');
 // const validations = require('../validations/applications');
-// const { checkAuth } = require('../middleware');
 
 const router = express.Router(); // eslint-disable-line new-cap
 
-router.get('/applications/unrated/:jobId', (req, res, next) => {
+router.get('/applications/unrated/:jobId', checkAuth, (req, res, next) => {
   const jobId = Number.parseInt(req.params.jobId);
 
   knex('applications')
@@ -32,7 +32,7 @@ router.get('/applications/unrated/:jobId', (req, res, next) => {
     });
 });
 
-router.get('/applications/rated/:jobId', (req, res, next) => {
+router.get('/applications/rated/:jobId', checkAuth, (req, res, next) => {
   const jobId = Number.parseInt(req.params.jobId);
 
   knex('applications')
@@ -49,7 +49,7 @@ router.get('/applications/rated/:jobId', (req, res, next) => {
     });
 });
 
-router.get('/applications/:appId', (req, res, next) => {
+router.get('/applications/:appId', checkAuth, (req, res, next) => {
   const applicationId = Number.parseInt(req.params.appId);
 
   let result;
@@ -90,7 +90,7 @@ router.get('/applications/:appId', (req, res, next) => {
     });
 });
 
-router.patch('/applications/:appId/edus', (req, res, next) => {
+router.patch('/applications/:appId/edus', checkAuth, (req, res, next) => {
   const appId = Number.parseInt(req.params.appId);
   const { edusRating } = req.body;
 
@@ -105,7 +105,7 @@ router.patch('/applications/:appId/edus', (req, res, next) => {
     });
 });
 
-router.patch('/applications/:appId/exps', (req, res, next) => {
+router.patch('/applications/:appId/exps', checkAuth, (req, res, next) => {
   const appId = Number.parseInt(req.params.appId);
   const { expsRating } = req.body;
 
@@ -120,7 +120,7 @@ router.patch('/applications/:appId/exps', (req, res, next) => {
     });
 });
 
-router.patch('/applications/:appId/anonymous', (req, res, next) => {
+router.patch('/applications/:appId/anonymous', checkAuth, (req, res, next) => {
   const appId = Number.parseInt(req.params.appId);
   const { isAnonymous } = req.body;
 
@@ -135,7 +135,7 @@ router.patch('/applications/:appId/anonymous', (req, res, next) => {
     });
 });
 
-router.patch('/applications/:appId/overallScore', (req, res, next) => {
+router.patch('/applications/:appId/overallScore', checkAuth, (req, res, next) => {
   const appId = Number.parseInt(req.params.appId);
 
   let total = 0;

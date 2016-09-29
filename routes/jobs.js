@@ -5,15 +5,15 @@ const express = require('express');
 const knex = require('../knex');
 const { camelizeKeys } = require('humps');
 const { getUnrated } = require('../utils');
+const checkAuth = require('../middleware');
 
 // const ev = require('express-validation');
 // const validations = require('../validations/users');
-// const { checkAuth } = require('../middleware');
 
 const router = express.Router(); // eslint-disable-line new-cap
 
 // eslint-disable-next-line max-len
-router.get('/jobs/:userId', (req, res, next) => {
+router.get('/jobs/:userId', checkAuth, (req, res, next) => {
   const userId = Number.parseInt(req.params.userId);
   let jobs;
 
