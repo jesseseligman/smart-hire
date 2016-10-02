@@ -39,12 +39,13 @@ const ReviewQuestion = React.createClass({
           rateResponse={this.props.rateResponse}
           response={response.response}
           responseIndex={index}
+          rating={response.rating}
         />;
       })}
 
       <div className="next-button">
         <RaisedButton
-          label={questionSet.index === toReview.length - 1 ? 'Finish' : 'Next'}
+          label={questionSet.index === toReview.length - 1 ? 'Finish' : 'Save and Continue'}
           onTouchTap={() => this.handleTouchTap(toReview, questionSet.index)}
         />
       </div>

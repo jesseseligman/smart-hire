@@ -34,6 +34,7 @@ const EducationResponse = React.createClass({
             appId={this.props.appId}
             onChange={this.handleChange}
             reviewed={this.props.reviewed}
+            rating={this.props.rating}
           />
         </CardActions>
 

@@ -61,12 +61,13 @@ const ReviewEducation = React.createClass({
           edus={response.edus}
           key={weakKey(response)}
           rateEdus={this.props.rateEdus}
+          rating={this.props.applications.appsToReview[index].edusRating}
         />;
       })}
 
       <div className="next-button">
         <RaisedButton
-          label="Next"
+          label="Save and Continue"
           onTouchTap={this.handleTouchTap}
         />
       </div>

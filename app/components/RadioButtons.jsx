@@ -13,6 +13,7 @@ const RadioButtons = React.createClass({
         name={`edu${this.props.appId}`}
         onChange={this.props.onChange}
         style={this.props.reviewed ? styleHidden : {}}
+        defaultSelected={this.props.rating}
       >
         <RadioButton
           iconStyle={{ marginRight: '5px' }}

@@ -53,12 +53,13 @@ const ReviewExperience = React.createClass({
           exps={response.exps}
           key={weakKey(response)}
           rateExps={this.props.rateExps}
+          rating={this.props.applications.appsToReview[index].expsRating}
         />;
       })}
 
       <div className="next-button">
         <RaisedButton
-          label="Next"
+          label="Save and Continue"
           onTouchTap={this.handleTouchTap}
         />
       </div>
