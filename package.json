@@ -20,8 +20,8 @@
     "resetdb": "npm run knex migrate:rollback; npm run knex migrate:latest; npm run knex seed:run"
   },
   "dependencies": {
-    "axios": "^0.14.0",
     "auto-reload-brunch": "^2.7.1",
+    "axios": "^0.14.0",
     "babel-brunch": "^6.0.6",
     "babel-preset-es2015": "^6.14.0",
     "babel-preset-react": "^6.11.1",
@@ -49,6 +49,7 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.8.0",
     "react-router-redux": "^4.0.5",
+    "react-router-scroll": "^0.3.2",
     "react-tap-event-plugin": "^1.0.0",
     "react-timestamp": "^3.0.4",
     "redux": "^3.6.0",

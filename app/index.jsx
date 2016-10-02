@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 
-import { IndexRoute, Route, Router } from 'react-router';
+import { IndexRoute, Route, Router, applyRouterMiddleware } from 'react-router';
 import store, { history } from './store';
 import App from './components/App';
 import Dashboard from './components/Dashboard';
@@ -18,6 +18,7 @@ import ReviewQuestion from './components/ReviewQuestion';
 import ReviewedApplication from './components/ReviewedApplication';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import { useScroll } from 'react-router-scroll';
 
 injectTapEventPlugin();
 
@@ -34,7 +35,7 @@ const muiTheme = getMuiTheme({
 
 const router = <MuiThemeProvider muiTheme={muiTheme}>
   <Provider store={store}>
-    <Router history={history}>
+    <Router history={history} render={applyRouterMiddleware(useScroll())}>
       <Route component={App} path="/" >
         <IndexRoute component={Landing} />
         <Route component={Login} path="login" />
