@@ -17,6 +17,10 @@ const Results = React.createClass({
     this.props.fetchCompleteApplication(appId);
   },
 
+  handleTouchTapReview() {
+    return this.props.fetchUnreviewedApplications(this.props.jobs.selectedJob.id);
+  },
+
   render() {
     const styleScoreWidth = { width: '2em' };
     const styleButtonWidth = { width: '6em' };
@@ -30,10 +34,8 @@ const Results = React.createClass({
           <h3 id="job-header">
             {selectedJob.title} - {selectedJob.unrated} unreviewed.
           </h3>
-          <div id="review">
-            <Link to={`/review/${this.props.jobs.selectedJob.id}/education`}>
+          <div id="review" onTouchTap={this.handleTouchTapReview}>
               Review More
-            </Link>
           </div>
         </div>
       </div>

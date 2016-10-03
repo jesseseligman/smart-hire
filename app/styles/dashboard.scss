@@ -35,4 +35,7 @@
   display: inline;
   color: #B85948;
   margin-left: 5px;
+  &:hover {
+    cursor: pointer;
+  }
 }

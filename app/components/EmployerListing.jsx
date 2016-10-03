@@ -3,12 +3,12 @@ import { Card, CardActions, CardHeader, CardText } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import React from 'react';
 import Timestamp from 'react-timestamp';
+import { browserHistory } from 'react-router';
 
 const EmployerListing = React.createClass({
 
   handleTouchTapContacts(job) {
     this.props.selectJob(job);
-    this.props.fetchUnreviewedApplications(job.id);
 
     return this.props.fetchReviewedApplications(job.id);
   },
