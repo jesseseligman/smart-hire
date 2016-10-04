@@ -299,9 +299,9 @@ exports.seed = function(knex) {
         id: 30,
         application_id: 15,
         school: 'Galvanize',
-        degree: 'Web Development Fellow',
-        major: 'Computer Science',
-        dates: '04/2014.08/2016',
+        degree: 'Fellow',
+        major: 'Web Development',
+        dates: '05/2016.10/2016',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },

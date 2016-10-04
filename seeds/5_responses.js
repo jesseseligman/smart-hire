@@ -225,7 +225,7 @@ exports.seed = function(knex) {
         id: 28,
         question_id: 4,
         application_id: 13,
-        text: 'The thing that I love most about software engineering is the opportunities for creative problem solving that it provides. When a customer\'s needs change and we need to pivot as a development team I just see it as another opportunity to reexamine the problem. I find that changing directions is actually the thing that has most contributed to my development as a programmer. When you are able to step back from a problem and challenge assumptions, it forces you to recontextualize the problem such that your understanding is that much deeper. I embrace changing directions on a project.',
+        text: 'I find it really difficult to change directions. I have a pretty one track mind so when things change I kind of just freak out. I need the security of knowing that things are going to stay the same forever.',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
@@ -241,7 +241,7 @@ exports.seed = function(knex) {
         id: 30,
         question_id: 4,
         application_id: 15,
-        text: 'I find it really difficult to change directions. I have a pretty one track mind so when things change I kind of just freak out. I need the security of knowing that things are going to stay the same forever.',
+        text: 'The thing that I love most about software engineering is the opportunities for creative problem solving that it provides. When a customer\'s needs change and we need to pivot as a development team I just see it as another opportunity to reexamine the problem. I find that changing directions is actually the thing that has most contributed to my development as a programmer. When you are able to step back from a problem and challenge assumptions, it forces you to recontextualize the problem such that your understanding is that much deeper. I embrace changing directions on a project.',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
