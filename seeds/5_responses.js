@@ -169,7 +169,7 @@ exports.seed = function(knex) {
         id: 21,
         question_id: 3,
         application_id: 13,
-        text: 'There are three things that are essential to any leader. First, they must have a strong tolerance for uncertainty and adversity. You never know starting out, how a project will go, and you need to roll with the punches. Second, you need to posess good judgement and strong decision making skills. Lastly, you need to practice active followership, which means being able to empower your other team members to rise to new challenges and support them in their endeavors. I am an excellent leader because I have mastered all three of these traits.',
+        text: 'I\'m a pretty good leader.',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
@@ -185,7 +185,7 @@ exports.seed = function(knex) {
         id: 23,
         question_id: 3,
         application_id: 15,
-        text: 'Leadership, leadership, leadership. I have taught seminars on what this elusive quality really means and how to develop as a leader. That should tell you something about my leadership skills. I am well versed in the four essential qualities, the nine steps to success and all the other nonsense leadership jargon. But let me be real. It is all nonsense. What I provide is real. I get things done.',
+        text: 'I have the experience and the know-how to be an effective leader on both big and small teams. My experience as a manager has honed my ability to look at my team and determine exactly what strengths my different team members have. This way I am able to maximize my entire team. Another key component of this is communication. Making sure that the entire team is communicating effectively is key to the success of any team. I bring excellent leadership skills to any team. Being a leader does not necessarily mean being the loudest voice in the room. It is the ability to work with a group of people and assess how you and your team can work together to maximize your productivity. Sometimes that means listening to others and empowering them to work independently. Other times it involves taking more direct control of a project and driving it yourself. I understand this balance.',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
@@ -225,7 +225,7 @@ exports.seed = function(knex) {
         id: 28,
         question_id: 4,
         application_id: 13,
-        text: 'I love changing directions because it forces me to think in new ways. When I have to pivot is when I shine. I also have a background in sailing which feels extremely relevant to the current discussion. Because in sailing it\'s all about how you point your sails so that you catch the right wind. And then you can choose your direction. See how the sailing connects to the question?',
+        text: 'The thing that I love most about software engineering is the opportunities for creative problem solving that it provides. When a customer\'s needs change and we need to pivot as a development team I just see it as another opportunity to reexamine the problem. I find that changing directions is actually the thing that has most contributed to my development as a programmer. When you are able to step back from a problem and challenge assumptions, it forces you to recontextualize the problem such that your understanding is that much deeper. I embrace changing directions on a project.',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },

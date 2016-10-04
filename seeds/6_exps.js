@@ -246,20 +246,10 @@ exports.seed = function(knex) {
       {
         id: 25,
         application_id: 13,
-        title: 'Software Architect',
-        company: 'Stanley Investments',
-        description: 'I ensured that new systems were built in a way that best ensures that functional requirements are met whilst also ensuring that service qualities (performance, scalability, extensibility etc) for the present and for the future are achievable. I reviewed and improved on existing systems, making use of new technologies and methodologies to continually improve existing systems. I provided high level guidance and direction on project work, making sure tha new projects fit in with an overall strategic vision.',
-        dates: '03/2004.10/2008',
-        created_at: new Date('2016-08-15 14:26:16 UTC'),
-        updated_at: new Date('2016-08-15 14:26:16 UTC')
-      },
-      {
-        id: 26,
-        application_id: 13,
-        title: 'Quality Assurance',
-        company: 'Technosurge',
-        description: 'I reviewed requirements specifications and technical design documents to provide timely and meaningful feedback. I created detailed, comprehensive and well-structured test plans and test cases. I estimated, prioritized, planned, and coordinated testing activities. I designed, developed and executed automation scripts using open source tools. Latly, I identified, recorded, documented thoroughly and tracked bugs to minimize costly bugs entering produciton.',
-        dates: '01/2009.05/2011',
+        title: 'Video Rewinder',
+        company: 'Blockbuster',
+        description: 'I rewound the videotapes.',
+        dates: '03/1996.10/2005',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
@@ -299,7 +289,7 @@ exports.seed = function(knex) {
         title: 'Project Manager',
         company: 'Synergy Group',
         description: 'I was able to easily relate to the product given that we have all been through technical interviews. I worked in a Ruby and Unix environment, practiced continuous integration and regularly unit tested code. As a young company, I provided close mentorship to aspiring junior developers as I helped to shape the premium interviewing experience we are endeavoring to create. In addition, I was in charge of hiring and growing our staff. I know how to work with all kinds of people and how to get the most out of everyone.',
-        dates: '01/2009.05/2011',
+        dates: '01/2009.05/2015',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
