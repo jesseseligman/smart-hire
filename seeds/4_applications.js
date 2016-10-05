@@ -156,10 +156,10 @@ exports.seed = function(knex) {
       },
       {
         id: 15,
-        first_name: 'Cedric',
+        first_name: 'Sarah',
         last_name: 'Daniels',
         phone: '3019072015',
-        email: 'cdaniels@gmail.com',
+        email: 'sdaniels@gmail.com',
         job_id: 2,
         created_at: new Date('2016-07-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
