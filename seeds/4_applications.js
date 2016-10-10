@@ -95,7 +95,6 @@ exports.seed = function(knex) {
         last_name: 'Moreland',
         phone: '3016028633',
         email: 'bunkybunk@gmail.com',
-        overall_score: 3.3,
         job_id: 2,
         created_at: new Date('2016-08-15 14:26:18 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
@@ -128,7 +127,6 @@ exports.seed = function(knex) {
         last_name: 'Carver',
         phone: '2069872775',
         email: 'ecarver@gmail.com',
-        overall_score: 1.4,
         job_id: 2,
         created_at: new Date('2016-08-15 13:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
@@ -149,7 +147,6 @@ exports.seed = function(knex) {
         last_name: 'Barksdale',
         phone: '2069072015',
         email: 'abarksdale@gmail.com',
-        overall_score: 2.5,
         job_id: 2,
         created_at: new Date('2016-08-16 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
