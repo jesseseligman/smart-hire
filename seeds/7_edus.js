@@ -290,7 +290,7 @@ exports.seed = function(knex) {
         application_id: 15,
         school: 'University of Maryland',
         degree: 'Bachelors of Science',
-        major: 'Chemistry',
+        major: 'Computer Science',
         dates: '02/2004.07/2008',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')

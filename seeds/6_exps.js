@@ -246,10 +246,10 @@ exports.seed = function(knex) {
       {
         id: 25,
         application_id: 13,
-        title: 'Video Rewinder',
-        company: 'Blockbuster',
-        description: 'I rewound the videotapes.',
-        dates: '03/1996.10/2005',
+        title: 'Sales Rep',
+        company: 'Kasky Partners',
+        description: 'I serviced existing accounts, obtained orders, and established new accounts by planning and organizing daily work schedule to call on existing or potential sales outlets and other trade factors. I adjusted content of sales presentations by studying the type of sales outlet or trade factor. I focused sales efforts by studying existing and potential volume of dealers. I submitted orders by referring to price lists and product literature. I kept management informed by submitting activity and results reports, such as daily call reports, weekly work plans, and monthly and annual territory analyses. I monitored competition by gathering current marketplace information on pricing, products, new products, delivery schedules, merchandising techniques, etc. Basically, I was a jack of all trades.',
+        dates: '03/2004.10/2008',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },

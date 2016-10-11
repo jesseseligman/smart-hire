@@ -169,7 +169,7 @@ exports.seed = function(knex) {
         id: 21,
         question_id: 3,
         application_id: 13,
-        text: 'I\'m a pretty good leader.',
+        text: 'I have the experience and the know-how to be an effective leader on both big and small teams. My experience as a manager has honed my ability to look at my team and determine exactly what strengths my different team members have.',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
@@ -185,7 +185,7 @@ exports.seed = function(knex) {
         id: 23,
         question_id: 3,
         application_id: 15,
-        text: 'I have the experience and the know-how to be an effective leader on both big and small teams. My experience as a manager has honed my ability to look at my team and determine exactly what strengths my different team members have. This way I am able to maximize my entire team. Another key component of this is communication. Making sure that the entire team is communicating effectively is key to the success of any team. I bring excellent leadership skills to any team. Being a leader does not necessarily mean being the loudest voice in the room. It is the ability to work with a group of people and assess how you and your team can work together to maximize your productivity. Sometimes that means listening to others and empowering them to work independently. Other times it involves taking more direct control of a project and driving it yourself. I understand this balance.',
+        text: 'I bring excellent leadership skills to any team. Being a leader does not necessarily mean being the loudest voice in the room. It is the ability to work with a group of people and assess how you and your team can work together to maximize your productivity. Sometimes that means listening to others and empowering them to work independently. Other times it involves taking more direct control of a project and driving it yourself. I understand this balance.',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
@@ -217,7 +217,7 @@ exports.seed = function(knex) {
         id: 27,
         question_id: 4,
         application_id: 12,
-        text: 'Being able to respond to changing demands is the name of the game in modern software development. If you cannot handle the heat please get out of the kitchen I say. I know how to change directions quickly in the process of developing software and understand the importance of being nimble.',
+        text: 'I find it really difficult to change directions. I have a pretty one track mind so when things change I kind of just freak out. I need the security of knowing that things are going to stay the same forever.',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
@@ -225,7 +225,7 @@ exports.seed = function(knex) {
         id: 28,
         question_id: 4,
         application_id: 13,
-        text: 'I find it really difficult to change directions. I have a pretty one track mind so when things change I kind of just freak out. I need the security of knowing that things are going to stay the same forever.',
+        text: 'Being able to respond to changing demands is the name of the game in modern software development. If you cannot handle the heat please get out of the kitchen I say. I know how to change directions quickly in the process of developing software and understand the importance of being nimble.',
         created_at: new Date('2016-08-15 14:26:16 UTC'),
         updated_at: new Date('2016-08-15 14:26:16 UTC')
       },
