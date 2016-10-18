@@ -29,7 +29,7 @@ const Login = React.createClass({
   },
 
   handleRequestClose() {
-    this.setState({ open: false });
+    this.setState({ open: false, });
   },
 
   handleKeyPress(event) {
@@ -86,6 +86,13 @@ const Login = React.createClass({
         message="Please enter a username and a password."
         onRequestClose={this.handleRequestClose}
         open={this.state.open}
+      />
+
+      <Snackbar
+        autoHideDuration={2500}
+        message="Invalid username or password."
+        onRequestClose={this.props.loginSuccess}
+        open={this.props.login.error}
       />
 
     </div>;

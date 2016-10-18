@@ -11,7 +11,8 @@ const defaultState = {
   applications: { reviewedApplications: [], appsToReview: [] },
   exps: { toReview: [] },
   edus: { toReview: [] },
-  questions: { toReview: [] }
+  questions: { toReview: [] },
+  login: { error: false }
 };
 
 const enhancers = compose(

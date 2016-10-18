@@ -444,16 +444,34 @@ export const submitLogin = (credentials) => {
       .then((res) => {
         const { id } = res.data;
 
+        dispatch(loginSuccess());
         return dispatch(push(`/dashboard/${id}`));
       })
       .catch((err) => {
         if (err.response.status === 401) {
+          dispatch(loginError());
           console.log('login error');
         }
         else {
           console.log('uh oh we messed up.');
         }
       });
+  };
+};
+
+export const LOGIN_ERROR = 'LOGIN_ERROR';
+
+export const loginError = () => {
+  return {
+    type: LOGIN_ERROR
+  };
+};
+
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+
+export const loginSuccess = () => {
+  return {
+    type: LOGIN_SUCCESS
   };
 };
 
