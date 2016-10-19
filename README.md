@@ -3,6 +3,9 @@ Smart hire is a tool for minimizing the impact of implicit bias on hiring decisi
 
 This project was inspired by an [episode](http://freakonomics.com/podcast/gender-barriers/) of the podcast Freakonomics. In particular, it was inspired by the discussion with [Iris Bohnet](http://scholar.harvard.edu/iris_bohnet/home), a behavioral economist at Harvard, in which she lays out a basic methodology for making the hiring process more fair and better at predicting job performance. 
 
+###Video Demo
+[![Smart Hire](http://i.imgur.com/Cq6vqT8.png)] (https://vimeo.com/188015409 "Smart Hire Demo - Click to Watch!")
+
 ##Who has this problem?
 While the level of interest in mitigating implicit bias varies, all employers have this problem to some extent or another. Social science research suggests that everyone holds unconscious biases regarding race, gender identity, sexual orientation, etc, and that these biases affect our behavior. In order to create a hiring process that is truly equitable and that is based solely on merit, employers must actively seek to mitigate the impact of implicit bias.
 
