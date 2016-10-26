@@ -3,9 +3,24 @@ import IconButton from 'material-ui/IconButton';
 import { Link } from 'react-router';
 import NavigationMenu from 'material-ui/svg-icons/navigation/menu';
 import React from 'react';
+import Snackbar from 'material-ui/Snackbar';
 import cookie from 'react-cookie';
 
 const Main = React.createClass({
+
+  getInitialState() {
+    return {
+      open: false
+    };
+  },
+
+  handleRequestClose() {
+    this.setState({ open: false });
+  },
+
+  handleTouchTapJobs() {
+    this.setState({ open: true });
+  },
 
   handleTouchTap() {
     this.props.submitLogout();
@@ -82,6 +97,7 @@ const Main = React.createClass({
                 label="Find a job"
                 labelStyle={styleButton}
                 style={{ color: '#F9FDFE' }}
+                onTouchTap={this.handleTouchTapJobs}
               />
             </Link>
           </div>
@@ -106,6 +122,13 @@ const Main = React.createClass({
           </div>
         </div>
       </nav>
+
+      <Snackbar
+        autoHideDuration={2500}
+        message="This feature coming soon."
+        onRequestClose={this.handleRequestClose}
+        open={this.state.open}
+      />
 
       {React.cloneElement(this.props.children, this.props)}
     </div>;
