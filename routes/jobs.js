@@ -3,7 +3,7 @@
 const boom = require('boom');
 const express = require('express');
 const knex = require('../knex');
-const { camelizeKeys } = require('humps');
+const { camelizeKeys, decamelizeKeys } = require('humps');
 const { getUnrated } = require('../utils');
 const checkAuth = require('../middleware');
 
@@ -33,4 +33,18 @@ router.get('/jobs/:userId', checkAuth, (req, res, next) => {
     });
 });
 
+router.post('/jobs', checkAuth, (req, res, next) => {
+  const userId = Number.parseInt(req.params.userId);
+  const row = decamelizeKeys(req.body);
+
+  knex('jobs')
+    .insert(row, '*')
+    .then((rows) => {
+      const job = camelizeKeys(rows[0]);
+      res.send(job);
+    })
+    .catch((err) => {
+      next(boom.wrap(err));
+    });
+});
 module.exports = router;

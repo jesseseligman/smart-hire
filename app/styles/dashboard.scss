@@ -13,16 +13,16 @@
 .page-title {
   font-family: 'Scope One';
   font-size: 2em;
-  margin-bottom: 0px;
+  margin: 0px;
 }
 
 .page-title-conatiner {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   width: 100%;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 #job-header {
