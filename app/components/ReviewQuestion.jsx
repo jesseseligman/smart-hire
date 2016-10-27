@@ -2,9 +2,17 @@ import QuestionResponse from './QuestionResponse';
 import RaisedButton from 'material-ui/RaisedButton';
 import React from 'react';
 import { browserHistory } from 'react-router';
+import cookie from 'react-cookie';
 import weakKey from 'weak-key';
 
 const ReviewQuestion = React.createClass({
+
+  componentWillMount() {
+    if (!cookie.load('loggedIn')) {
+      browserHistory.push('/');
+    }
+  },
+
   handleTouchTap(toReview, index) {
     this.props.patchResponses(toReview[index].responses);
 
@@ -25,7 +33,7 @@ const ReviewQuestion = React.createClass({
       // eslint-disable-next-line max-len
       return questions.questionId === Number.parseInt(this.props.params.questionId);
     });
-    const questionSet = array[0];
+    const questionSet = array[0] || { question: null, responses: [] };
 
     return <div className="dashboard-container">
       <div className="page-title-conatiner">

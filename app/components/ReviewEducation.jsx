@@ -2,6 +2,8 @@ import EducationResponse from './EducationResponse';
 import RaisedButton from 'material-ui/RaisedButton';
 import React from 'react';
 import Snackbar from 'material-ui/Snackbar';
+import { browserHistory } from 'react-router';
+import cookie from 'react-cookie';
 import weakKey from 'weak-key';
 
 const ReviewEducation = React.createClass({
@@ -13,6 +15,10 @@ const ReviewEducation = React.createClass({
   },
 
   componentWillMount() {
+    if (!cookie.load('loggedIn')) {
+      browserHistory.push('/');
+    }
+
     const appIds = this.props.applications.appsToReview.map((app) => {
       return app.id;
     });

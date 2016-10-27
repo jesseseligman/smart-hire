@@ -2,10 +2,15 @@
 import EmployerListing from 'components/EmployerListing';
 // import FloatingActionButton from 'material-ui/FloatingActionButton';
 import React from 'react';
+import { browserHistory } from 'react-router';
+import cookie from 'react-cookie';
 import weakKey from 'weak-key';
 
 const Dashboard = React.createClass({
   componentWillMount() {
+    if (!cookie.load('loggedIn')) {
+      browserHistory.push('/');
+    }
     this.props.fetchJobs(this.props.params.userId);
   },
 

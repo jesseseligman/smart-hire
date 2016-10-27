@@ -2,6 +2,8 @@ import ExperienceResponse from './ExperienceResponse';
 import RaisedButton from 'material-ui/RaisedButton';
 import React from 'react';
 import Snackbar from 'material-ui/Snackbar';
+import { browserHistory } from 'react-router';
+import cookie from 'react-cookie';
 import weakKey from 'weak-key';
 
 const ReviewExperience = React.createClass({
@@ -10,6 +12,12 @@ const ReviewExperience = React.createClass({
     return {
       open: false
     };
+  },
+
+  componentWillMount() {
+    if (!cookie.load('loggedIn')) {
+      browserHistory.push('/');
+    }
   },
 
   handleTouchTap() {

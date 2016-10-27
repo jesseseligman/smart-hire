@@ -4,10 +4,18 @@ import FlatButton from 'material-ui/FlatButton';
 import { Link } from 'react-router';
 import QuestionResponse from './QuestionResponse';
 import React from 'react';
+import { browserHistory } from 'react-router';
+import cookie from 'react-cookie';
 import { hyphenizePhone } from '../utils';
 import weakKey from 'weak-key';
 
 const ReviewedApplication = React.createClass({
+
+  componentWillMount() {
+    if (!cookie.load('loggedIn')) {
+      browserHistory.push('/');
+    }
+  },
 
   handleTouchTap(id, anonymous) {
     this.props.toggleAnonymous(id, !anonymous);
