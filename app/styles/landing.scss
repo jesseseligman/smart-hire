@@ -1,3 +1,5 @@
+@import "variables";
+
 #image-container {
   display: flex;
   align-items: center;
@@ -11,8 +13,8 @@ a {
 }
 
 #action-button {
-  background: #B85948;
-  color: #F9FDFE;
+  background: $themeRed;
+  color: $lightBlue;
   width: 240px;
   height: 60px;
   text-align: center;
@@ -37,7 +39,7 @@ a {
 }
 
 .info-column {
-  color: #174859;
+  color: $darkBlue;
   text-align: center;
   margin: 10px;
   font-family: Roboto;
@@ -64,7 +66,7 @@ a {
 
 #tagline {
   z-index: 1;
-  color: #F9FDFE;
+  color: $lightBlue;
   font-family: Roboto;
   font-size: 3.7em;
   text-shadow: 1px 1px 2px black;

@@ -1,8 +1,10 @@
+@import "variables";
+
 #applicant-info {
   align-items: center;
-  border: 1px solid #174859;
+  border: 1px solid $darkBlue;
   border-radius: 9px;
-  color: #174859;
+  color: $darkBlue;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -49,10 +51,6 @@ h4 {
   justify-content: center;
   width: 100%;
 }
-
-// #experience {
-//   width: 65%;
-// }
 
 #title-label {
   font-family: 'Scope One';

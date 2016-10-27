@@ -1,3 +1,5 @@
+@import "variables";
+
 .dashboard-container {
   margin: 0 15px;
   @media (min-width: 550px) {
@@ -33,7 +35,7 @@
   font-family: 'Scope One';
   font-size: 1em;
   display: inline;
-  color: #B85948;
+  color: $themeRed;
   margin-left: 5px;
   &:hover {
     cursor: pointer;

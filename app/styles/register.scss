@@ -1,3 +1,5 @@
+@import "variables";
+
 #register-container {
   margin-top: 30px;
   display: flex;
@@ -15,7 +17,7 @@
   width: 700px;
   height: 600px;
   z-index: 2;
-  background: #F9FDFE;
+  background: $lightBlue;
   border: 1px solid #5B788E;
   border-radius: 8px;
 }
@@ -32,5 +34,5 @@
   margin-top: 35px;
   font-family: Roboto;
   font-size: 1.5em;
-  color: #174859;
+  color: $darkBlue;
 }

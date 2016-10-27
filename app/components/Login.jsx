@@ -60,6 +60,7 @@ const Login = React.createClass({
             floatingLabelText="Email"
             name="email"
             onChange={this.handleChange}
+            onKeyPress={this.handleKeyPress}
             type="email"
           />
 
