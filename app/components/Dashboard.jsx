@@ -1,10 +1,5 @@
-import ContentAdd from 'material-ui/svg-icons/content/add';
 import EmployerListing from 'components/EmployerListing';
-import FontIcon from 'material-ui/FontIcon';
-
 import IconButton from 'material-ui/IconButton';
-
-import FloatingActionButton from 'material-ui/FloatingActionButton';
 import React from 'react';
 import { browserHistory } from 'react-router';
 import cookie from 'react-cookie';
@@ -19,16 +14,6 @@ const Dashboard = React.createClass({
   },
 
   render() {
-    const styleSmallIcon = {
-      width: 36,
-      height: 36
-    };
-
-    const styleSmall = {
-      width: 72,
-      height: 72,
-      padding: 16
-    };
 
     return <div className="dashboard-container">
 
